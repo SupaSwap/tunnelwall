@@ -3,12 +3,12 @@ pragma solidity >=0.4.16 <0.9.0;
 
 contract Tunnelwall {
     
-    mapping(uint256 => Message) Wall; // store unique ids with corresponding Message struct
-    
     // bundle uploaded messages with time of upload into specialised datatype
     struct Message {
         bytes32 text;
         uint256 timestamp;
     }
+
+    mapping(uint256 => Message) Wall; // store unique ids with corresponding Message struct
 
 }
