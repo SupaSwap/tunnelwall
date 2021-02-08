@@ -11,7 +11,7 @@ contract Tunnelwall {
 
     address private owner;
 
-    mapping(uint256 => Message) Wall; // store unique ids with corresponding Message struct
+    mapping(uint256 => Message) Wall;
     
     constructor () {
         owner = msg.sender;
