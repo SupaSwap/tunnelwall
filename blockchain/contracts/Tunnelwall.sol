@@ -2,5 +2,10 @@
 pragma solidity >=0.4.16 <0.9.0;
 
 contract Tunnelwall {
-    // Smart contract logic here
+    
+    struct Message {
+        bytes32 text;
+        uint256 timestamp;
+    }
+
 }
