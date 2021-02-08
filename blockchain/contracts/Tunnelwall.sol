@@ -3,10 +3,9 @@ pragma solidity >=0.4.16 <0.9.0;
 
 contract Tunnelwall {
     
-    // bundle uploaded messages with time of upload into specialised datatype
     struct Message {
-        bytes32 text;
-        uint256 timestamp;
+        bytes32 text;   // max 32 char message in hex
+        uint256 timestamp;  //  time of upload in unix
     }
 
     address private owner;
