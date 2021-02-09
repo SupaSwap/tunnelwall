@@ -38,4 +38,11 @@ contract Tunnelwall {
         );
     }
 
+    /*
+     * @dev Read latest item in Wall mapping
+     * @return Message text and timestamp at current uid value
+     */
+    function readLast() view public returns(Message memory) {
+        return Wall[uid];
+    }
 }
