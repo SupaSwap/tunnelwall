@@ -39,6 +39,15 @@ contract Tunnelwall {
     }
 
     /*
+     * @dev Read specified item in Wall mapping
+     * @param _uid id of message to be read
+     * @return Message text and timestamp at specified uid value
+     */
+    function read(uint256 _uid) view public returns(Message memory) {
+        return Wall[_uid];
+    }
+
+    /*
      * @dev Read latest item in Wall mapping
      * @return Message text and timestamp at current uid value
      */
