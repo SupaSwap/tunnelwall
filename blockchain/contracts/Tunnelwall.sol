@@ -19,7 +19,7 @@ contract Tunnelwall {
      */
     constructor () {
         owner = msg.sender;
-        uid = 1;
+        uid = 0;
         Wall[uid] = Message(
             0x5468652074756e6e656c20626567696e7320686572652e000000000000000000,
             block.timestamp
