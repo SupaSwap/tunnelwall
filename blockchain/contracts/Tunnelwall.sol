@@ -10,6 +10,8 @@ contract Tunnelwall {
 
     address private owner;
 
+    uint256 uid;
+
     mapping(uint256 => Message) Wall;
     
     constructor () {
