@@ -45,4 +45,12 @@ contract Tunnelwall {
     function readLast() view public returns(Message memory) {
         return Wall[uid];
     }
+
+    /*
+     * @dev Read current value of uid var
+     * @return uid id of latest message
+     */
+    function getUid() view public returns(uint256) {
+        return uid;
+    }
 }
