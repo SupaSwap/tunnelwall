@@ -5,6 +5,7 @@ contract Tunnelwall {
     
     struct Message {
         bytes32 text;   // max 32 char message in hex
+        address sender; // address of message origin
         uint256 timestamp;  //  time of upload in unix
     }
 
@@ -22,6 +23,7 @@ contract Tunnelwall {
         uid = 0;
         Wall[uid] = Message(
             0x5468652074756e6e656c20626567696e7320686572652e000000000000000000,
+            owner,
             block.timestamp
         );
     }
@@ -34,6 +36,7 @@ contract Tunnelwall {
         uid++;
         Wall[uid] = Message(
             _text,
+            msg.sender,
             block.timestamp
         );
     }
