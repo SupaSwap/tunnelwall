@@ -26,4 +26,16 @@ contract Tunnelwall {
         );
     }
 
+    /*
+     * @dev Append users message to Wall mapping
+     * @param _text message from user
+     */
+    function write(bytes32 _text) public {
+        uid++;
+        Wall[uid] = Message(
+            _text,
+            block.timestamp
+        );
+    }
+
 }
