@@ -19,7 +19,7 @@ function App() {
     var result = [
       web3.utils.toAscii(raw_result[0]).replaceAll(String.fromCharCode(0),''),
       raw_result[1],
-      new Date(parseInt(raw_result[2])).toLocaleString()
+      new Date(parseInt(raw_result[2]) * 1000).toLocaleString()
     ]
     console.log(result) // debugging
     setLastMessage(result);
