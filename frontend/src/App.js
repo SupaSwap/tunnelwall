@@ -52,7 +52,9 @@ function App() {
       <Form className="text-center mb-5">
         <FormGroup>
           <Form.Label>Write a message on the wall</Form.Label>
-          <Form.Control type="text"/>
+          <Form.Control
+            type="text"
+            maxLength="32" />
         </FormGroup>
         <Button
           variant="primary"
