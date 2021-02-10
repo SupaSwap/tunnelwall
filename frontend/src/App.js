@@ -27,8 +27,8 @@ function App() {
         display: "block",
         margin: "auto"
         }} />
-      <h1 className="center">Welcome to the Tunnelwall Project</h1>
-      <p className="lead center">
+      <h1 className="text-center">Welcome to the Tunnelwall Project</h1>
+      <p className="lead text-center">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
