@@ -11,7 +11,10 @@ const web3 = new Web3(Web3.givenProvider);  // use the given Provider or instant
 function App() {
   return (
     <div>
-      <Logo />
+      <Logo style={{
+        display: "block",
+        margin: "auto"
+        }} />
       <p>Welcome to the Tunnelwall</p>
       <Form className="text-center mb-5">
         <FormGroup>
