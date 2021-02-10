@@ -53,7 +53,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -83,7 +84,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -96,7 +98,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"getUid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_uid\",\"type\":\"uint256\"}],\"name\":\"read\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"text\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct Tunnelwall.Message\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"readLast\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"text\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct Tunnelwall.Message\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_text\",\"type\":\"bytes32\"}],\"name\":\"write\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/Josh/Documents/Josh/GitHub/tunnelwall/blockchain/contracts/Tunnelwall.sol\":\"Tunnelwall\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Josh/Documents/Josh/GitHub/tunnelwall/blockchain/contracts/Tunnelwall.sol\":{\"keccak256\":\"0x6c5a7e1bc3eea9baf4ab8e2d8d82ebaadec368ae2162ece3d6b63adee1c3460b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4070b33e43bf5f69159ad7476bfa5bb92ac3a00a145fd05dca2404ad58d90407\",\"dweb:/ipfs/QmVkPZP6zXy7KYhTNx4ohwQ2WPz36myUtZX1THtCRjjR3A\"]}},\"version\":1}",
@@ -4321,9 +4324,17 @@
     "name": "solc",
     "version": "0.8.1+commit.df193b15.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xd159ac415F41B06ca2420aAC9264654a239def51",
+      "transactionHash": "0xbb6a003125d6e116d13a315cb25ba115ab24976b17ba64a55767b640834486c1"
+    }
+  },
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-02-09T21:03:35.535Z",
+  "updatedAt": "2021-02-10T21:52:50.580Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
