@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
 import { Navbar, Form, FormGroup, Button, Alert } from 'react-bootstrap';
@@ -7,10 +7,24 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 const web3 = new Web3(Web3.givenProvider);  // use the given Provider or instantiate a new websocket provider
-const contractAddress = '0x0000000000000000000000000000000000000000';
+const contractAddress = '0xd159ac415F41B06ca2420aAC9264654a239def51'; // contract address from Truffle migration to Ganache
 const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 
 function App() {
+  const [lastMessage, setLastMessage] = useState('');
+
+  const handleGetLastMessage = async (e) => {
+    e.preventDefault();
+    var raw_result = await contract.methods.readLast().call();
+    var result = [
+      web3.utils.toAscii(raw_result[0]).replaceAll(String.fromCharCode(0),''),
+      raw_result[1],
+      new Date(parseInt(raw_result[2])).toLocaleString()
+    ]
+    console.log(result) // debugging
+    setLastMessage(result);
+  }
+
   return (
     <div>
       <Navbar bg="dark" variant="dark">
@@ -52,10 +66,13 @@ function App() {
         className="mb-3"
         variant="primary"
         type="button" 
-        block > 
+        onClick={ handleGetLastMessage }
+        block >
         Request Message
       </Button>
-      <Alert variant="secondary" className="text-center py-2 px-3">Message appears here</Alert>
+      <Alert variant="secondary" className="text-center py-2 px-3">{ lastMessage[0] }</Alert>
+      <Alert variant="secondary" className="text-center py-2 px-3">{ lastMessage[1] }</Alert>
+      <Alert variant="secondary" className="text-center py-2 px-3">{ lastMessage[2] }</Alert>
     </div>
   );
 }
