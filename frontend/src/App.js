@@ -1,7 +1,7 @@
 import React from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
-import { Navbar, Form, FormGroup, Button } from 'react-bootstrap';
+import { Navbar, Form, FormGroup, Button, Alert } from 'react-bootstrap';
 import { ReactComponent as Logo } from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
@@ -45,6 +45,15 @@ function App() {
           Write
         </Button>
       </Form>
+      <p className="text-center mb-2">Get most recent message</p>
+      <Button
+        className="mb-3"
+        variant="primary"
+        type="button" 
+        block > 
+        Request Message
+      </Button>
+      <Alert variant="secondary" className="text-center py-2 px-3">Message appears here</Alert>
     </div>
   );
 }
