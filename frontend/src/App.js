@@ -1,7 +1,7 @@
 import React from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
-import { Form, FormGroup, Button } from 'react-bootstrap';
+import { Navbar, Form, FormGroup, Button } from 'react-bootstrap';
 import { ReactComponent as Logo } from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
@@ -11,11 +11,28 @@ const web3 = new Web3(Web3.givenProvider);  // use the given Provider or instant
 function App() {
   return (
     <div>
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand style={{
+          paddingBottom: "0"
+        }}>
+          <Logo style={{
+            width: "1.5em",
+            height: "1.5em",
+            marginBottom: "0.3em"
+          }}/>{' '}
+          Tunnelwall
+        </Navbar.Brand>
+      </Navbar>
       <Logo style={{
         display: "block",
         margin: "auto"
         }} />
-      <p>Welcome to the Tunnelwall</p>
+      <h1 className="center">Welcome to the Tunnelwall Project</h1>
+      <p className="lead center">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </p>
       <Form className="text-center mb-5">
         <FormGroup>
           <Form.Label>Write a message on the wall</Form.Label>
