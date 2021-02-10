@@ -1,5 +1,6 @@
 import React from 'react';
 import Web3 from 'web3';
+import { tunnelwallAbi } from './abi';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
