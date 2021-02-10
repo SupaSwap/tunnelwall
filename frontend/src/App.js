@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 const web3 = new Web3(Web3.givenProvider);  // use the given Provider or instantiate a new websocket provider
+const contractAddress = '0x0000000000000000000000000000000000000000';
+const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 
 function App() {
   return (
