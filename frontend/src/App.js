@@ -19,10 +19,11 @@ function App() {
     var accounts = await window.ethereum.enable();
     var account = accounts[0];
     var _message = web3.utils.fromAscii(message.padEnd(32, String.fromCharCode(0)));
-    var gas = 
-    await contract.methods.write(_message).estimateGas();
+    var gas = await contract.methods.write(_message).estimateGas();
     var result = await contract.methods.write(_message).send({ from: account, gas });
-    console.log(result)
+    var uid = result.events.Log.returnValues['uid'];
+    console.log(result) // debugging
+    console.log(uid) // debugging
   }
 
   const handleGetLastMessage = async (e) => {
