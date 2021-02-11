@@ -34,14 +34,16 @@ contract Tunnelwall {
     /*
      * @dev Append users message to Wall mapping
      * @param _text message from user
+     * @return uid id of latest message
      */
-    function write(bytes32 _text) public {
+    function write(bytes32 _text) public returns(uint256) {
         uid++;
         Wall[uid] = Message(
             _text,
             msg.sender,
             block.timestamp
         );
+        return uid;
     }
 
     /*
