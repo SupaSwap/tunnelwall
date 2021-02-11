@@ -14,11 +14,13 @@ function App() {
   const [message, setMessage] = useState('');
   const [lastMessage, setLastMessage] = useState('');
   const [uid, setUid] = useState('');
+  const [walletAddress, setWalletAddress] = useState('Please connect with MetaMask')
 
   const handleWriteMessage = async (e) => {
     e.preventDefault();
     var accounts = await window.ethereum.enable();
     var account = accounts[0];
+    setWalletAddress(account);
     var _message = web3.utils.fromAscii(message.padEnd(32, String.fromCharCode(0)));
     var gas = await contract.methods.write(_message).estimateGas();
     var result = await contract.methods.write(_message).send({ from: account, gas });
@@ -50,7 +52,7 @@ function App() {
             height: "1.5em",
             marginBottom: "0.3em"
           }}/>{' '}
-          Tunnelwall
+          Tunnelwall { walletAddress }
         </Navbar.Brand>
       </Navbar>
       <Logo style={{
