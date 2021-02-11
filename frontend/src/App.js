@@ -73,6 +73,7 @@ function App() {
         </p>
         <a 
           href="https://www.github.com"
+          target="blank"
           style={{
             position: "relative",
             display: "inline-block"
