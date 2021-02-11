@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 const web3 = new Web3(Web3.givenProvider);  // use the given Provider or instantiate a new websocket provider
-const contractAddress = '0x0d441dd233201aBF55493D95b57103dA34c2E5E0'; // contract address from Truffle migration to Ganache
+const contractAddress = '0xa08F012B5273b3835fAFb5288df65602D3DccF56'; // contract address from Truffle migration to Ganache
 const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 
 function App() {
@@ -19,7 +19,8 @@ function App() {
     var accounts = await window.ethereum.enable();
     var account = accounts[0];
     var _message = web3.utils.fromAscii(message.padEnd(32, String.fromCharCode(0)));
-    var gas = await contract.methods.write(_message).estimateGas();
+    var gas = 
+    await contract.methods.write(_message).estimateGas();
     var result = await contract.methods.write(_message).send({ from: account, gas });
     console.log(result)
   }

@@ -72,7 +72,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -102,7 +103,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -115,7 +117,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"uid\",\"type\":\"uint256\"}],\"name\":\"Log\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"getUid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_uid\",\"type\":\"uint256\"}],\"name\":\"read\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"text\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct Tunnelwall.Message\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"readLast\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"text\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct Tunnelwall.Message\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_text\",\"type\":\"bytes32\"}],\"name\":\"write\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/Josh/Documents/Josh/GitHub/tunnelwall/blockchain/contracts/Tunnelwall.sol\":\"Tunnelwall\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Josh/Documents/Josh/GitHub/tunnelwall/blockchain/contracts/Tunnelwall.sol\":{\"keccak256\":\"0x78314f55b1ad885dfdb587d3bb8e96360cc54a581e43b37a2af6d16c2066a477\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7d52b7671b3ed06637c806460f3125d3138a59969d2c628ded132840b2cf0cd3\",\"dweb:/ipfs/QmWHHVWMW1YzsCoFf7EnCTZtPycKFGcoufmQNe7A9Kgcmw\"]}},\"version\":1}",
@@ -4620,14 +4623,29 @@
   },
   "networks": {
     "5777": {
-      "events": {},
+      "events": {
+        "0x909c57d5c6ac08245cf2a6de3900e2b868513fa59099b92b27d8db823d92df9c": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "uid",
+              "type": "uint256"
+            }
+          ],
+          "name": "Log",
+          "type": "event"
+        }
+      },
       "links": {},
-      "address": "0x0d441dd233201aBF55493D95b57103dA34c2E5E0",
-      "transactionHash": "0x5e5b5fa99d2aed320cbf2387691db00752a0998113330160b79983d2ac77c7f3"
+      "address": "0xa08F012B5273b3835fAFb5288df65602D3DccF56",
+      "transactionHash": "0x4ffb16ccc490e2b509ad0c1288f081a69a0a2e3747e05960e380d95dcb5d8b4c"
     }
   },
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-02-11T01:14:56.963Z",
+  "updatedAt": "2021-02-11T01:23:19.954Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
