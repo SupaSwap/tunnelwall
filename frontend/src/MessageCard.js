@@ -4,11 +4,11 @@ import { Card } from 'react-bootstrap';
 export default class MessageCard extends Component {
   render() {
     return(
-      <Card>
+      <Card className="w-100">
         <Card.Body>
-          <Card.Title>{ this.props.text }</Card.Title>
+          <Card.Title>Card Title</Card.Title>
           <Card.Subtitle className="text-muted">ID: { this.props.uid }</Card.Subtitle>
-          <kbd> Hello</kbd>
+          <p>{ this.props.text }</p>
         </Card.Body>
       </Card>
     )

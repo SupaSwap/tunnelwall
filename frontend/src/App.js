@@ -13,34 +13,44 @@ const contractAddress = '0x8b4216eCB98f7656b11089570Aa908A49A1b5F9d'; // contrac
 const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 
 function App() {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState('-');
   const [lastMessage, setLastMessage] = useState('');
-  const [uid, setUid] = useState('');
+  const [uid, setUid] = useState('-');
   const [walletAddress, setWalletAddress] = useState('Please connect a wallet with MetaMask')
 
   const handleWriteMessage = async (e) => {
     e.preventDefault();
+
     var accounts = await window.ethereum.enable();
     var account = accounts[0];
     setWalletAddress('Connected: ' + account);
-    var _message = web3.utils.fromAscii(message.padEnd(32, String.fromCharCode(0)));
+
+    const formData = new FormData(e.target), formDataObj = Object.fromEntries(formData.entries())
+    var message = formDataObj['input']
+    var _message = web3.utils.fromAscii(formDataObj['input'].padEnd(32, String.fromCharCode(0)));
+
     var gas = await contract.methods.write(_message).estimateGas();
     var result = await contract.methods.write(_message).send({ from: account, gas });
+
+    setMessage(message);
     setUid(result.events.Log.returnValues['uid']);
+
     console.log(result) // debugging
-    console.log({ uid }) // debugging
   }
 
   const handleGetLastMessage = async (e) => {
     e.preventDefault();
+
     var raw_result = await contract.methods.readLast().call();
     var result = [
       web3.utils.toAscii(raw_result[0]).replaceAll(String.fromCharCode(0),''),
       raw_result[1],
       new Date(parseInt(raw_result[2]) * 1000).toLocaleString()
     ]
-    console.log(result) // debugging
+    
     setLastMessage(result);
+
+    console.log(result) // debugging
   }
 
   return (
@@ -93,7 +103,7 @@ function App() {
         <h3 className="text-center text-dark">This is your dashboard</h3>
         <p className="text-center lead mb-5">From here, you can interact with the Tunnelwall program. For help getting started, please view the <a href="https://www.google.com">guide</a>.</p>
         <Row className="mb-4">
-          <Col xs={8}>
+          <Col xs={7}>
             <Form
               className="text-center"
               onSubmit={ handleWriteMessage } >
@@ -102,8 +112,9 @@ function App() {
                 <Form.Control
                   type="text"
                   maxLength="32"
-                  value={ message }
-                  onChange={ e => setMessage(e.target.value) } />
+                  name="input"
+                  placeholder="Max 32 characters"
+                  />
               </FormGroup>
               <Button
                 variant="primary"
@@ -113,15 +124,15 @@ function App() {
               </Button>
             </Form>
           </Col>
-          <Col>
-            <p className="text-center mb-2">Fetched message card</p>
+          <Col xs={5}>
+            <p className="text-center mb-2">Output</p>
             <MessageCard 
               text={ message }
               uid={ uid } />
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col xs={4}>
             <p className="text-center mb-2">Get most recent message</p>
             <Button
               className="mb-3"
@@ -135,10 +146,10 @@ function App() {
             <Alert variant="secondary" className="text-center py-2 px-3">{ lastMessage[1] }</Alert>
             <Alert variant="secondary" className="text-center py-2 px-3">{ lastMessage[2] }</Alert>
           </Col>
-          <Col>
+          <Col xs={4}>
             I am a column
           </Col>
-          <Col>
+          <Col xs={4}>
             I am also a column
           </Col>
         </Row>
