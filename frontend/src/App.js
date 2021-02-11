@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
-import { Navbar, Form, FormGroup, Button, Alert, Container } from 'react-bootstrap';
+import { Navbar, Jumbotron, Form, FormGroup, Button, Alert, Container } from 'react-bootstrap';
 import { ReactComponent as Logo } from './logo.svg';
 import MessageCard from './MessageCard';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -61,16 +61,18 @@ function App() {
           </span>
         </Container>
       </Navbar>
-      <Logo style={{
-        display: "block",
-        margin: "auto"
-        }} />
-      <h1 className="text-center">Welcome to the Tunnelwall Project</h1>
-      <p className="lead text-center">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
+      <Jumbotron>
+        <Logo style={{
+          display: "block",
+          margin: "auto"
+          }} />
+        <h1 className="text-center">Welcome to the Tunnelwall Project</h1>
+        <p className="lead text-center">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+      </Jumbotron>
       <Form
         className="text-center mb-5"
         onSubmit={ handleWriteMessage } >
