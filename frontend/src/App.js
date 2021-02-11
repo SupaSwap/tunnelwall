@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
-import { Navbar, Form, FormGroup, Button, Alert } from 'react-bootstrap';
+import { Navbar, Form, FormGroup, Button, Alert, Container } from 'react-bootstrap';
 import { ReactComponent as Logo } from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
@@ -20,7 +20,7 @@ function App() {
     e.preventDefault();
     var accounts = await window.ethereum.enable();
     var account = accounts[0];
-    setWalletAddress(account);
+    setWalletAddress('Connected: ' + account);
     var _message = web3.utils.fromAscii(message.padEnd(32, String.fromCharCode(0)));
     var gas = await contract.methods.write(_message).estimateGas();
     var result = await contract.methods.write(_message).send({ from: account, gas });
@@ -44,16 +44,21 @@ function App() {
   return (
     <div>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand style={{
-          paddingBottom: "0"
-        }}>
-          <Logo style={{
-            width: "1.5em",
-            height: "1.5em",
-            marginBottom: "0.3em"
-          }}/>{' '}
-          Tunnelwall { walletAddress }
-        </Navbar.Brand>
+        <Container fluid>
+          <Navbar.Brand style={{
+            paddingBottom: "0"
+          }}>
+            <Logo style={{
+              width: "1.5em",
+              height: "1.5em",
+              marginBottom: "0.3em"
+            }}/>{' '}
+            Tunnelwall 
+          </Navbar.Brand>
+          <span className="navbar-text">
+          { walletAddress }
+          </span>
+        </Container>
       </Navbar>
       <Logo style={{
         display: "block",
