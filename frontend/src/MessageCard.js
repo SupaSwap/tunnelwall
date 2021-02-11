@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 export default class MessageCard extends Component {
   render() {
     return(
-      <Card style={{ width: '25rem' }}>
+      <Card>
         <Card.Body>
           <Card.Title>{ this.props.text }</Card.Title>
           <Card.Subtitle className="text-muted">ID: { this.props.uid }</Card.Subtitle>
