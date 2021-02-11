@@ -13,6 +13,7 @@ const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 function App() {
   const [message, setMessage] = useState('');
   const [lastMessage, setLastMessage] = useState('');
+  const [uid, setUid] = useState('');
 
   const handleWriteMessage = async (e) => {
     e.preventDefault();
@@ -21,9 +22,9 @@ function App() {
     var _message = web3.utils.fromAscii(message.padEnd(32, String.fromCharCode(0)));
     var gas = await contract.methods.write(_message).estimateGas();
     var result = await contract.methods.write(_message).send({ from: account, gas });
-    var uid = result.events.Log.returnValues['uid'];
+    setUid(result.events.Log.returnValues['uid']);
     console.log(result) // debugging
-    console.log(uid) // debugging
+    console.log({ uid }) // debugging
   }
 
   const handleGetLastMessage = async (e) => {
