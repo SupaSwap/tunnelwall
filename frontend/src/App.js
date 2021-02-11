@@ -14,7 +14,7 @@ function App() {
   const [message, setMessage] = useState('');
   const [lastMessage, setLastMessage] = useState('');
   const [uid, setUid] = useState('');
-  const [walletAddress, setWalletAddress] = useState('Please connect with MetaMask')
+  const [walletAddress, setWalletAddress] = useState('Please connect a wallet with MetaMask')
 
   const handleWriteMessage = async (e) => {
     e.preventDefault();
