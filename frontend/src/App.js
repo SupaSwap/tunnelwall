@@ -11,7 +11,18 @@ const contractAddress = '0x0d441dd233201aBF55493D95b57103dA34c2E5E0'; // contrac
 const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 
 function App() {
+  const [message, setMessage] = useState('');
   const [lastMessage, setLastMessage] = useState('');
+
+  const handleWriteMessage = async (e) => {
+    e.preventDefault();
+    var accounts = await window.ethereum.enable();
+    var account = accounts[0];
+    var _message = web3.utils.fromAscii(message.padEnd(32, String.fromCharCode(0)));
+    var gas = await contract.methods.write(_message).estimateGas();
+    var result = await contract.methods.write(_message).send({ from: account, gas });
+    console.log(result)
+  }
 
   const handleGetLastMessage = async (e) => {
     e.preventDefault();
@@ -49,12 +60,16 @@ function App() {
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       </p>
-      <Form className="text-center mb-5">
+      <Form
+        className="text-center mb-5"
+        onSubmit={ handleWriteMessage } >
         <FormGroup>
           <Form.Label>Write a message on the wall</Form.Label>
           <Form.Control
             type="text"
-            maxLength="32" />
+            maxLength="32"
+            value={ message }
+            onChange={ e => setMessage(e.target.value) } />
         </FormGroup>
         <Button
           variant="primary"
