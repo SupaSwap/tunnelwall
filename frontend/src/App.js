@@ -3,6 +3,7 @@ import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
 import { Navbar, Form, FormGroup, Button, Alert, Container } from 'react-bootstrap';
 import { ReactComponent as Logo } from './logo.svg';
+import MessageCard from './MessageCard';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
@@ -100,6 +101,9 @@ function App() {
       <Alert variant="secondary" className="text-center py-2 px-3">{ lastMessage[0] }</Alert>
       <Alert variant="secondary" className="text-center py-2 px-3">{ lastMessage[1] }</Alert>
       <Alert variant="secondary" className="text-center py-2 px-3">{ lastMessage[2] }</Alert>
+      <MessageCard 
+        text={ message }
+        uid={ uid } />
     </div>
   );
 }
