@@ -17,6 +17,8 @@ contract Tunnelwall {
     uint256 uid;
 
     mapping(uint256 => Message) Wall;
+
+    event Log(uint256 uid);
     
     /*
      * @dev Set first item in Wall mapping when contract is deployed
@@ -43,6 +45,7 @@ contract Tunnelwall {
             msg.sender,
             block.timestamp
         );
+        emit Log(uid);
         return uid;
     }
 
