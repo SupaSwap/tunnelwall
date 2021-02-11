@@ -61,16 +61,13 @@ function App() {
           </span>
         </Container>
       </Navbar>
-      <Jumbotron>
-        <Logo style={{
-          display: "block",
-          margin: "auto"
-          }} />
-        <h1 className="text-center">Welcome to the Tunnelwall Project</h1>
-        <p className="lead text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      <Jumbotron style={{
+        borderRadius: "0",
+        backgroundImage: "linear-gradient(120deg, #b721ff 0%, #21d4fd 100%)"
+      }}>
+        <h1 className="text-white text-center mt-5">Welcome to the Tunnelwall Project</h1>
+        <p className="text-white lead text-center mb-5">
+        A virtual wall built on the Ethereum blockchain, on which anyone can write to and read from.
         </p>
       </Jumbotron>
       <Form
