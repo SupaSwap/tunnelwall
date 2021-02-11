@@ -6,7 +6,7 @@ export default class MessageCard extends Component {
     return(
       <Card className="w-100">
         <Card.Body>
-          <Card.Title className="text-center">Successfully did a thing</Card.Title>
+          <Card.Title className="text-center">{ this.props.info }</Card.Title>
           <hr className="mt-4 mb-3"/>
           <Card.Subtitle className="mt-3">Post ID</Card.Subtitle>
           <Card.Text>{ this.props.uid }</Card.Text>

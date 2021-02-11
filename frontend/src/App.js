@@ -16,6 +16,7 @@ function App() {
   const [message, setMessage] = useState('-');
   const [lastPost, setLastPost] = useState('');
   const [uid, setUid] = useState('-');
+  const [info, setInfo] = useState('Successfully retrieved origin post')
   const [walletAddress, setWalletAddress] = useState('Please connect a wallet with MetaMask')
 
   const handleWriteMessage = async (e) => {
@@ -32,6 +33,7 @@ function App() {
     var gas = await contract.methods.write(_message).estimateGas();
     var result = await contract.methods.write(_message).send({ from: account, gas });
 
+    setInfo('Successfully posted on the wall')
     setMessage(message);
     setUid(result.events.Log.returnValues['uid']);
 
@@ -126,9 +128,12 @@ function App() {
           </Col>
           <Col xs={5}>
             <p className="text-center mb-2">Output</p>
-            <MessageCard 
+            <MessageCard
+              info={ info }
               text={ message }
-              uid={ uid } />
+              uid={ uid }
+              address="None"
+              timestamp="None" />
           </Col>
         </Row>
         <Row>
