@@ -14,7 +14,7 @@ const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 
 function App() {
   const [message, setMessage] = useState('-');
-  const [lastPost, setLastPost] = useState('');
+  const [post, setPost] = useState('');
   const [uid, setUid] = useState('-');
   const [info, setInfo] = useState('Successfully retrieved origin post')
   const [walletAddress, setWalletAddress] = useState('Please connect a wallet with MetaMask')
@@ -50,7 +50,7 @@ function App() {
       new Date(parseInt(raw_result[2]) * 1000).toLocaleString()
     ]
     
-    setLastPost(result);
+    setPost(result);
 
     console.log(result) // debugging
   }
@@ -151,9 +151,9 @@ function App() {
               block >
               Request Message
             </Button>
-            <Alert variant="secondary" className="text-center py-2 px-3">{ lastPost[0] }</Alert>
-            <Alert variant="secondary" className="text-center py-2 px-3">{ lastPost[1] }</Alert>
-            <Alert variant="secondary" className="text-center py-2 px-3">{ lastPost[2] }</Alert>
+            <Alert variant="secondary" className="text-center py-2 px-3">{ post[0] }</Alert>
+            <Alert variant="secondary" className="text-center py-2 px-3">{ post[1] }</Alert>
+            <Alert variant="secondary" className="text-center py-2 px-3">{ post[2] }</Alert>
           </Col>
           <Col xs={4}>
             I am a column
