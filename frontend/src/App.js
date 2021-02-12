@@ -26,14 +26,14 @@ function App() {
     setWalletAddress('Connected: ' + account);
 
     const formData = new FormData(e.target), formDataObj = Object.fromEntries(formData.entries())
-    var readableMessage = formDataObj['input']
-    var message = web3.utils.fromAscii(formDataObj['input'].padEnd(32, String.fromCharCode(0)));
+    var readableMessage = formDataObj['messageInput']
+    var message = web3.utils.fromAscii(formDataObj['messageInput'].padEnd(32, String.fromCharCode(0)));
 
     var gas = await contract.methods.write(message).estimateGas();
     var result = await contract.methods.write(message).send({ from: account, gas });
 
-    setInfo('You have written on the wall')
-    setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()])
+    setInfo('You have written on the wall');
+    setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()]);
     setUid(result.events.Log.returnValues['uid']);
 
     console.log(result) // debugging
@@ -49,7 +49,7 @@ function App() {
       new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
     ]
     
-    setInfo('The latest message on the wall')
+    setInfo('The latest message on the wall');
     setPost(result);
 
     console.log(result) // debugging
@@ -58,16 +58,21 @@ function App() {
   const handleGetSpecificMessage = async (e) => {
     e.preventDefault();
 
-    var rawResult = await contract.methods.read().call();
+    const formData = new FormData(e.target), formDataObj = Object.fromEntries(formData.entries())
+    var _uid = formDataObj['uidInput']
+    
+    var rawResult = await contract.methods.read(web3.utils.toBN(parseInt(_uid))).call();
     var result = [
       web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
       rawResult[1].toLowerCase(),
       new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
     ]
 
-    setInfo('Message n on the wall')
-    setPost(result)
+    setUid(_uid);
+    setInfo('Message ' + _uid + ' on the wall');
+    setPost(result);
 
+    console.log(result) // debugging
   }
 
   return (
@@ -133,7 +138,7 @@ function App() {
                 <Form.Control
                   type="text"
                   maxLength="32"
-                  name="input"
+                  name="messageInput"
                   placeholder="Max 32 characters"
                   />
               </FormGroup>
@@ -166,16 +171,23 @@ function App() {
               </Button>
             </Col>
             <Col xs={4}>
-              <InputGroup className="mb-3">
-                <Form.Control
-                  placeholder="Post ID" />
-                <InputGroup.Append>
-                  <Button
-                    variant="primary" >
-                    Read
-                  </Button>
-                </InputGroup.Append>
-              </InputGroup>
+              <Form
+                onSubmit={ handleGetSpecificMessage } >
+                <InputGroup className="mb-3">
+                  <Form.Control
+                    type="number"
+                    min="0"
+                    name="uidInput"
+                    placeholder="Post ID" />
+                  <InputGroup.Append>
+                    <Button
+                      variant="primary"
+                      type="submit" >
+                      Read
+                    </Button>
+                  </InputGroup.Append>
+                </InputGroup>
+              </Form>
             </Col>
           </Row>
           </Col>
