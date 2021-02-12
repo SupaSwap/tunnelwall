@@ -147,7 +147,7 @@ function App() {
           placement="bottom" >
           <a
             className="mb-5"
-            href="https://www.github.com"
+            href="https://www.github.com/jshstw/tunnelwall"
             target="blank"
             style={{
               position: "relative",
