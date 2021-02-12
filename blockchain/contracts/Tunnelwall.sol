@@ -18,7 +18,10 @@ contract Tunnelwall {
 
     mapping(uint256 => Message) Wall;
 
-    event Log(uint256 uid);
+    event Log(
+        uint256 uid,
+        uint256 timestamp
+    );
     
     /*
      * @dev Set first item in Wall mapping when contract is deployed
@@ -38,15 +41,17 @@ contract Tunnelwall {
      * @param _text message from user
      * @return uid id of latest message
      */
-    function write(bytes32 _text) public returns(uint256) {
+    function write(bytes32 _text) public {
         uid++;
         Wall[uid] = Message(
             _text,
             msg.sender,
             block.timestamp
         );
-        emit Log(uid);
-        return uid;
+        emit Log(
+            uid,
+            block.timestamp
+        );
     }
 
     /*
