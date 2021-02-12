@@ -42,11 +42,11 @@ function App() {
   const handleGetLastMessage = async (e) => {
     e.preventDefault();
 
-    var raw_result = await contract.methods.readLast().call();
+    var rawResult = await contract.methods.readLast().call();
     var result = [
-      web3.utils.toAscii(raw_result[0]).replaceAll(String.fromCharCode(0),''),
-      raw_result[1].toLowerCase(),
-      new Date(parseInt(raw_result[2]) * 1000).toLocaleString()
+      web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
+      rawResult[1].toLowerCase(),
+      new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
     ]
     
     setInfo('The latest message on the wall')
