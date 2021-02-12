@@ -14,8 +14,8 @@ const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 
 function App() {
   const [message, setMessage] = useState('-');
-  const [post, setPost] = useState('');
-  const [uid, setUid] = useState('-');
+  const [post, setPost] = useState(['The tunnel begins here.', '0x0000000000000000000000000000000000000000', 'Arbitrary timestamp']);
+  const [uid, setUid] = useState(0);
   const [info, setInfo] = useState('Successfully retrieved origin post')
   const [walletAddress, setWalletAddress] = useState('Please connect a wallet with MetaMask')
 
