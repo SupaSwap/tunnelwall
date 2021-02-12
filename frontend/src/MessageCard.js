@@ -22,7 +22,7 @@ export default class MessageCard extends Component {
               target="blank" >{ this.props.address }
             </a>
             <OverlayTrigger
-              overlay={<Tooltip>View the address on <strong>etherscan.io</strong></Tooltip>}
+              overlay={<Tooltip>View on <strong>etherscan.io</strong></Tooltip>}
               placement="right" >
               <HelpIcon
                 style={{
