@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { ReactComponent as HelpIcon } from './help.svg';
 
 export default class MessageCard extends Component {
   render() {
@@ -20,6 +21,18 @@ export default class MessageCard extends Component {
               href={"https://etherscan.io/address/" + this.props.address }
               target="blank" >{ this.props.address }
             </a>
+            <OverlayTrigger
+              overlay={<Tooltip>View the address on <strong>etherscan.io</strong></Tooltip>}
+              placement="right" >
+              <HelpIcon
+                style={{
+                  width: "1em",
+                  height: "1em",
+                  fill: "#292b2c",
+                  marginBottom: "0.15em",
+                  marginLeft: "0.3em"
+                }} />
+            </OverlayTrigger>
           </Card.Text>
           <hr className="my-3"/>
           <Card.Subtitle className="mt-3">Timestamp</Card.Subtitle>
