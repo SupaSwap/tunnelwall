@@ -16,7 +16,7 @@ function App() {
   const [message, setMessage] = useState('-');
   const [post, setPost] = useState(['The tunnel begins here.', '0x0000000000000000000000000000000000000000', 'Arbitrary timestamp']);
   const [uid, setUid] = useState(0);
-  const [info, setInfo] = useState('Successfully retrieved origin post')
+  const [info, setInfo] = useState('The genesis message')
   const [walletAddress, setWalletAddress] = useState('Please connect a wallet with MetaMask')
 
   const handleWriteMessage = async (e) => {
@@ -33,7 +33,7 @@ function App() {
     var gas = await contract.methods.write(_message).estimateGas();
     var result = await contract.methods.write(_message).send({ from: account, gas });
 
-    setInfo('Successfully posted on the wall')
+    setInfo('You have written on the wall')
     setPost([readableMessage, account, "Date is not yet added"])
     setMessage(readableMessage);
     setUid(result.events.Log.returnValues['uid']);
