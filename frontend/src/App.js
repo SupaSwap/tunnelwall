@@ -106,13 +106,13 @@ function App() {
         </Container>
       </Navbar>
       <Jumbotron 
-        className="mb-5"
+        className=" mb-5"
         style={{
           borderRadius: "0",
           backgroundImage: "linear-gradient(120deg, #b721ff 0%, #21d4fd 100%)",
           textAlign: "center"
         }}>
-        <h1 className="text-white mt-5">Welcome to the Tunnelwall Project</h1>
+        <h1 className="text-white mt-5 pt-3">Welcome to the Tunnelwall Project</h1>
         <p className="text-white lead mb-4">
         A virtual wall built on the Ethereum blockchain, on which anyone can write to and read from.
         </p>
@@ -120,7 +120,7 @@ function App() {
           overlay={<Tooltip>View the code</Tooltip>}
           placement="bottom" >
           <a
-            className="mb-4"
+            className="mb-4 pb-3"
             href="https://www.github.com"
             target="blank"
             style={{
@@ -137,7 +137,7 @@ function App() {
         </OverlayTrigger>
       </Jumbotron>
       <Container>
-        <h3 className="text-center text-dark">This is your dashboard</h3>
+        <h3 className="text-center text-dark pt-4">This is your dashboard</h3>
         <p className="text-center lead mb-5">From here, you can interact with the Tunnelwall program. For help getting started, please view the <a href="https://www.google.com">guide</a>.</p>
         <Row className="mb-5">
           <Col xs={7}>
