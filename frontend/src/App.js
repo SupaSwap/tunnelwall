@@ -32,7 +32,7 @@ function App() {
     var gas = await contract.methods.write(message).estimateGas();
     var result = await contract.methods.write(message).send({ from: account, gas });
 
-    setInfo('You have written on the wall');
+    setInfo('You message has been posted');
     setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()]);
     setUid(result.events.Log.returnValues['uid']);
 
@@ -52,7 +52,7 @@ function App() {
     var _uid = await contract.methods.getUid().call();
     
     setUid(_uid);
-    setInfo('The latest message on the wall');
+    setInfo('Latest message on the wall');
     setPost(result);
 
     console.log(result) // debugging
@@ -65,15 +65,23 @@ function App() {
     var _uid = formDataObj['uidInput']
     
     var rawResult = await contract.methods.read(web3.utils.toBN(parseInt(_uid))).call();
-    var result = [
-      web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
-      rawResult[1].toLowerCase(),
-      new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
-    ]
 
-    setUid(_uid);
-    setInfo('Message ' + _uid + ' on the wall');
-    setPost(result);
+    if (parseInt(rawResult[2]) !== 0) {
+      var result = [
+        web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
+        rawResult[1].toLowerCase(),
+        new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
+      ]
+
+      setUid(_uid);
+      setInfo('Message ' + _uid + ' on the wall');
+      setPost(result);
+
+    } else {
+      setUid('—');
+      setInfo('No messages found with an ID of ' + _uid);
+      setPost(['—', '—', '—'])
+    }
 
     console.log(result) // debugging
   }
