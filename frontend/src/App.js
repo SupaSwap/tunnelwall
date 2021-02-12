@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
-import { Navbar, Jumbotron, Card, Form, FormGroup, InputGroup, Button, Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Navbar, Jumbotron, Card, Form, FormGroup, InputGroup, Button, Container, Row, Col, OverlayTrigger, Tooltip, Spinner } from 'react-bootstrap';
 import { ReactComponent as Logo } from './logo.svg';
 import { ReactComponent as GithubLogo } from './github.svg';
 import MessageCard from './MessageCard';
@@ -186,6 +186,15 @@ function App() {
                     type="submit"
                     block >
                     Write
+                    <Spinner
+                      style={{
+                        marginBottom: "0.1em",
+                        marginLeft: "0.5em"
+                      }}
+                      as="span"
+                      animation="border"
+                      size="sm"
+                      role="status" />
                   </Button>
                 </Form>
               </Card.Body>
