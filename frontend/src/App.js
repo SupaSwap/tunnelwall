@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
-import { Navbar, Jumbotron, Form, FormGroup, InputGroup, Button, Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Navbar, Jumbotron, Card, Form, FormGroup, InputGroup, Button, Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { ReactComponent as Logo } from './logo.svg';
 import { ReactComponent as GithubLogo } from './github.svg';
 import MessageCard from './MessageCard';
@@ -120,7 +120,7 @@ function App() {
           overlay={<Tooltip>View the code</Tooltip>}
           placement="bottom" >
           <a
-            className="mb-4 pb-3"
+            className="mb-5"
             href="https://www.github.com"
             target="blank"
             style={{
@@ -138,69 +138,71 @@ function App() {
       </Jumbotron>
       <Container>
         <h3 className="text-center text-dark pt-4">This is your dashboard</h3>
-        <p className="text-center lead mb-5">From here, you can interact with the Tunnelwall program. For help getting started, please view the <a href="https://www.google.com">guide</a>.</p>
+        <p className="text-center lead mb-5 pb-3">From here, you can interact with the Tunnelwall program. For help getting started, please view the <a href="https://www.google.com">guide</a>.</p>
         <Row className="mb-5">
           <Col xs={7}>
-            <Form
-              className="text-center mb-3"
-              onSubmit={ handleWriteMessage } >
-              <FormGroup>
-                <Form.Label>Write a message on the wall</Form.Label>
-                <Form.Control
-                  type="text"
-                  maxLength="32"
-                  name="messageInput"
-                  placeholder="Max 32 characters"
-                  />
-              </FormGroup>
-              <Button
-                variant="primary"
-                type="submit"
-                block >
-                Write
-              </Button>
-            </Form>
-          <p className="text-center mb-2">Read the messages on the wall</p>
-          <Row>
-            <Col xs={4}>
-              <Button
-                className="mb-3"
-                variant="primary"
-                type="button" 
-                onClick={ handleGetLastMessage }
-                block >
-                Most recent
-              </Button>
-            </Col>
-            <Col xs={4}>
-              <Button
-                className="mb-3"
-                variant="primary"
-                type="button"
-                block >
-                Random
-              </Button>
-            </Col>
-            <Col xs={4}>
-              <Form
-                onSubmit={ handleGetSpecificMessage } >
-                <InputGroup className="mb-3">
-                  <Form.Control
-                    type="number"
-                    min="0"
-                    name="uidInput"
-                    placeholder="Post ID" />
-                  <InputGroup.Append>
+            <p className="text-center mb-2">Write a message on the wall</p>
+            <Card className="w-100">
+              <Card.Body>
+                <Form
+                  className="text-center mb-3"
+                  onSubmit={ handleWriteMessage } >
+                  <FormGroup>
+                    <Form.Control
+                      type="text"
+                      maxLength="32"
+                      name="messageInput"
+                      placeholder="Max 32 characters"
+                      />
+                  </FormGroup>
+                  <Button
+                    variant="primary"
+                    type="submit"
+                    block >
+                    Write
+                  </Button>
+                </Form>
+                <p className="text-center mb-2">Read the messages on the wall</p>
+                <Row>
+                  <Col xs={4}>
                     <Button
                       variant="primary"
-                      type="submit" >
-                      Read
+                      type="button" 
+                      onClick={ handleGetLastMessage }
+                      block >
+                      Most recent
                     </Button>
-                  </InputGroup.Append>
-                </InputGroup>
-              </Form>
-            </Col>
-          </Row>
+                  </Col>
+                  <Col xs={4}>
+                    <Button
+                      variant="primary"
+                      type="button"
+                      block >
+                      Random
+                    </Button>
+                  </Col>
+                  <Col xs={4}>
+                    <Form
+                      onSubmit={ handleGetSpecificMessage } >
+                      <InputGroup>
+                        <Form.Control
+                          type="number"
+                          min="0"
+                          name="uidInput"
+                          placeholder="Post ID" />
+                        <InputGroup.Append>
+                          <Button
+                            variant="primary"
+                            type="submit" >
+                            Read
+                          </Button>
+                        </InputGroup.Append>
+                      </InputGroup>
+                    </Form>
+                  </Col>
+                </Row>
+              </Card.Body>
+            </Card>
           </Col>
           <Col xs={5}>
             <p className="text-center mb-2">Output</p>
