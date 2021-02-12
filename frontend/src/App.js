@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
-import { Navbar, Jumbotron, Form, FormGroup, Button, Alert, Container, Row, Col } from 'react-bootstrap';
+import { Navbar, Jumbotron, Form, FormGroup, Button, Alert, Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { ReactComponent as Logo } from './logo.svg';
 import { ReactComponent as GithubLogo } from './github.svg';
 import MessageCard from './MessageCard';
@@ -85,21 +85,25 @@ function App() {
         <p className="text-white lead mb-4">
         A virtual wall built on the Ethereum blockchain, on which anyone can write to and read from.
         </p>
-        <a 
-          href="https://www.github.com"
-          target="blank"
-          style={{
-            position: "relative",
-            display: "inline-block"
-          }} >
-          <GithubLogo 
+        <OverlayTrigger
+          overlay={<Tooltip>View the code</Tooltip>}
+          placement="bottom" >
+          <a
             className="mb-4"
+            href="https://www.github.com"
+            target="blank"
             style={{
-              width: "2em",
-              height: "2em",
-              fill: "#fff"
-            }} />
-        </a>
+              position: "relative",
+              display: "inline-block"
+            }} >
+            <GithubLogo
+              style={{
+                width: "2em",
+                height: "2em",
+                fill: "#fff"
+              }} />
+          </a>
+        </OverlayTrigger>
       </Jumbotron>
       <Container>
         <h3 className="text-center text-dark">This is your dashboard</h3>
