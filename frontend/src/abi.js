@@ -12,6 +12,12 @@ export const tunnelwallAbi = [
         "internalType": "uint256",
         "name": "uid",
         "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
       }
     ],
     "name": "Log",
@@ -26,13 +32,7 @@ export const tunnelwallAbi = [
       }
     ],
     "name": "write",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
