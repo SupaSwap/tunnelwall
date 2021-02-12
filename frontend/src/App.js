@@ -34,7 +34,7 @@ function App() {
     var result = await contract.methods.write(_message).send({ from: account, gas });
 
     setInfo('You have written on the wall')
-    setPost([readableMessage, account, "Date is not yet added"])
+    setPost([readableMessage, account, 'Date is not yet added'])
     setMessage(readableMessage);
     setUid(result.events.Log.returnValues['uid']);
 
@@ -51,6 +51,7 @@ function App() {
       new Date(parseInt(raw_result[2]) * 1000).toLocaleString()
     ]
     
+    setInfo('The latest message on the wall')
     setPost(result);
 
     console.log(result) // debugging
@@ -152,9 +153,6 @@ function App() {
               block >
               Request Message
             </Button>
-            <Alert variant="secondary" className="text-center py-2 px-3">{ post[0] }</Alert>
-            <Alert variant="secondary" className="text-center py-2 px-3">{ post[1] }</Alert>
-            <Alert variant="secondary" className="text-center py-2 px-3">{ post[2] }</Alert>
           </Col>
           <Col xs={4}>
             I am a column
