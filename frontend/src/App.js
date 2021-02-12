@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
-import { Navbar, Jumbotron, Form, FormGroup, Button, Alert, Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Navbar, Jumbotron, Form, FormGroup, Button, Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { ReactComponent as Logo } from './logo.svg';
 import { ReactComponent as GithubLogo } from './github.svg';
 import MessageCard from './MessageCard';
