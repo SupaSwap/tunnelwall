@@ -32,7 +32,7 @@ function App() {
     var gas = await contract.methods.write(message).estimateGas();
     var result = await contract.methods.write(message).send({ from: account, gas });
 
-    setInfo('You message has been posted');
+    setInfo('Your message has been posted');
     setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()]);
     setUid(result.events.Log.returnValues['uid']);
 
@@ -141,11 +141,11 @@ function App() {
         <p className="text-center lead mb-5 pb-3">From here, you can interact with the Tunnelwall program. For help getting started, please view the <a href="https://www.google.com">guide</a>.</p>
         <Row className="mb-5">
           <Col xs={7}>
-            <p className="text-center mb-2">Write a message on the wall</p>
-            <Card className="w-100">
+            <p className="lead text-center mb-2">Write a message on the wall</p>
+            <Card>
               <Card.Body>
                 <Form
-                  className="text-center mb-3"
+                  className="text-center"
                   onSubmit={ handleWriteMessage } >
                   <FormGroup>
                     <Form.Control
@@ -162,9 +162,31 @@ function App() {
                     Write
                   </Button>
                 </Form>
-                <p className="text-center mb-2">Read the messages on the wall</p>
+              </Card.Body>
+            </Card>
+            <p className="lead text-center mt-3 mb-2">Read the messages on the wall</p>
+            <Card>
+             <Card.Body>
+              <Form
+                onSubmit={ handleGetSpecificMessage } >
+                <InputGroup className="mb-3">
+                  <Form.Control
+                    type="number"
+                    min="0"
+                    name="uidInput"
+                    placeholder="Post ID" />
+                  <InputGroup.Append>
+                    <Button
+                      className="px-5"
+                      variant="primary"
+                      type="submit" >
+                      Read
+                    </Button>
+                  </InputGroup.Append>
+                </InputGroup>
+              </Form>
                 <Row>
-                  <Col xs={4}>
+                  <Col xs={6}>
                     <Button
                       variant="primary"
                       type="button" 
@@ -173,7 +195,7 @@ function App() {
                       Most recent
                     </Button>
                   </Col>
-                  <Col xs={4}>
+                  <Col xs={6}>
                     <Button
                       variant="primary"
                       type="button"
@@ -181,31 +203,12 @@ function App() {
                       Random
                     </Button>
                   </Col>
-                  <Col xs={4}>
-                    <Form
-                      onSubmit={ handleGetSpecificMessage } >
-                      <InputGroup>
-                        <Form.Control
-                          type="number"
-                          min="0"
-                          name="uidInput"
-                          placeholder="Post ID" />
-                        <InputGroup.Append>
-                          <Button
-                            variant="primary"
-                            type="submit" >
-                            Read
-                          </Button>
-                        </InputGroup.Append>
-                      </InputGroup>
-                    </Form>
-                  </Col>
                 </Row>
               </Card.Body>
             </Card>
           </Col>
           <Col xs={5}>
-            <p className="text-center mb-2">Output</p>
+            <p className="lead text-center mb-2">Output</p>
             <MessageCard
               info={ info }
               text={ post[0] }
