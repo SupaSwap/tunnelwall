@@ -72,7 +72,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -102,7 +103,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -115,7 +117,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"uid\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"Log\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"getUid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_uid\",\"type\":\"uint256\"}],\"name\":\"read\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"text\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct Tunnelwall.Message\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"readLast\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"text\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct Tunnelwall.Message\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_text\",\"type\":\"bytes32\"}],\"name\":\"write\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/Josh/Documents/Josh/GitHub/tunnelwall/blockchain/contracts/Tunnelwall.sol\":\"Tunnelwall\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Josh/Documents/Josh/GitHub/tunnelwall/blockchain/contracts/Tunnelwall.sol\":{\"keccak256\":\"0xc8d7b17e74ca61dbb8cdf95f738ef788fe66c1441df948267cbe96744ac0e03c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://99fb63e5c0aecd4805764b46765e5a15d08bcc0f6ba5fb5d226d81a862519a5e\",\"dweb:/ipfs/Qmag3ST7XJRCcZgxmCkUubRJuhaYUEHQfHqEpJEwunL8aC\"]}},\"version\":1}",
@@ -4816,15 +4819,35 @@
           ],
           "name": "Log",
           "type": "event"
+        },
+        "0xbd0faddf87043dd749c1b9d4dca8a12589b8cb5e2106832111ce23f219b14367": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "uid",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "timestamp",
+              "type": "uint256"
+            }
+          ],
+          "name": "Log",
+          "type": "event"
         }
       },
       "links": {},
-      "address": "0x384fcCfF795542Ad6C06a74744af10480606031f",
-      "transactionHash": "0xbc2fe980ac0e7c566444dd530be6972ecb66bb16bd534420a4490601621cdd8f"
+      "address": "0xF472c0676b7b4eda7675f6301962BCa168EEBE2f",
+      "transactionHash": "0x0a00fec4d76ee7898ed0e383a08d764b710ef6a53634f77a9644ea5bb49e6751"
     }
   },
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-02-12T13:30:14.829Z",
+  "updatedAt": "2021-02-12T13:35:45.041Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
