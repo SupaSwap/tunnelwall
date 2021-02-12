@@ -27,14 +27,14 @@ function App() {
     setWalletAddress('Connected: ' + account);
 
     const formData = new FormData(e.target), formDataObj = Object.fromEntries(formData.entries())
-    var message = formDataObj['input']
+    var readableMessage = formDataObj['input']
     var _message = web3.utils.fromAscii(formDataObj['input'].padEnd(32, String.fromCharCode(0)));
 
     var gas = await contract.methods.write(_message).estimateGas();
     var result = await contract.methods.write(_message).send({ from: account, gas });
 
     setInfo('Successfully posted on the wall')
-    setMessage(message);
+    setMessage(readableMessage);
     setUid(result.events.Log.returnValues['uid']);
 
     console.log(result) // debugging
