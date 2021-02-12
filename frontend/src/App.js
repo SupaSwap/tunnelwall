@@ -55,6 +55,21 @@ function App() {
     console.log(result) // debugging
   }
 
+  const handleGetSpecificMessage = async (e) => {
+    e.preventDefault();
+
+    var rawResult = await contract.methods.read().call();
+    var result = [
+      web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
+      rawResult[1].toLowerCase(),
+      new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
+    ]
+
+    setInfo('Message n on the wall')
+    setPost(result)
+
+  }
+
   return (
     <div>
       <Navbar bg="dark" variant="dark">
