@@ -48,7 +48,10 @@ function App() {
       rawResult[1].toLowerCase(),
       new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
     ]
+
+    var _uid = await contract.methods.getUid().call();
     
+    setUid(_uid);
     setInfo('The latest message on the wall');
     setPost(result);
 
