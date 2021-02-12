@@ -14,6 +14,12 @@
           "internalType": "uint256",
           "name": "uid",
           "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
         }
       ],
       "name": "Log",
@@ -28,13 +34,7 @@
         }
       ],
       "name": "write",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
+      "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
     },
@@ -72,8 +72,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -103,8 +102,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -117,20 +115,19 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"uid\",\"type\":\"uint256\"}],\"name\":\"Log\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"getUid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_uid\",\"type\":\"uint256\"}],\"name\":\"read\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"text\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct Tunnelwall.Message\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"readLast\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"text\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct Tunnelwall.Message\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_text\",\"type\":\"bytes32\"}],\"name\":\"write\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/Josh/Documents/Josh/GitHub/tunnelwall/blockchain/contracts/Tunnelwall.sol\":\"Tunnelwall\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Josh/Documents/Josh/GitHub/tunnelwall/blockchain/contracts/Tunnelwall.sol\":{\"keccak256\":\"0x78314f55b1ad885dfdb587d3bb8e96360cc54a581e43b37a2af6d16c2066a477\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7d52b7671b3ed06637c806460f3125d3138a59969d2c628ded132840b2cf0cd3\",\"dweb:/ipfs/QmWHHVWMW1YzsCoFf7EnCTZtPycKFGcoufmQNe7A9Kgcmw\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600060018190555060405180606001604052807f5468652074756e6e656c20626567696e7320686572652e00000000000000000060001b815260200160008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001428152506002600060015481526020019081526020016000206000820151816000015560208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550604082015181600201559050506105b28061014f6000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80633d0e6f191461005157806382b3117f1461006f578063e020def21461008d578063ed2e5a97146100bd575b600080fd5b6100596100ed565b6040516100669190610475565b60405180910390f35b6100776100f7565b604051610084919061045a565b60405180910390f35b6100a760048036038101906100a2919061038a565b61018e565b6040516100b49190610475565b60405180910390f35b6100d760048036038101906100d291906103b3565b61028f565b6040516100e4919061045a565b60405180910390f35b6000600154905090565b6100ff610326565b600260006001548152602001908152602001600020604051806060016040529081600082015481526020016001820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600282015481525050905090565b6000600160008154809291906101a3906104d6565b919050555060405180606001604052808381526020013373ffffffffffffffffffffffffffffffffffffffff168152602001428152506002600060015481526020019081526020016000206000820151816000015560208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550604082015181600201559050507f909c57d5c6ac08245cf2a6de3900e2b868513fa59099b92b27d8db823d92df9c60015460405161027d9190610475565b60405180910390a16001549050919050565b610297610326565b60026000838152602001908152602001600020604051806060016040529081600082015481526020016001820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016002820154815250509050919050565b604051806060016040528060008019168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081525090565b60008135905061036f8161054e565b92915050565b60008135905061038481610565565b92915050565b60006020828403121561039c57600080fd5b60006103aa84828501610360565b91505092915050565b6000602082840312156103c557600080fd5b60006103d384828501610375565b91505092915050565b6103e581610490565b82525050565b6103f4816104a2565b82525050565b60608201600082015161041060008501826103eb565b50602082015161042360208501826103dc565b506040820151610436604085018261043c565b50505050565b610445816104cc565b82525050565b610454816104cc565b82525050565b600060608201905061046f60008301846103fa565b92915050565b600060208201905061048a600083018461044b565b92915050565b600061049b826104ac565b9050919050565b6000819050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b60006104e1826104cc565b91507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8214156105145761051361051f565b5b600182019050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b610557816104a2565b811461056257600080fd5b50565b61056e816104cc565b811461057957600080fd5b5056fea264697066735822122022d90ca60fc3d63761e48e69f15020d352024b7d9110f63c2bce05be525feef764736f6c63430008010033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80633d0e6f191461005157806382b3117f1461006f578063e020def21461008d578063ed2e5a97146100bd575b600080fd5b6100596100ed565b6040516100669190610475565b60405180910390f35b6100776100f7565b604051610084919061045a565b60405180910390f35b6100a760048036038101906100a2919061038a565b61018e565b6040516100b49190610475565b60405180910390f35b6100d760048036038101906100d291906103b3565b61028f565b6040516100e4919061045a565b60405180910390f35b6000600154905090565b6100ff610326565b600260006001548152602001908152602001600020604051806060016040529081600082015481526020016001820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600282015481525050905090565b6000600160008154809291906101a3906104d6565b919050555060405180606001604052808381526020013373ffffffffffffffffffffffffffffffffffffffff168152602001428152506002600060015481526020019081526020016000206000820151816000015560208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550604082015181600201559050507f909c57d5c6ac08245cf2a6de3900e2b868513fa59099b92b27d8db823d92df9c60015460405161027d9190610475565b60405180910390a16001549050919050565b610297610326565b60026000838152602001908152602001600020604051806060016040529081600082015481526020016001820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016002820154815250509050919050565b604051806060016040528060008019168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081525090565b60008135905061036f8161054e565b92915050565b60008135905061038481610565565b92915050565b60006020828403121561039c57600080fd5b60006103aa84828501610360565b91505092915050565b6000602082840312156103c557600080fd5b60006103d384828501610375565b91505092915050565b6103e581610490565b82525050565b6103f4816104a2565b82525050565b60608201600082015161041060008501826103eb565b50602082015161042360208501826103dc565b506040820151610436604085018261043c565b50505050565b610445816104cc565b82525050565b610454816104cc565b82525050565b600060608201905061046f60008301846103fa565b92915050565b600060208201905061048a600083018461044b565b92915050565b600061049b826104ac565b9050919050565b6000819050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b60006104e1826104cc565b91507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8214156105145761051361051f565b5b600182019050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b610557816104a2565b811461056257600080fd5b50565b61056e816104cc565b811461057957600080fd5b5056fea264697066735822122022d90ca60fc3d63761e48e69f15020d352024b7d9110f63c2bce05be525feef764736f6c63430008010033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"uid\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"Log\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"getUid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_uid\",\"type\":\"uint256\"}],\"name\":\"read\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"text\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct Tunnelwall.Message\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"readLast\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"text\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"internalType\":\"struct Tunnelwall.Message\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_text\",\"type\":\"bytes32\"}],\"name\":\"write\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/Josh/Documents/Josh/GitHub/tunnelwall/blockchain/contracts/Tunnelwall.sol\":\"Tunnelwall\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Josh/Documents/Josh/GitHub/tunnelwall/blockchain/contracts/Tunnelwall.sol\":{\"keccak256\":\"0xc8d7b17e74ca61dbb8cdf95f738ef788fe66c1441df948267cbe96744ac0e03c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://99fb63e5c0aecd4805764b46765e5a15d08bcc0f6ba5fb5d226d81a862519a5e\",\"dweb:/ipfs/Qmag3ST7XJRCcZgxmCkUubRJuhaYUEHQfHqEpJEwunL8aC\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600060018190555060405180606001604052807f5468652074756e6e656c20626567696e7320686572652e00000000000000000060001b815260200160008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001428152506002600060015481526020019081526020016000206000820151816000015560208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550604082015181600201559050506105c08061014f6000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80633d0e6f191461005157806382b3117f1461006f578063e020def21461008d578063ed2e5a97146100a9575b600080fd5b6100596100d9565b604051610066919061045a565b60405180910390f35b6100776100e3565b604051610084919061043f565b60405180910390f35b6100a760048036038101906100a2919061036f565b61017a565b005b6100c360048036038101906100be9190610398565b610274565b6040516100d0919061043f565b60405180910390f35b6000600154905090565b6100eb61030b565b600260006001548152602001908152602001600020604051806060016040529081600082015481526020016001820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600282015481525050905090565b6001600081548092919061018d906104e4565b919050555060405180606001604052808281526020013373ffffffffffffffffffffffffffffffffffffffff168152602001428152506002600060015481526020019081526020016000206000820151816000015560208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550604082015181600201559050507fbd0faddf87043dd749c1b9d4dca8a12589b8cb5e2106832111ce23f219b1436760015442604051610269929190610475565b60405180910390a150565b61027c61030b565b60026000838152602001908152602001600020604051806060016040529081600082015481526020016001820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016002820154815250509050919050565b604051806060016040528060008019168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081525090565b6000813590506103548161055c565b92915050565b60008135905061036981610573565b92915050565b60006020828403121561038157600080fd5b600061038f84828501610345565b91505092915050565b6000602082840312156103aa57600080fd5b60006103b88482850161035a565b91505092915050565b6103ca8161049e565b82525050565b6103d9816104b0565b82525050565b6060820160008201516103f560008501826103d0565b50602082015161040860208501826103c1565b50604082015161041b6040850182610421565b50505050565b61042a816104da565b82525050565b610439816104da565b82525050565b600060608201905061045460008301846103df565b92915050565b600060208201905061046f6000830184610430565b92915050565b600060408201905061048a6000830185610430565b6104976020830184610430565b9392505050565b60006104a9826104ba565b9050919050565b6000819050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b60006104ef826104da565b91507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8214156105225761052161052d565b5b600182019050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b610565816104b0565b811461057057600080fd5b50565b61057c816104da565b811461058757600080fd5b5056fea2646970667358221220a62a0cdf83cde66c11768b0bd998a5f621616a08bcc7fa796d0e47a123acd95c64736f6c63430008010033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80633d0e6f191461005157806382b3117f1461006f578063e020def21461008d578063ed2e5a97146100a9575b600080fd5b6100596100d9565b604051610066919061045a565b60405180910390f35b6100776100e3565b604051610084919061043f565b60405180910390f35b6100a760048036038101906100a2919061036f565b61017a565b005b6100c360048036038101906100be9190610398565b610274565b6040516100d0919061043f565b60405180910390f35b6000600154905090565b6100eb61030b565b600260006001548152602001908152602001600020604051806060016040529081600082015481526020016001820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600282015481525050905090565b6001600081548092919061018d906104e4565b919050555060405180606001604052808281526020013373ffffffffffffffffffffffffffffffffffffffff168152602001428152506002600060015481526020019081526020016000206000820151816000015560208201518160010160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550604082015181600201559050507fbd0faddf87043dd749c1b9d4dca8a12589b8cb5e2106832111ce23f219b1436760015442604051610269929190610475565b60405180910390a150565b61027c61030b565b60026000838152602001908152602001600020604051806060016040529081600082015481526020016001820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016002820154815250509050919050565b604051806060016040528060008019168152602001600073ffffffffffffffffffffffffffffffffffffffff168152602001600081525090565b6000813590506103548161055c565b92915050565b60008135905061036981610573565b92915050565b60006020828403121561038157600080fd5b600061038f84828501610345565b91505092915050565b6000602082840312156103aa57600080fd5b60006103b88482850161035a565b91505092915050565b6103ca8161049e565b82525050565b6103d9816104b0565b82525050565b6060820160008201516103f560008501826103d0565b50602082015161040860208501826103c1565b50604082015161041b6040850182610421565b50505050565b61042a816104da565b82525050565b610439816104da565b82525050565b600060608201905061045460008301846103df565b92915050565b600060208201905061046f6000830184610430565b92915050565b600060408201905061048a6000830185610430565b6104976020830184610430565b9392505050565b60006104a9826104ba565b9050919050565b6000819050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b60006104ef826104da565b91507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8214156105225761052161052d565b5b600182019050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b610565816104b0565b811461057057600080fd5b50565b61057c816104da565b811461058757600080fd5b5056fea2646970667358221220a62a0cdf83cde66c11768b0bd998a5f621616a08bcc7fa796d0e47a123acd95c64736f6c63430008010033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [
     {
       "ast": {
         "nodeType": "YulBlock",
-        "src": "0:3671:1",
+        "src": "0:4009:1",
         "statements": [
           {
             "body": {
@@ -1472,32 +1469,191 @@
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "2638:51:1",
+              "src": "2719:206:1",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "2648:35:1",
+                  "src": "2729:26:1",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "2741:9:1"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "2752:2:1",
+                        "type": "",
+                        "value": "64"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "add",
+                      "nodeType": "YulIdentifier",
+                      "src": "2737:3:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "2737:18:1"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "tail",
+                      "nodeType": "YulIdentifier",
+                      "src": "2729:4:1"
+                    }
+                  ]
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "value0",
+                        "nodeType": "YulIdentifier",
+                        "src": "2809:6:1"
+                      },
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "2822:9:1"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "2833:1:1",
+                            "type": "",
+                            "value": "0"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "2818:3:1"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "2818:17:1"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "abi_encode_t_uint256_to_t_uint256_fromStack",
+                      "nodeType": "YulIdentifier",
+                      "src": "2765:43:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "2765:71:1"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "2765:71:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "value1",
+                        "nodeType": "YulIdentifier",
+                        "src": "2890:6:1"
+                      },
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "2903:9:1"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "2914:2:1",
+                            "type": "",
+                            "value": "32"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "2899:3:1"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "2899:18:1"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "abi_encode_t_uint256_to_t_uint256_fromStack",
+                      "nodeType": "YulIdentifier",
+                      "src": "2846:43:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "2846:72:1"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "2846:72:1"
+                }
+              ]
+            },
+            "name": "abi_encode_tuple_t_uint256_t_uint256__to_t_uint256_t_uint256__fromStack_reversed",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "headStart",
+                "nodeType": "YulTypedName",
+                "src": "2683:9:1",
+                "type": ""
+              },
+              {
+                "name": "value1",
+                "nodeType": "YulTypedName",
+                "src": "2695:6:1",
+                "type": ""
+              },
+              {
+                "name": "value0",
+                "nodeType": "YulTypedName",
+                "src": "2703:6:1",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "tail",
+                "nodeType": "YulTypedName",
+                "src": "2714:4:1",
+                "type": ""
+              }
+            ],
+            "src": "2593:332:1"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "2976:51:1",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "2986:35:1",
                   "value": {
                     "arguments": [
                       {
                         "name": "value",
                         "nodeType": "YulIdentifier",
-                        "src": "2677:5:1"
+                        "src": "3015:5:1"
                       }
                     ],
                     "functionName": {
                       "name": "cleanup_t_uint160",
                       "nodeType": "YulIdentifier",
-                      "src": "2659:17:1"
+                      "src": "2997:17:1"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "2659:24:1"
+                    "src": "2997:24:1"
                   },
                   "variableNames": [
                     {
                       "name": "cleaned",
                       "nodeType": "YulIdentifier",
-                      "src": "2648:7:1"
+                      "src": "2986:7:1"
                     }
                   ]
                 }
@@ -1509,7 +1665,7 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
-                "src": "2620:5:1",
+                "src": "2958:5:1",
                 "type": ""
               }
             ],
@@ -1517,30 +1673,30 @@
               {
                 "name": "cleaned",
                 "nodeType": "YulTypedName",
-                "src": "2630:7:1",
+                "src": "2968:7:1",
                 "type": ""
               }
             ],
-            "src": "2593:96:1"
+            "src": "2931:96:1"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "2740:32:1",
+              "src": "3078:32:1",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "2750:16:1",
+                  "src": "3088:16:1",
                   "value": {
                     "name": "value",
                     "nodeType": "YulIdentifier",
-                    "src": "2761:5:1"
+                    "src": "3099:5:1"
                   },
                   "variableNames": [
                     {
                       "name": "cleaned",
                       "nodeType": "YulIdentifier",
-                      "src": "2750:7:1"
+                      "src": "3088:7:1"
                     }
                   ]
                 }
@@ -1552,7 +1708,7 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
-                "src": "2722:5:1",
+                "src": "3060:5:1",
                 "type": ""
               }
             ],
@@ -1560,31 +1716,31 @@
               {
                 "name": "cleaned",
                 "nodeType": "YulTypedName",
-                "src": "2732:7:1",
+                "src": "3070:7:1",
                 "type": ""
               }
             ],
-            "src": "2695:77:1"
+            "src": "3033:77:1"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "2823:81:1",
+              "src": "3161:81:1",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "2833:65:1",
+                  "src": "3171:65:1",
                   "value": {
                     "arguments": [
                       {
                         "name": "value",
                         "nodeType": "YulIdentifier",
-                        "src": "2848:5:1"
+                        "src": "3186:5:1"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "2855:42:1",
+                        "src": "3193:42:1",
                         "type": "",
                         "value": "0xffffffffffffffffffffffffffffffffffffffff"
                       }
@@ -1592,16 +1748,16 @@
                     "functionName": {
                       "name": "and",
                       "nodeType": "YulIdentifier",
-                      "src": "2844:3:1"
+                      "src": "3182:3:1"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "2844:54:1"
+                    "src": "3182:54:1"
                   },
                   "variableNames": [
                     {
                       "name": "cleaned",
                       "nodeType": "YulIdentifier",
-                      "src": "2833:7:1"
+                      "src": "3171:7:1"
                     }
                   ]
                 }
@@ -1613,7 +1769,7 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
-                "src": "2805:5:1",
+                "src": "3143:5:1",
                 "type": ""
               }
             ],
@@ -1621,30 +1777,30 @@
               {
                 "name": "cleaned",
                 "nodeType": "YulTypedName",
-                "src": "2815:7:1",
+                "src": "3153:7:1",
                 "type": ""
               }
             ],
-            "src": "2778:126:1"
+            "src": "3116:126:1"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "2955:32:1",
+              "src": "3293:32:1",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "2965:16:1",
+                  "src": "3303:16:1",
                   "value": {
                     "name": "value",
                     "nodeType": "YulIdentifier",
-                    "src": "2976:5:1"
+                    "src": "3314:5:1"
                   },
                   "variableNames": [
                     {
                       "name": "cleaned",
                       "nodeType": "YulIdentifier",
-                      "src": "2965:7:1"
+                      "src": "3303:7:1"
                     }
                   ]
                 }
@@ -1656,7 +1812,7 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
-                "src": "2937:5:1",
+                "src": "3275:5:1",
                 "type": ""
               }
             ],
@@ -1664,48 +1820,48 @@
               {
                 "name": "cleaned",
                 "nodeType": "YulTypedName",
-                "src": "2947:7:1",
+                "src": "3285:7:1",
                 "type": ""
               }
             ],
-            "src": "2910:77:1"
+            "src": "3248:77:1"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "3036:190:1",
+              "src": "3374:190:1",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
-                  "src": "3046:33:1",
+                  "src": "3384:33:1",
                   "value": {
                     "arguments": [
                       {
                         "name": "value",
                         "nodeType": "YulIdentifier",
-                        "src": "3073:5:1"
+                        "src": "3411:5:1"
                       }
                     ],
                     "functionName": {
                       "name": "cleanup_t_uint256",
                       "nodeType": "YulIdentifier",
-                      "src": "3055:17:1"
+                      "src": "3393:17:1"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "3055:24:1"
+                    "src": "3393:24:1"
                   },
                   "variableNames": [
                     {
                       "name": "value",
                       "nodeType": "YulIdentifier",
-                      "src": "3046:5:1"
+                      "src": "3384:5:1"
                     }
                   ]
                 },
                 {
                   "body": {
                     "nodeType": "YulBlock",
-                    "src": "3169:22:1",
+                    "src": "3507:22:1",
                     "statements": [
                       {
                         "expression": {
@@ -1713,13 +1869,13 @@
                           "functionName": {
                             "name": "panic_error_0x11",
                             "nodeType": "YulIdentifier",
-                            "src": "3171:16:1"
+                            "src": "3509:16:1"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "3171:18:1"
+                          "src": "3509:18:1"
                         },
                         "nodeType": "YulExpressionStatement",
-                        "src": "3171:18:1"
+                        "src": "3509:18:1"
                       }
                     ]
                   },
@@ -1728,12 +1884,12 @@
                       {
                         "name": "value",
                         "nodeType": "YulIdentifier",
-                        "src": "3094:5:1"
+                        "src": "3432:5:1"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "3101:66:1",
+                        "src": "3439:66:1",
                         "type": "",
                         "value": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
                       }
@@ -1741,28 +1897,28 @@
                     "functionName": {
                       "name": "eq",
                       "nodeType": "YulIdentifier",
-                      "src": "3091:2:1"
+                      "src": "3429:2:1"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "3091:77:1"
+                    "src": "3429:77:1"
                   },
                   "nodeType": "YulIf",
-                  "src": "3088:2:1"
+                  "src": "3426:2:1"
                 },
                 {
                   "nodeType": "YulAssignment",
-                  "src": "3200:20:1",
+                  "src": "3538:20:1",
                   "value": {
                     "arguments": [
                       {
                         "name": "value",
                         "nodeType": "YulIdentifier",
-                        "src": "3211:5:1"
+                        "src": "3549:5:1"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "3218:1:1",
+                        "src": "3556:1:1",
                         "type": "",
                         "value": "1"
                       }
@@ -1770,16 +1926,16 @@
                     "functionName": {
                       "name": "add",
                       "nodeType": "YulIdentifier",
-                      "src": "3207:3:1"
+                      "src": "3545:3:1"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "3207:13:1"
+                    "src": "3545:13:1"
                   },
                   "variableNames": [
                     {
                       "name": "ret",
                       "nodeType": "YulIdentifier",
-                      "src": "3200:3:1"
+                      "src": "3538:3:1"
                     }
                   ]
                 }
@@ -1791,7 +1947,7 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
-                "src": "3022:5:1",
+                "src": "3360:5:1",
                 "type": ""
               }
             ],
@@ -1799,16 +1955,16 @@
               {
                 "name": "ret",
                 "nodeType": "YulTypedName",
-                "src": "3032:3:1",
+                "src": "3370:3:1",
                 "type": ""
               }
             ],
-            "src": "2993:233:1"
+            "src": "3331:233:1"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "3260:152:1",
+              "src": "3598:152:1",
               "statements": [
                 {
                   "expression": {
@@ -1816,14 +1972,14 @@
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "3277:1:1",
+                        "src": "3615:1:1",
                         "type": "",
                         "value": "0"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "3280:77:1",
+                        "src": "3618:77:1",
                         "type": "",
                         "value": "35408467139433450592217433187231851964531694900788300625387963629091585785856"
                       }
@@ -1831,13 +1987,13 @@
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "3270:6:1"
+                      "src": "3608:6:1"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "3270:88:1"
+                    "src": "3608:88:1"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "3270:88:1"
+                  "src": "3608:88:1"
                 },
                 {
                   "expression": {
@@ -1845,14 +2001,14 @@
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "3374:1:1",
+                        "src": "3712:1:1",
                         "type": "",
                         "value": "4"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "3377:4:1",
+                        "src": "3715:4:1",
                         "type": "",
                         "value": "0x11"
                       }
@@ -1860,13 +2016,13 @@
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
-                      "src": "3367:6:1"
+                      "src": "3705:6:1"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "3367:15:1"
+                    "src": "3705:15:1"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "3367:15:1"
+                  "src": "3705:15:1"
                 },
                 {
                   "expression": {
@@ -1874,14 +2030,14 @@
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "3398:1:1",
+                        "src": "3736:1:1",
                         "type": "",
                         "value": "0"
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
-                        "src": "3401:4:1",
+                        "src": "3739:4:1",
                         "type": "",
                         "value": "0x24"
                       }
@@ -1889,29 +2045,29 @@
                     "functionName": {
                       "name": "revert",
                       "nodeType": "YulIdentifier",
-                      "src": "3391:6:1"
+                      "src": "3729:6:1"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "3391:15:1"
+                    "src": "3729:15:1"
                   },
                   "nodeType": "YulExpressionStatement",
-                  "src": "3391:15:1"
+                  "src": "3729:15:1"
                 }
               ]
             },
             "name": "panic_error_0x11",
             "nodeType": "YulFunctionDefinition",
-            "src": "3232:180:1"
+            "src": "3570:180:1"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "3461:79:1",
+              "src": "3799:79:1",
               "statements": [
                 {
                   "body": {
                     "nodeType": "YulBlock",
-                    "src": "3518:16:1",
+                    "src": "3856:16:1",
                     "statements": [
                       {
                         "expression": {
@@ -1919,14 +2075,14 @@
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "3527:1:1",
+                              "src": "3865:1:1",
                               "type": "",
                               "value": "0"
                             },
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "3530:1:1",
+                              "src": "3868:1:1",
                               "type": "",
                               "value": "0"
                             }
@@ -1934,13 +2090,13 @@
                           "functionName": {
                             "name": "revert",
                             "nodeType": "YulIdentifier",
-                            "src": "3520:6:1"
+                            "src": "3858:6:1"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "3520:12:1"
+                          "src": "3858:12:1"
                         },
                         "nodeType": "YulExpressionStatement",
-                        "src": "3520:12:1"
+                        "src": "3858:12:1"
                       }
                     ]
                   },
@@ -1951,44 +2107,44 @@
                           {
                             "name": "value",
                             "nodeType": "YulIdentifier",
-                            "src": "3484:5:1"
+                            "src": "3822:5:1"
                           },
                           {
                             "arguments": [
                               {
                                 "name": "value",
                                 "nodeType": "YulIdentifier",
-                                "src": "3509:5:1"
+                                "src": "3847:5:1"
                               }
                             ],
                             "functionName": {
                               "name": "cleanup_t_bytes32",
                               "nodeType": "YulIdentifier",
-                              "src": "3491:17:1"
+                              "src": "3829:17:1"
                             },
                             "nodeType": "YulFunctionCall",
-                            "src": "3491:24:1"
+                            "src": "3829:24:1"
                           }
                         ],
                         "functionName": {
                           "name": "eq",
                           "nodeType": "YulIdentifier",
-                          "src": "3481:2:1"
+                          "src": "3819:2:1"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "3481:35:1"
+                        "src": "3819:35:1"
                       }
                     ],
                     "functionName": {
                       "name": "iszero",
                       "nodeType": "YulIdentifier",
-                      "src": "3474:6:1"
+                      "src": "3812:6:1"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "3474:43:1"
+                    "src": "3812:43:1"
                   },
                   "nodeType": "YulIf",
-                  "src": "3471:2:1"
+                  "src": "3809:2:1"
                 }
               ]
             },
@@ -1998,21 +2154,21 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
-                "src": "3454:5:1",
+                "src": "3792:5:1",
                 "type": ""
               }
             ],
-            "src": "3418:122:1"
+            "src": "3756:122:1"
           },
           {
             "body": {
               "nodeType": "YulBlock",
-              "src": "3589:79:1",
+              "src": "3927:79:1",
               "statements": [
                 {
                   "body": {
                     "nodeType": "YulBlock",
-                    "src": "3646:16:1",
+                    "src": "3984:16:1",
                     "statements": [
                       {
                         "expression": {
@@ -2020,14 +2176,14 @@
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "3655:1:1",
+                              "src": "3993:1:1",
                               "type": "",
                               "value": "0"
                             },
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "3658:1:1",
+                              "src": "3996:1:1",
                               "type": "",
                               "value": "0"
                             }
@@ -2035,13 +2191,13 @@
                           "functionName": {
                             "name": "revert",
                             "nodeType": "YulIdentifier",
-                            "src": "3648:6:1"
+                            "src": "3986:6:1"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "3648:12:1"
+                          "src": "3986:12:1"
                         },
                         "nodeType": "YulExpressionStatement",
-                        "src": "3648:12:1"
+                        "src": "3986:12:1"
                       }
                     ]
                   },
@@ -2052,44 +2208,44 @@
                           {
                             "name": "value",
                             "nodeType": "YulIdentifier",
-                            "src": "3612:5:1"
+                            "src": "3950:5:1"
                           },
                           {
                             "arguments": [
                               {
                                 "name": "value",
                                 "nodeType": "YulIdentifier",
-                                "src": "3637:5:1"
+                                "src": "3975:5:1"
                               }
                             ],
                             "functionName": {
                               "name": "cleanup_t_uint256",
                               "nodeType": "YulIdentifier",
-                              "src": "3619:17:1"
+                              "src": "3957:17:1"
                             },
                             "nodeType": "YulFunctionCall",
-                            "src": "3619:24:1"
+                            "src": "3957:24:1"
                           }
                         ],
                         "functionName": {
                           "name": "eq",
                           "nodeType": "YulIdentifier",
-                          "src": "3609:2:1"
+                          "src": "3947:2:1"
                         },
                         "nodeType": "YulFunctionCall",
-                        "src": "3609:35:1"
+                        "src": "3947:35:1"
                       }
                     ],
                     "functionName": {
                       "name": "iszero",
                       "nodeType": "YulIdentifier",
-                      "src": "3602:6:1"
+                      "src": "3940:6:1"
                     },
                     "nodeType": "YulFunctionCall",
-                    "src": "3602:43:1"
+                    "src": "3940:43:1"
                   },
                   "nodeType": "YulIf",
-                  "src": "3599:2:1"
+                  "src": "3937:2:1"
                 }
               ]
             },
@@ -2099,23 +2255,23 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
-                "src": "3582:5:1",
+                "src": "3920:5:1",
                 "type": ""
               }
             ],
-            "src": "3546:122:1"
+            "src": "3884:122:1"
           }
         ]
       },
-      "contents": "{\n\n    function abi_decode_t_bytes32(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_bytes32(value)\n    }\n\n    function abi_decode_t_uint256(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_uint256(value)\n    }\n\n    function abi_decode_tuple_t_bytes32(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_bytes32(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_uint256(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_encode_t_address_to_t_address(value, pos) {\n        mstore(pos, cleanup_t_address(value))\n    }\n\n    function abi_encode_t_bytes32_to_t_bytes32(value, pos) {\n        mstore(pos, cleanup_t_bytes32(value))\n    }\n\n    // struct Tunnelwall.Message -> struct Tunnelwall.Message\n    function abi_encode_t_struct$_Message_$8_memory_ptr_to_t_struct$_Message_$8_memory_ptr_fromStack(value, pos)  {\n        let tail := add(pos, 0x60)\n\n        {\n            // text\n\n            let memberValue0 := mload(add(value, 0x00))\n            abi_encode_t_bytes32_to_t_bytes32(memberValue0, add(pos, 0x00))\n        }\n\n        {\n            // sender\n\n            let memberValue0 := mload(add(value, 0x20))\n            abi_encode_t_address_to_t_address(memberValue0, add(pos, 0x20))\n        }\n\n        {\n            // timestamp\n\n            let memberValue0 := mload(add(value, 0x40))\n            abi_encode_t_uint256_to_t_uint256(memberValue0, add(pos, 0x40))\n        }\n\n    }\n\n    function abi_encode_t_uint256_to_t_uint256(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    function abi_encode_t_uint256_to_t_uint256_fromStack(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    function abi_encode_tuple_t_struct$_Message_$8_memory_ptr__to_t_struct$_Message_$8_memory_ptr__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 96)\n\n        abi_encode_t_struct$_Message_$8_memory_ptr_to_t_struct$_Message_$8_memory_ptr_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function cleanup_t_address(value) -> cleaned {\n        cleaned := cleanup_t_uint160(value)\n    }\n\n    function cleanup_t_bytes32(value) -> cleaned {\n        cleaned := value\n    }\n\n    function cleanup_t_uint160(value) -> cleaned {\n        cleaned := and(value, 0xffffffffffffffffffffffffffffffffffffffff)\n    }\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function increment_t_uint256(value) -> ret {\n        value := cleanup_t_uint256(value)\n        if eq(value, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff) { panic_error_0x11() }\n        ret := add(value, 1)\n    }\n\n    function panic_error_0x11() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x11)\n        revert(0, 0x24)\n    }\n\n    function validator_revert_t_bytes32(value) {\n        if iszero(eq(value, cleanup_t_bytes32(value))) { revert(0, 0) }\n    }\n\n    function validator_revert_t_uint256(value) {\n        if iszero(eq(value, cleanup_t_uint256(value))) { revert(0, 0) }\n    }\n\n}\n",
+      "contents": "{\n\n    function abi_decode_t_bytes32(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_bytes32(value)\n    }\n\n    function abi_decode_t_uint256(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_uint256(value)\n    }\n\n    function abi_decode_tuple_t_bytes32(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_bytes32(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_uint256(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_encode_t_address_to_t_address(value, pos) {\n        mstore(pos, cleanup_t_address(value))\n    }\n\n    function abi_encode_t_bytes32_to_t_bytes32(value, pos) {\n        mstore(pos, cleanup_t_bytes32(value))\n    }\n\n    // struct Tunnelwall.Message -> struct Tunnelwall.Message\n    function abi_encode_t_struct$_Message_$8_memory_ptr_to_t_struct$_Message_$8_memory_ptr_fromStack(value, pos)  {\n        let tail := add(pos, 0x60)\n\n        {\n            // text\n\n            let memberValue0 := mload(add(value, 0x00))\n            abi_encode_t_bytes32_to_t_bytes32(memberValue0, add(pos, 0x00))\n        }\n\n        {\n            // sender\n\n            let memberValue0 := mload(add(value, 0x20))\n            abi_encode_t_address_to_t_address(memberValue0, add(pos, 0x20))\n        }\n\n        {\n            // timestamp\n\n            let memberValue0 := mload(add(value, 0x40))\n            abi_encode_t_uint256_to_t_uint256(memberValue0, add(pos, 0x40))\n        }\n\n    }\n\n    function abi_encode_t_uint256_to_t_uint256(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    function abi_encode_t_uint256_to_t_uint256_fromStack(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    function abi_encode_tuple_t_struct$_Message_$8_memory_ptr__to_t_struct$_Message_$8_memory_ptr__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 96)\n\n        abi_encode_t_struct$_Message_$8_memory_ptr_to_t_struct$_Message_$8_memory_ptr_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function abi_encode_tuple_t_uint256_t_uint256__to_t_uint256_t_uint256__fromStack_reversed(headStart , value1, value0) -> tail {\n        tail := add(headStart, 64)\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value0,  add(headStart, 0))\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value1,  add(headStart, 32))\n\n    }\n\n    function cleanup_t_address(value) -> cleaned {\n        cleaned := cleanup_t_uint160(value)\n    }\n\n    function cleanup_t_bytes32(value) -> cleaned {\n        cleaned := value\n    }\n\n    function cleanup_t_uint160(value) -> cleaned {\n        cleaned := and(value, 0xffffffffffffffffffffffffffffffffffffffff)\n    }\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function increment_t_uint256(value) -> ret {\n        value := cleanup_t_uint256(value)\n        if eq(value, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff) { panic_error_0x11() }\n        ret := add(value, 1)\n    }\n\n    function panic_error_0x11() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x11)\n        revert(0, 0x24)\n    }\n\n    function validator_revert_t_bytes32(value) {\n        if iszero(eq(value, cleanup_t_bytes32(value))) { revert(0, 0) }\n    }\n\n    function validator_revert_t_uint256(value) {\n        if iszero(eq(value, cleanup_t_uint256(value))) { revert(0, 0) }\n    }\n\n}\n",
       "id": 1,
       "language": "Yul",
       "name": "#utility.yul"
     }
   ],
-  "sourceMap": "100:1777:0:-:0;;;542:242;;;;;;;;;;576:10;568:5;;:18;;;;;;;;;;;;;;;;;;603:1;597:3;:7;;;;627:149;;;;;;;;649:66;627:149;;;;;;730:5;;;;;;;;;;627:149;;;;;;750:15;627:149;;;615:4;:9;620:3;;615:9;;;;;;;;;;;:161;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;100:1777;;;;;;",
-  "deployedSourceMap": "100:1777:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1798:76;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1598:91;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;939:239;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1363:100;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1798:76;1836:7;1863:3;;1856:10;;1798:76;:::o;1598:91::-;1638:14;;:::i;:::-;1672:4;:9;1677:3;;1672:9;;;;;;;;;;;1665:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1598:91;:::o;939:239::-;984:7;1004:3;;:5;;;;;;;;;:::i;:::-;;;;;;1032:93;;;;;;;;1054:5;1032:93;;;;1074:10;1032:93;;;;;;1099:15;1032:93;;;1020:4;:9;1025:3;;1020:9;;;;;;;;;;;:105;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1141:8;1145:3;;1141:8;;;;;;:::i;:::-;;;;;;;;1167:3;;1160:10;;939:239;;;:::o;1363:100::-;1411:14;;:::i;:::-;1445:4;:10;1450:4;1445:10;;;;;;;;;;;1438:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1363:100;;;:::o;-1:-1:-1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;7:139:1:-;;91:6;78:20;69:29;;107:33;134:5;107:33;:::i;:::-;59:87;;;;:::o;152:139::-;;236:6;223:20;214:29;;252:33;279:5;252:33;:::i;:::-;204:87;;;;:::o;297:262::-;;405:2;393:9;384:7;380:23;376:32;373:2;;;421:1;418;411:12;373:2;464:1;489:53;534:7;525:6;514:9;510:22;489:53;:::i;:::-;479:63;;435:117;363:196;;;;:::o;565:262::-;;673:2;661:9;652:7;648:23;644:32;641:2;;;689:1;686;679:12;641:2;732:1;757:53;802:7;793:6;782:9;778:22;757:53;:::i;:::-;747:63;;703:117;631:196;;;;:::o;833:108::-;910:24;928:5;910:24;:::i;:::-;905:3;898:37;888:53;;:::o;947:108::-;1024:24;1042:5;1024:24;:::i;:::-;1019:3;1012:37;1002:53;;:::o;1123:682::-;1264:4;1259:3;1255:14;1351:4;1344:5;1340:16;1334:23;1370:63;1427:4;1422:3;1418:14;1404:12;1370:63;:::i;:::-;1279:164;1527:4;1520:5;1516:16;1510:23;1546:63;1603:4;1598:3;1594:14;1580:12;1546:63;:::i;:::-;1453:166;1706:4;1699:5;1695:16;1689:23;1725:63;1782:4;1777:3;1773:14;1759:12;1725:63;:::i;:::-;1629:169;1233:572;;;:::o;1811:108::-;1888:24;1906:5;1888:24;:::i;:::-;1883:3;1876:37;1866:53;;:::o;1925:118::-;2012:24;2030:5;2012:24;:::i;:::-;2007:3;2000:37;1990:53;;:::o;2049:310::-;;2224:2;2213:9;2209:18;2201:26;;2237:115;2349:1;2338:9;2334:17;2325:6;2237:115;:::i;:::-;2191:168;;;;:::o;2365:222::-;;2496:2;2485:9;2481:18;2473:26;;2509:71;2577:1;2566:9;2562:17;2553:6;2509:71;:::i;:::-;2463:124;;;;:::o;2593:96::-;;2659:24;2677:5;2659:24;:::i;:::-;2648:35;;2638:51;;;:::o;2695:77::-;;2761:5;2750:16;;2740:32;;;:::o;2778:126::-;;2855:42;2848:5;2844:54;2833:65;;2823:81;;;:::o;2910:77::-;;2976:5;2965:16;;2955:32;;;:::o;2993:233::-;;3055:24;3073:5;3055:24;:::i;:::-;3046:33;;3101:66;3094:5;3091:77;3088:2;;;3171:18;;:::i;:::-;3088:2;3218:1;3211:5;3207:13;3200:20;;3036:190;;;:::o;3232:180::-;3280:77;3277:1;3270:88;3377:4;3374:1;3367:15;3401:4;3398:1;3391:15;3418:122;3491:24;3509:5;3491:24;:::i;:::-;3484:5;3481:35;3471:2;;3530:1;3527;3520:12;3471:2;3461:79;:::o;3546:122::-;3619:24;3637:5;3619:24;:::i;:::-;3612:5;3609:35;3599:2;;3658:1;3655;3648:12;3599:2;3589:79;:::o",
-  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.16 <0.9.0;\r\n\r\n/*\r\n * @author Josh Stow\r\n */\r\ncontract Tunnelwall {\r\n    \r\n    struct Message {\r\n        bytes32 text;   // max 32 char message in hex\r\n        address sender; // address of message origin\r\n        uint256 timestamp;  //  time of upload in unix\r\n    }\r\n\r\n    address private owner;\r\n\r\n    uint256 uid;\r\n\r\n    mapping(uint256 => Message) Wall;\r\n\r\n    event Log(uint256 uid);\r\n    \r\n    /*\r\n     * @dev Set first item in Wall mapping when contract is deployed\r\n     */\r\n    constructor () {\r\n        owner = msg.sender;\r\n        uid = 0;\r\n        Wall[uid] = Message(\r\n            0x5468652074756e6e656c20626567696e7320686572652e000000000000000000,\r\n            owner,\r\n            block.timestamp\r\n        );\r\n    }\r\n\r\n    /*\r\n     * @dev Append users message to Wall mapping\r\n     * @param _text message from user\r\n     * @return uid id of latest message\r\n     */\r\n    function write(bytes32 _text) public returns(uint256) {\r\n        uid++;\r\n        Wall[uid] = Message(\r\n            _text,\r\n            msg.sender,\r\n            block.timestamp\r\n        );\r\n        emit Log(uid);\r\n        return uid;\r\n    }\r\n\r\n    /*\r\n     * @dev Read specified item in Wall mapping\r\n     * @param _uid id of message to be read\r\n     * @return Message text and timestamp at specified uid value\r\n     */\r\n    function read(uint256 _uid) view public returns(Message memory) {\r\n        return Wall[_uid];\r\n    }\r\n\r\n    /*\r\n     * @dev Read latest item in Wall mapping\r\n     * @return Message text and timestamp at current uid value\r\n     */\r\n    function readLast() view public returns(Message memory) {\r\n        return Wall[uid];\r\n    }\r\n\r\n    /*\r\n     * @dev Read current value of uid var\r\n     * @return uid id of latest message\r\n     */\r\n    function getUid() view public returns(uint256) {\r\n        return uid;\r\n    }\r\n}",
+  "sourceMap": "100:1837:0:-:0;;;586:242;;;;;;;;;;620:10;612:5;;:18;;;;;;;;;;;;;;;;;;647:1;641:3;:7;;;;671:149;;;;;;;;693:66;671:149;;;;;;774:5;;;;;;;;;;671:149;;;;;;794:15;671:149;;;659:4;:9;664:3;;659:9;;;;;;;;;;;:161;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;100:1837;;;;;;",
+  "deployedSourceMap": "100:1837:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1858:76;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1658:91;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;983:255;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;1423:100;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1858:76;1896:7;1923:3;;1916:10;;1858:76;:::o;1658:91::-;1698:14;;:::i;:::-;1732:4;:9;1737:3;;1732:9;;;;;;;;;;;1725:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1658:91;:::o;983:255::-;1031:3;;:5;;;;;;;;;:::i;:::-;;;;;;1059:93;;;;;;;;1081:5;1059:93;;;;1101:10;1059:93;;;;;;1126:15;1059:93;;;1047:4;:9;1052:3;;1047:9;;;;;;;;;;;:105;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1168:62;1186:3;;1204:15;1168:62;;;;;;;:::i;:::-;;;;;;;;983:255;:::o;1423:100::-;1471:14;;:::i;:::-;1505:4;:10;1510:4;1505:10;;;;;;;;;;;1498:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1423:100;;;:::o;-1:-1:-1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;7:139:1:-;;91:6;78:20;69:29;;107:33;134:5;107:33;:::i;:::-;59:87;;;;:::o;152:139::-;;236:6;223:20;214:29;;252:33;279:5;252:33;:::i;:::-;204:87;;;;:::o;297:262::-;;405:2;393:9;384:7;380:23;376:32;373:2;;;421:1;418;411:12;373:2;464:1;489:53;534:7;525:6;514:9;510:22;489:53;:::i;:::-;479:63;;435:117;363:196;;;;:::o;565:262::-;;673:2;661:9;652:7;648:23;644:32;641:2;;;689:1;686;679:12;641:2;732:1;757:53;802:7;793:6;782:9;778:22;757:53;:::i;:::-;747:63;;703:117;631:196;;;;:::o;833:108::-;910:24;928:5;910:24;:::i;:::-;905:3;898:37;888:53;;:::o;947:108::-;1024:24;1042:5;1024:24;:::i;:::-;1019:3;1012:37;1002:53;;:::o;1123:682::-;1264:4;1259:3;1255:14;1351:4;1344:5;1340:16;1334:23;1370:63;1427:4;1422:3;1418:14;1404:12;1370:63;:::i;:::-;1279:164;1527:4;1520:5;1516:16;1510:23;1546:63;1603:4;1598:3;1594:14;1580:12;1546:63;:::i;:::-;1453:166;1706:4;1699:5;1695:16;1689:23;1725:63;1782:4;1777:3;1773:14;1759:12;1725:63;:::i;:::-;1629:169;1233:572;;;:::o;1811:108::-;1888:24;1906:5;1888:24;:::i;:::-;1883:3;1876:37;1866:53;;:::o;1925:118::-;2012:24;2030:5;2012:24;:::i;:::-;2007:3;2000:37;1990:53;;:::o;2049:310::-;;2224:2;2213:9;2209:18;2201:26;;2237:115;2349:1;2338:9;2334:17;2325:6;2237:115;:::i;:::-;2191:168;;;;:::o;2365:222::-;;2496:2;2485:9;2481:18;2473:26;;2509:71;2577:1;2566:9;2562:17;2553:6;2509:71;:::i;:::-;2463:124;;;;:::o;2593:332::-;;2752:2;2741:9;2737:18;2729:26;;2765:71;2833:1;2822:9;2818:17;2809:6;2765:71;:::i;:::-;2846:72;2914:2;2903:9;2899:18;2890:6;2846:72;:::i;:::-;2719:206;;;;;:::o;2931:96::-;;2997:24;3015:5;2997:24;:::i;:::-;2986:35;;2976:51;;;:::o;3033:77::-;;3099:5;3088:16;;3078:32;;;:::o;3116:126::-;;3193:42;3186:5;3182:54;3171:65;;3161:81;;;:::o;3248:77::-;;3314:5;3303:16;;3293:32;;;:::o;3331:233::-;;3393:24;3411:5;3393:24;:::i;:::-;3384:33;;3439:66;3432:5;3429:77;3426:2;;;3509:18;;:::i;:::-;3426:2;3556:1;3549:5;3545:13;3538:20;;3374:190;;;:::o;3570:180::-;3618:77;3615:1;3608:88;3715:4;3712:1;3705:15;3739:4;3736:1;3729:15;3756:122;3829:24;3847:5;3829:24;:::i;:::-;3822:5;3819:35;3809:2;;3868:1;3865;3858:12;3809:2;3799:79;:::o;3884:122::-;3957:24;3975:5;3957:24;:::i;:::-;3950:5;3947:35;3937:2;;3996:1;3993;3986:12;3937:2;3927:79;:::o",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.16 <0.9.0;\r\n\r\n/*\r\n * @author Josh Stow\r\n */\r\ncontract Tunnelwall {\r\n    \r\n    struct Message {\r\n        bytes32 text;   // max 32 char message in hex\r\n        address sender; // address of message origin\r\n        uint256 timestamp;  //  time of upload in unix\r\n    }\r\n\r\n    address private owner;\r\n\r\n    uint256 uid;\r\n\r\n    mapping(uint256 => Message) Wall;\r\n\r\n    event Log(\r\n        uint256 uid,\r\n        uint256 timestamp\r\n    );\r\n    \r\n    /*\r\n     * @dev Set first item in Wall mapping when contract is deployed\r\n     */\r\n    constructor () {\r\n        owner = msg.sender;\r\n        uid = 0;\r\n        Wall[uid] = Message(\r\n            0x5468652074756e6e656c20626567696e7320686572652e000000000000000000,\r\n            owner,\r\n            block.timestamp\r\n        );\r\n    }\r\n\r\n    /*\r\n     * @dev Append users message to Wall mapping\r\n     * @param _text message from user\r\n     * @return uid id of latest message\r\n     */\r\n    function write(bytes32 _text) public {\r\n        uid++;\r\n        Wall[uid] = Message(\r\n            _text,\r\n            msg.sender,\r\n            block.timestamp\r\n        );\r\n        emit Log(\r\n            uid,\r\n            block.timestamp\r\n        );\r\n    }\r\n\r\n    /*\r\n     * @dev Read specified item in Wall mapping\r\n     * @param _uid id of message to be read\r\n     * @return Message text and timestamp at specified uid value\r\n     */\r\n    function read(uint256 _uid) view public returns(Message memory) {\r\n        return Wall[_uid];\r\n    }\r\n\r\n    /*\r\n     * @dev Read latest item in Wall mapping\r\n     * @return Message text and timestamp at current uid value\r\n     */\r\n    function readLast() view public returns(Message memory) {\r\n        return Wall[uid];\r\n    }\r\n\r\n    /*\r\n     * @dev Read current value of uid var\r\n     * @return uid id of latest message\r\n     */\r\n    function getUid() view public returns(uint256) {\r\n        return uid;\r\n    }\r\n}",
   "sourcePath": "C:/Users/Josh/Documents/Josh/GitHub/tunnelwall/blockchain/contracts/Tunnelwall.sol",
   "ast": {
     "absolutePath": "/C/Users/Josh/Documents/Josh/GitHub/tunnelwall/blockchain/contracts/Tunnelwall.sol",
@@ -2352,11 +2508,11 @@
           },
           {
             "anonymous": false,
-            "id": 21,
+            "id": 23,
             "name": "Log",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 20,
+              "id": 22,
               "nodeType": "ParameterList",
               "parameters": [
                 {
@@ -2366,8 +2522,8 @@
                   "mutability": "mutable",
                   "name": "uid",
                   "nodeType": "VariableDeclaration",
-                  "scope": 21,
-                  "src": "430:11:0",
+                  "scope": 23,
+                  "src": "440:11:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2378,7 +2534,34 @@
                     "id": 18,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "430:7:0",
+                    "src": "440:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 21,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "timestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23,
+                  "src": "462:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "462:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2387,30 +2570,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "429:13:0"
+              "src": "429:57:0"
             },
-            "src": "420:23:0"
+            "src": "420:67:0"
           },
           {
             "body": {
-              "id": 44,
+              "id": 46,
               "nodeType": "Block",
-              "src": "557:227:0",
+              "src": "601:227:0",
               "statements": [
                 {
                   "expression": {
-                    "id": 27,
+                    "id": 29,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 24,
+                      "id": 26,
                       "name": "owner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 10,
-                      "src": "568:5:0",
+                      "src": "612:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -2420,54 +2603,54 @@
                     "operator": "=",
                     "rightHandSide": {
                       "expression": {
-                        "id": 25,
+                        "id": 27,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4294967281,
-                        "src": "576:3:0",
+                        "src": "620:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 26,
+                      "id": 28,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
-                      "src": "576:10:0",
+                      "src": "620:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "568:18:0",
+                    "src": "612:18:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 28,
+                  "id": 30,
                   "nodeType": "ExpressionStatement",
-                  "src": "568:18:0"
+                  "src": "612:18:0"
                 },
                 {
                   "expression": {
-                    "id": 31,
+                    "id": 33,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 29,
+                      "id": 31,
                       "name": "uid",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 12,
-                      "src": "597:3:0",
+                      "src": "641:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2477,58 +2660,58 @@
                     "operator": "=",
                     "rightHandSide": {
                       "hexValue": "30",
-                      "id": 30,
+                      "id": 32,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "603:1:0",
+                      "src": "647:1:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "597:7:0",
+                    "src": "641:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 32,
+                  "id": 34,
                   "nodeType": "ExpressionStatement",
-                  "src": "597:7:0"
+                  "src": "641:7:0"
                 },
                 {
                   "expression": {
-                    "id": 42,
+                    "id": 44,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 33,
+                        "id": 35,
                         "name": "Wall",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 17,
-                        "src": "615:4:0",
+                        "src": "659:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Message_$8_storage_$",
                           "typeString": "mapping(uint256 => struct Tunnelwall.Message storage ref)"
                         }
                       },
-                      "id": 35,
+                      "id": 37,
                       "indexExpression": {
-                        "id": 34,
+                        "id": 36,
                         "name": "uid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 12,
-                        "src": "620:3:0",
+                        "src": "664:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2539,7 +2722,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "615:9:0",
+                      "src": "659:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Message_$8_storage",
                         "typeString": "struct Tunnelwall.Message storage ref"
@@ -2551,14 +2734,14 @@
                       "arguments": [
                         {
                           "hexValue": "307835343638363532303734373536653665363536633230363236353637363936653733323036383635373236353265303030303030303030303030303030303030",
-                          "id": 37,
+                          "id": 39,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "649:66:0",
+                          "src": "693:66:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_38178729327095182087406104306263882598930686573613811757816572583175551713280_by_1",
                             "typeString": "int_const 3817...(69 digits omitted)...3280"
@@ -2566,12 +2749,12 @@
                           "value": "0x5468652074756e6e656c20626567696e7320686572652e000000000000000000"
                         },
                         {
-                          "id": 38,
+                          "id": 40,
                           "name": "owner",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 10,
-                          "src": "730:5:0",
+                          "src": "774:5:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -2579,25 +2762,25 @@
                         },
                         {
                           "expression": {
-                            "id": 39,
+                            "id": 41,
                             "name": "block",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 4294967292,
-                            "src": "750:5:0",
+                            "src": "794:5:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_block",
                               "typeString": "block"
                             }
                           },
-                          "id": 40,
+                          "id": 42,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "timestamp",
                           "nodeType": "MemberAccess",
-                          "src": "750:15:0",
+                          "src": "794:15:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2619,18 +2802,18 @@
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 36,
+                        "id": 38,
                         "name": "Message",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 8,
-                        "src": "627:7:0",
+                        "src": "671:7:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_struct$_Message_$8_storage_ptr_$",
                           "typeString": "type(struct Tunnelwall.Message storage pointer)"
                         }
                       },
-                      "id": 41,
+                      "id": 43,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2638,45 +2821,45 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "627:149:0",
+                      "src": "671:149:0",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Message_$8_memory_ptr",
                         "typeString": "struct Tunnelwall.Message memory"
                       }
                     },
-                    "src": "615:161:0",
+                    "src": "659:161:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Message_$8_storage",
                       "typeString": "struct Tunnelwall.Message storage ref"
                     }
                   },
-                  "id": 43,
+                  "id": 45,
                   "nodeType": "ExpressionStatement",
-                  "src": "615:161:0"
+                  "src": "659:161:0"
                 }
               ]
             },
-            "id": 45,
+            "id": 47,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 22,
+              "id": 24,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "554:2:0"
+              "src": "598:2:0"
             },
             "returnParameters": {
-              "id": 23,
+              "id": 25,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "557:0:0"
+              "src": "601:0:0"
             },
             "scope": 107,
-            "src": "542:242:0",
+            "src": "586:242:0",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
@@ -2685,7 +2868,7 @@
             "body": {
               "id": 73,
               "nodeType": "Block",
-              "src": "993:185:0",
+              "src": "1020:218:0",
               "statements": [
                 {
                   "expression": {
@@ -2697,14 +2880,14 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "1004:5:0",
+                    "src": "1031:5:0",
                     "subExpression": {
                       "id": 52,
                       "name": "uid",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 12,
-                      "src": "1004:3:0",
+                      "src": "1031:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2717,7 +2900,7 @@
                   },
                   "id": 54,
                   "nodeType": "ExpressionStatement",
-                  "src": "1004:5:0"
+                  "src": "1031:5:0"
                 },
                 {
                   "expression": {
@@ -2733,7 +2916,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 17,
-                        "src": "1020:4:0",
+                        "src": "1047:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Message_$8_storage_$",
                           "typeString": "mapping(uint256 => struct Tunnelwall.Message storage ref)"
@@ -2746,7 +2929,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 12,
-                        "src": "1025:3:0",
+                        "src": "1052:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2757,7 +2940,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "1020:9:0",
+                      "src": "1047:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Message_$8_storage",
                         "typeString": "struct Tunnelwall.Message storage ref"
@@ -2772,8 +2955,8 @@
                           "name": "_text",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 47,
-                          "src": "1054:5:0",
+                          "referencedDeclaration": 49,
+                          "src": "1081:5:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -2786,7 +2969,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 4294967281,
-                            "src": "1074:3:0",
+                            "src": "1101:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
@@ -2799,7 +2982,7 @@
                           "lValueRequested": false,
                           "memberName": "sender",
                           "nodeType": "MemberAccess",
-                          "src": "1074:10:0",
+                          "src": "1101:10:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -2812,7 +2995,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 4294967292,
-                            "src": "1099:5:0",
+                            "src": "1126:5:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_block",
                               "typeString": "block"
@@ -2825,7 +3008,7 @@
                           "lValueRequested": false,
                           "memberName": "timestamp",
                           "nodeType": "MemberAccess",
-                          "src": "1099:15:0",
+                          "src": "1126:15:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2852,7 +3035,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 8,
-                        "src": "1032:7:0",
+                        "src": "1059:7:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_struct$_Message_$8_storage_ptr_$",
                           "typeString": "type(struct Tunnelwall.Message storage pointer)"
@@ -2866,14 +3049,14 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "1032:93:0",
+                      "src": "1059:93:0",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Message_$8_memory_ptr",
                         "typeString": "struct Tunnelwall.Message memory"
                       }
                     },
-                    "src": "1020:105:0",
+                    "src": "1047:105:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Message_$8_storage",
                       "typeString": "struct Tunnelwall.Message storage ref"
@@ -2881,7 +3064,7 @@
                   },
                   "id": 66,
                   "nodeType": "ExpressionStatement",
-                  "src": "1020:105:0"
+                  "src": "1047:105:0"
                 },
                 {
                   "eventCall": {
@@ -2892,7 +3075,33 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 12,
-                        "src": "1145:3:0",
+                        "src": "1186:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 69,
+                          "name": "block",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967292,
+                          "src": "1204:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_block",
+                            "typeString": "block"
+                          }
+                        },
+                        "id": 70,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "timestamp",
+                        "nodeType": "MemberAccess",
+                        "src": "1204:15:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2904,20 +3113,24 @@
                         {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         }
                       ],
                       "id": 67,
                       "name": "Log",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 21,
-                      "src": "1141:3:0",
+                      "referencedDeclaration": 23,
+                      "src": "1168:3:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$returns$__$",
-                        "typeString": "function (uint256)"
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256,uint256)"
                       }
                     },
-                    "id": 69,
+                    "id": 71,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2925,34 +3138,16 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1141:8:0",
+                    "src": "1168:62:0",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 70,
-                  "nodeType": "EmitStatement",
-                  "src": "1136:13:0"
-                },
-                {
-                  "expression": {
-                    "id": 71,
-                    "name": "uid",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 12,
-                    "src": "1167:3:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "functionReturnParameters": 51,
                   "id": 72,
-                  "nodeType": "Return",
-                  "src": "1160:10:0"
+                  "nodeType": "EmitStatement",
+                  "src": "1163:67:0"
                 }
               ]
             },
@@ -2964,17 +3159,17 @@
             "name": "write",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 48,
+              "id": 50,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 47,
+                  "id": 49,
                   "mutability": "mutable",
                   "name": "_text",
                   "nodeType": "VariableDeclaration",
                   "scope": 74,
-                  "src": "954:13:0",
+                  "src": "998:13:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2982,10 +3177,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 46,
+                    "id": 48,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "954:7:0",
+                    "src": "998:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2994,43 +3189,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "953:15:0"
+              "src": "997:15:0"
             },
             "returnParameters": {
               "id": 51,
               "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 50,
-                  "mutability": "mutable",
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 74,
-                  "src": "984:7:0",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 49,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "984:7:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "983:9:0"
+              "parameters": [],
+              "src": "1020:0:0"
             },
             "scope": 107,
-            "src": "939:239:0",
+            "src": "983:255:0",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
@@ -3039,7 +3207,7 @@
             "body": {
               "id": 86,
               "nodeType": "Block",
-              "src": "1427:36:0",
+              "src": "1487:36:0",
               "statements": [
                 {
                   "expression": {
@@ -3049,7 +3217,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 17,
-                      "src": "1445:4:0",
+                      "src": "1505:4:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Message_$8_storage_$",
                         "typeString": "mapping(uint256 => struct Tunnelwall.Message storage ref)"
@@ -3062,7 +3230,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 76,
-                      "src": "1450:4:0",
+                      "src": "1510:4:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3073,7 +3241,7 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "1445:10:0",
+                    "src": "1505:10:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Message_$8_storage",
                       "typeString": "struct Tunnelwall.Message storage ref"
@@ -3082,7 +3250,7 @@
                   "functionReturnParameters": 81,
                   "id": 85,
                   "nodeType": "Return",
-                  "src": "1438:17:0"
+                  "src": "1498:17:0"
                 }
               ]
             },
@@ -3104,7 +3272,7 @@
                   "name": "_uid",
                   "nodeType": "VariableDeclaration",
                   "scope": 87,
-                  "src": "1377:12:0",
+                  "src": "1437:12:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3115,7 +3283,7 @@
                     "id": 75,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1377:7:0",
+                    "src": "1437:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3124,7 +3292,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1376:14:0"
+              "src": "1436:14:0"
             },
             "returnParameters": {
               "id": 81,
@@ -3137,7 +3305,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 87,
-                  "src": "1411:14:0",
+                  "src": "1471:14:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3152,10 +3320,10 @@
                       "name": "Message",
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 8,
-                      "src": "1411:7:0"
+                      "src": "1471:7:0"
                     },
                     "referencedDeclaration": 8,
-                    "src": "1411:7:0",
+                    "src": "1471:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Message_$8_storage_ptr",
                       "typeString": "struct Tunnelwall.Message"
@@ -3164,10 +3332,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1410:16:0"
+              "src": "1470:16:0"
             },
             "scope": 107,
-            "src": "1363:100:0",
+            "src": "1423:100:0",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
@@ -3176,7 +3344,7 @@
             "body": {
               "id": 97,
               "nodeType": "Block",
-              "src": "1654:35:0",
+              "src": "1714:35:0",
               "statements": [
                 {
                   "expression": {
@@ -3186,7 +3354,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 17,
-                      "src": "1672:4:0",
+                      "src": "1732:4:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Message_$8_storage_$",
                         "typeString": "mapping(uint256 => struct Tunnelwall.Message storage ref)"
@@ -3199,7 +3367,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 12,
-                      "src": "1677:3:0",
+                      "src": "1737:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3210,7 +3378,7 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "1672:9:0",
+                    "src": "1732:9:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Message_$8_storage",
                       "typeString": "struct Tunnelwall.Message storage ref"
@@ -3219,7 +3387,7 @@
                   "functionReturnParameters": 92,
                   "id": 96,
                   "nodeType": "Return",
-                  "src": "1665:16:0"
+                  "src": "1725:16:0"
                 }
               ]
             },
@@ -3234,7 +3402,7 @@
               "id": 88,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1615:2:0"
+              "src": "1675:2:0"
             },
             "returnParameters": {
               "id": 92,
@@ -3247,7 +3415,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 98,
-                  "src": "1638:14:0",
+                  "src": "1698:14:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3262,10 +3430,10 @@
                       "name": "Message",
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 8,
-                      "src": "1638:7:0"
+                      "src": "1698:7:0"
                     },
                     "referencedDeclaration": 8,
-                    "src": "1638:7:0",
+                    "src": "1698:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Message_$8_storage_ptr",
                       "typeString": "struct Tunnelwall.Message"
@@ -3274,10 +3442,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1637:16:0"
+              "src": "1697:16:0"
             },
             "scope": 107,
-            "src": "1598:91:0",
+            "src": "1658:91:0",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
@@ -3286,7 +3454,7 @@
             "body": {
               "id": 105,
               "nodeType": "Block",
-              "src": "1845:29:0",
+              "src": "1905:29:0",
               "statements": [
                 {
                   "expression": {
@@ -3295,7 +3463,7 @@
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
                     "referencedDeclaration": 12,
-                    "src": "1863:3:0",
+                    "src": "1923:3:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3304,7 +3472,7 @@
                   "functionReturnParameters": 102,
                   "id": 104,
                   "nodeType": "Return",
-                  "src": "1856:10:0"
+                  "src": "1916:10:0"
                 }
               ]
             },
@@ -3319,7 +3487,7 @@
               "id": 99,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1813:2:0"
+              "src": "1873:2:0"
             },
             "returnParameters": {
               "id": 102,
@@ -3332,7 +3500,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 106,
-                  "src": "1836:7:0",
+                  "src": "1896:7:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3343,7 +3511,7 @@
                     "id": 100,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1836:7:0",
+                    "src": "1896:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3352,20 +3520,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1835:9:0"
+              "src": "1895:9:0"
             },
             "scope": 107,
-            "src": "1798:76:0",
+            "src": "1858:76:0",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           }
         ],
         "scope": 108,
-        "src": "100:1777:0"
+        "src": "100:1837:0"
       }
     ],
-    "src": "33:1844:0"
+    "src": "33:1904:0"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/Josh/Documents/Josh/GitHub/tunnelwall/blockchain/contracts/Tunnelwall.sol",
@@ -3602,11 +3770,11 @@
           },
           {
             "anonymous": false,
-            "id": 21,
+            "id": 23,
             "name": "Log",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 20,
+              "id": 22,
               "nodeType": "ParameterList",
               "parameters": [
                 {
@@ -3616,8 +3784,8 @@
                   "mutability": "mutable",
                   "name": "uid",
                   "nodeType": "VariableDeclaration",
-                  "scope": 21,
-                  "src": "430:11:0",
+                  "scope": 23,
+                  "src": "440:11:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3628,7 +3796,34 @@
                     "id": 18,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "430:7:0",
+                    "src": "440:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 21,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "timestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23,
+                  "src": "462:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "462:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3637,30 +3832,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "429:13:0"
+              "src": "429:57:0"
             },
-            "src": "420:23:0"
+            "src": "420:67:0"
           },
           {
             "body": {
-              "id": 44,
+              "id": 46,
               "nodeType": "Block",
-              "src": "557:227:0",
+              "src": "601:227:0",
               "statements": [
                 {
                   "expression": {
-                    "id": 27,
+                    "id": 29,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 24,
+                      "id": 26,
                       "name": "owner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 10,
-                      "src": "568:5:0",
+                      "src": "612:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -3670,54 +3865,54 @@
                     "operator": "=",
                     "rightHandSide": {
                       "expression": {
-                        "id": 25,
+                        "id": 27,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4294967281,
-                        "src": "576:3:0",
+                        "src": "620:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 26,
+                      "id": 28,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
-                      "src": "576:10:0",
+                      "src": "620:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "568:18:0",
+                    "src": "612:18:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 28,
+                  "id": 30,
                   "nodeType": "ExpressionStatement",
-                  "src": "568:18:0"
+                  "src": "612:18:0"
                 },
                 {
                   "expression": {
-                    "id": 31,
+                    "id": 33,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 29,
+                      "id": 31,
                       "name": "uid",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 12,
-                      "src": "597:3:0",
+                      "src": "641:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3727,58 +3922,58 @@
                     "operator": "=",
                     "rightHandSide": {
                       "hexValue": "30",
-                      "id": 30,
+                      "id": 32,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "603:1:0",
+                      "src": "647:1:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "597:7:0",
+                    "src": "641:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 32,
+                  "id": 34,
                   "nodeType": "ExpressionStatement",
-                  "src": "597:7:0"
+                  "src": "641:7:0"
                 },
                 {
                   "expression": {
-                    "id": 42,
+                    "id": 44,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 33,
+                        "id": 35,
                         "name": "Wall",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 17,
-                        "src": "615:4:0",
+                        "src": "659:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Message_$8_storage_$",
                           "typeString": "mapping(uint256 => struct Tunnelwall.Message storage ref)"
                         }
                       },
-                      "id": 35,
+                      "id": 37,
                       "indexExpression": {
-                        "id": 34,
+                        "id": 36,
                         "name": "uid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 12,
-                        "src": "620:3:0",
+                        "src": "664:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3789,7 +3984,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "615:9:0",
+                      "src": "659:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Message_$8_storage",
                         "typeString": "struct Tunnelwall.Message storage ref"
@@ -3801,14 +3996,14 @@
                       "arguments": [
                         {
                           "hexValue": "307835343638363532303734373536653665363536633230363236353637363936653733323036383635373236353265303030303030303030303030303030303030",
-                          "id": 37,
+                          "id": 39,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "649:66:0",
+                          "src": "693:66:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_38178729327095182087406104306263882598930686573613811757816572583175551713280_by_1",
                             "typeString": "int_const 3817...(69 digits omitted)...3280"
@@ -3816,12 +4011,12 @@
                           "value": "0x5468652074756e6e656c20626567696e7320686572652e000000000000000000"
                         },
                         {
-                          "id": 38,
+                          "id": 40,
                           "name": "owner",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 10,
-                          "src": "730:5:0",
+                          "src": "774:5:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -3829,25 +4024,25 @@
                         },
                         {
                           "expression": {
-                            "id": 39,
+                            "id": 41,
                             "name": "block",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 4294967292,
-                            "src": "750:5:0",
+                            "src": "794:5:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_block",
                               "typeString": "block"
                             }
                           },
-                          "id": 40,
+                          "id": 42,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "timestamp",
                           "nodeType": "MemberAccess",
-                          "src": "750:15:0",
+                          "src": "794:15:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -3869,18 +4064,18 @@
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 36,
+                        "id": 38,
                         "name": "Message",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 8,
-                        "src": "627:7:0",
+                        "src": "671:7:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_struct$_Message_$8_storage_ptr_$",
                           "typeString": "type(struct Tunnelwall.Message storage pointer)"
                         }
                       },
-                      "id": 41,
+                      "id": 43,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3888,45 +4083,45 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "627:149:0",
+                      "src": "671:149:0",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Message_$8_memory_ptr",
                         "typeString": "struct Tunnelwall.Message memory"
                       }
                     },
-                    "src": "615:161:0",
+                    "src": "659:161:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Message_$8_storage",
                       "typeString": "struct Tunnelwall.Message storage ref"
                     }
                   },
-                  "id": 43,
+                  "id": 45,
                   "nodeType": "ExpressionStatement",
-                  "src": "615:161:0"
+                  "src": "659:161:0"
                 }
               ]
             },
-            "id": 45,
+            "id": 47,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 22,
+              "id": 24,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "554:2:0"
+              "src": "598:2:0"
             },
             "returnParameters": {
-              "id": 23,
+              "id": 25,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "557:0:0"
+              "src": "601:0:0"
             },
             "scope": 107,
-            "src": "542:242:0",
+            "src": "586:242:0",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
@@ -3935,7 +4130,7 @@
             "body": {
               "id": 73,
               "nodeType": "Block",
-              "src": "993:185:0",
+              "src": "1020:218:0",
               "statements": [
                 {
                   "expression": {
@@ -3947,14 +4142,14 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "1004:5:0",
+                    "src": "1031:5:0",
                     "subExpression": {
                       "id": 52,
                       "name": "uid",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 12,
-                      "src": "1004:3:0",
+                      "src": "1031:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3967,7 +4162,7 @@
                   },
                   "id": 54,
                   "nodeType": "ExpressionStatement",
-                  "src": "1004:5:0"
+                  "src": "1031:5:0"
                 },
                 {
                   "expression": {
@@ -3983,7 +4178,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 17,
-                        "src": "1020:4:0",
+                        "src": "1047:4:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Message_$8_storage_$",
                           "typeString": "mapping(uint256 => struct Tunnelwall.Message storage ref)"
@@ -3996,7 +4191,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 12,
-                        "src": "1025:3:0",
+                        "src": "1052:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4007,7 +4202,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "1020:9:0",
+                      "src": "1047:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Message_$8_storage",
                         "typeString": "struct Tunnelwall.Message storage ref"
@@ -4022,8 +4217,8 @@
                           "name": "_text",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 47,
-                          "src": "1054:5:0",
+                          "referencedDeclaration": 49,
+                          "src": "1081:5:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -4036,7 +4231,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 4294967281,
-                            "src": "1074:3:0",
+                            "src": "1101:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
@@ -4049,7 +4244,7 @@
                           "lValueRequested": false,
                           "memberName": "sender",
                           "nodeType": "MemberAccess",
-                          "src": "1074:10:0",
+                          "src": "1101:10:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -4062,7 +4257,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 4294967292,
-                            "src": "1099:5:0",
+                            "src": "1126:5:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_block",
                               "typeString": "block"
@@ -4075,7 +4270,7 @@
                           "lValueRequested": false,
                           "memberName": "timestamp",
                           "nodeType": "MemberAccess",
-                          "src": "1099:15:0",
+                          "src": "1126:15:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -4102,7 +4297,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 8,
-                        "src": "1032:7:0",
+                        "src": "1059:7:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_struct$_Message_$8_storage_ptr_$",
                           "typeString": "type(struct Tunnelwall.Message storage pointer)"
@@ -4116,14 +4311,14 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "1032:93:0",
+                      "src": "1059:93:0",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Message_$8_memory_ptr",
                         "typeString": "struct Tunnelwall.Message memory"
                       }
                     },
-                    "src": "1020:105:0",
+                    "src": "1047:105:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Message_$8_storage",
                       "typeString": "struct Tunnelwall.Message storage ref"
@@ -4131,7 +4326,7 @@
                   },
                   "id": 66,
                   "nodeType": "ExpressionStatement",
-                  "src": "1020:105:0"
+                  "src": "1047:105:0"
                 },
                 {
                   "eventCall": {
@@ -4142,7 +4337,33 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 12,
-                        "src": "1145:3:0",
+                        "src": "1186:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 69,
+                          "name": "block",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967292,
+                          "src": "1204:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_block",
+                            "typeString": "block"
+                          }
+                        },
+                        "id": 70,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "timestamp",
+                        "nodeType": "MemberAccess",
+                        "src": "1204:15:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4154,20 +4375,24 @@
                         {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         }
                       ],
                       "id": 67,
                       "name": "Log",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 21,
-                      "src": "1141:3:0",
+                      "referencedDeclaration": 23,
+                      "src": "1168:3:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$returns$__$",
-                        "typeString": "function (uint256)"
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256,uint256)"
                       }
                     },
-                    "id": 69,
+                    "id": 71,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4175,34 +4400,16 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1141:8:0",
+                    "src": "1168:62:0",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 70,
-                  "nodeType": "EmitStatement",
-                  "src": "1136:13:0"
-                },
-                {
-                  "expression": {
-                    "id": 71,
-                    "name": "uid",
-                    "nodeType": "Identifier",
-                    "overloadedDeclarations": [],
-                    "referencedDeclaration": 12,
-                    "src": "1167:3:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "functionReturnParameters": 51,
                   "id": 72,
-                  "nodeType": "Return",
-                  "src": "1160:10:0"
+                  "nodeType": "EmitStatement",
+                  "src": "1163:67:0"
                 }
               ]
             },
@@ -4214,17 +4421,17 @@
             "name": "write",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 48,
+              "id": 50,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 47,
+                  "id": 49,
                   "mutability": "mutable",
                   "name": "_text",
                   "nodeType": "VariableDeclaration",
                   "scope": 74,
-                  "src": "954:13:0",
+                  "src": "998:13:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4232,10 +4439,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 46,
+                    "id": 48,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "954:7:0",
+                    "src": "998:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -4244,43 +4451,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "953:15:0"
+              "src": "997:15:0"
             },
             "returnParameters": {
               "id": 51,
               "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 50,
-                  "mutability": "mutable",
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 74,
-                  "src": "984:7:0",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 49,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "984:7:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "983:9:0"
+              "parameters": [],
+              "src": "1020:0:0"
             },
             "scope": 107,
-            "src": "939:239:0",
+            "src": "983:255:0",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
@@ -4289,7 +4469,7 @@
             "body": {
               "id": 86,
               "nodeType": "Block",
-              "src": "1427:36:0",
+              "src": "1487:36:0",
               "statements": [
                 {
                   "expression": {
@@ -4299,7 +4479,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 17,
-                      "src": "1445:4:0",
+                      "src": "1505:4:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Message_$8_storage_$",
                         "typeString": "mapping(uint256 => struct Tunnelwall.Message storage ref)"
@@ -4312,7 +4492,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 76,
-                      "src": "1450:4:0",
+                      "src": "1510:4:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -4323,7 +4503,7 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "1445:10:0",
+                    "src": "1505:10:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Message_$8_storage",
                       "typeString": "struct Tunnelwall.Message storage ref"
@@ -4332,7 +4512,7 @@
                   "functionReturnParameters": 81,
                   "id": 85,
                   "nodeType": "Return",
-                  "src": "1438:17:0"
+                  "src": "1498:17:0"
                 }
               ]
             },
@@ -4354,7 +4534,7 @@
                   "name": "_uid",
                   "nodeType": "VariableDeclaration",
                   "scope": 87,
-                  "src": "1377:12:0",
+                  "src": "1437:12:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4365,7 +4545,7 @@
                     "id": 75,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1377:7:0",
+                    "src": "1437:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4374,7 +4554,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1376:14:0"
+              "src": "1436:14:0"
             },
             "returnParameters": {
               "id": 81,
@@ -4387,7 +4567,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 87,
-                  "src": "1411:14:0",
+                  "src": "1471:14:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4402,10 +4582,10 @@
                       "name": "Message",
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 8,
-                      "src": "1411:7:0"
+                      "src": "1471:7:0"
                     },
                     "referencedDeclaration": 8,
-                    "src": "1411:7:0",
+                    "src": "1471:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Message_$8_storage_ptr",
                       "typeString": "struct Tunnelwall.Message"
@@ -4414,10 +4594,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1410:16:0"
+              "src": "1470:16:0"
             },
             "scope": 107,
-            "src": "1363:100:0",
+            "src": "1423:100:0",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
@@ -4426,7 +4606,7 @@
             "body": {
               "id": 97,
               "nodeType": "Block",
-              "src": "1654:35:0",
+              "src": "1714:35:0",
               "statements": [
                 {
                   "expression": {
@@ -4436,7 +4616,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 17,
-                      "src": "1672:4:0",
+                      "src": "1732:4:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Message_$8_storage_$",
                         "typeString": "mapping(uint256 => struct Tunnelwall.Message storage ref)"
@@ -4449,7 +4629,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 12,
-                      "src": "1677:3:0",
+                      "src": "1737:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -4460,7 +4640,7 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "1672:9:0",
+                    "src": "1732:9:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Message_$8_storage",
                       "typeString": "struct Tunnelwall.Message storage ref"
@@ -4469,7 +4649,7 @@
                   "functionReturnParameters": 92,
                   "id": 96,
                   "nodeType": "Return",
-                  "src": "1665:16:0"
+                  "src": "1725:16:0"
                 }
               ]
             },
@@ -4484,7 +4664,7 @@
               "id": 88,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1615:2:0"
+              "src": "1675:2:0"
             },
             "returnParameters": {
               "id": 92,
@@ -4497,7 +4677,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 98,
-                  "src": "1638:14:0",
+                  "src": "1698:14:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4512,10 +4692,10 @@
                       "name": "Message",
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 8,
-                      "src": "1638:7:0"
+                      "src": "1698:7:0"
                     },
                     "referencedDeclaration": 8,
-                    "src": "1638:7:0",
+                    "src": "1698:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Message_$8_storage_ptr",
                       "typeString": "struct Tunnelwall.Message"
@@ -4524,10 +4704,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1637:16:0"
+              "src": "1697:16:0"
             },
             "scope": 107,
-            "src": "1598:91:0",
+            "src": "1658:91:0",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
@@ -4536,7 +4716,7 @@
             "body": {
               "id": 105,
               "nodeType": "Block",
-              "src": "1845:29:0",
+              "src": "1905:29:0",
               "statements": [
                 {
                   "expression": {
@@ -4545,7 +4725,7 @@
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
                     "referencedDeclaration": 12,
-                    "src": "1863:3:0",
+                    "src": "1923:3:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4554,7 +4734,7 @@
                   "functionReturnParameters": 102,
                   "id": 104,
                   "nodeType": "Return",
-                  "src": "1856:10:0"
+                  "src": "1916:10:0"
                 }
               ]
             },
@@ -4569,7 +4749,7 @@
               "id": 99,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1813:2:0"
+              "src": "1873:2:0"
             },
             "returnParameters": {
               "id": 102,
@@ -4582,7 +4762,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 106,
-                  "src": "1836:7:0",
+                  "src": "1896:7:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4593,7 +4773,7 @@
                     "id": 100,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1836:7:0",
+                    "src": "1896:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4602,20 +4782,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1835:9:0"
+              "src": "1895:9:0"
             },
             "scope": 107,
-            "src": "1798:76:0",
+            "src": "1858:76:0",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           }
         ],
         "scope": 108,
-        "src": "100:1777:0"
+        "src": "100:1837:0"
       }
     ],
-    "src": "33:1844:0"
+    "src": "33:1904:0"
   },
   "compiler": {
     "name": "solc",
@@ -4644,8 +4824,7 @@
     }
   },
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-02-11T23:39:30.198Z",
-  "networkType": "ethereum",
+  "updatedAt": "2021-02-12T13:30:14.829Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
