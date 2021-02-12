@@ -74,12 +74,12 @@ function App() {
       ]
 
       setUid(_uid);
-      setInfo('Message ' + _uid + ' on the wall');
+      setInfo('Retrieved message from the wall');
       setPost(result);
 
     } else {
       setUid('—');
-      setInfo('No messages found with an ID of ' + _uid);
+      setInfo('No messages found at that ID');
       setPost(['—', '—', '—'])
     }
 
@@ -138,10 +138,10 @@ function App() {
       </Jumbotron>
       <Container>
         <h3 className="text-center text-dark pt-4">This is your dashboard</h3>
-        <p className="text-center lead mb-5 pb-3">From here, you can interact with the Tunnelwall program. For help getting started, please view the <a href="https://www.google.com">guide</a>.</p>
+        <p className="text-center lead mb-5 pb-5">From here, you can interact with the Tunnelwall program. For help getting started, please view the <a href="https://www.google.com">guide</a>.</p>
         <Row className="mb-5">
           <Col xs={7}>
-            <p className="lead text-center mb-2">Write a message on the wall</p>
+            <h5 className="text-center mb-2">Write a message on the wall</h5>
             <Card>
               <Card.Body>
                 <Form
@@ -164,7 +164,7 @@ function App() {
                 </Form>
               </Card.Body>
             </Card>
-            <p className="lead text-center mt-3 mb-2">Read the messages on the wall</p>
+            <h5 className="text-center mt-4 mb-2">Read the messages on the wall</h5>
             <Card>
              <Card.Body>
               <Form
@@ -208,7 +208,7 @@ function App() {
             </Card>
           </Col>
           <Col xs={5}>
-            <p className="lead text-center mb-2">Output</p>
+            <h5 className="text-center mb-2">Output</h5>
             <MessageCard
               info={ info }
               text={ post[0] }
