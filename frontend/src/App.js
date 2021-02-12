@@ -47,7 +47,7 @@ function App() {
     var raw_result = await contract.methods.readLast().call();
     var result = [
       web3.utils.toAscii(raw_result[0]).replaceAll(String.fromCharCode(0),''),
-      raw_result[1],
+      raw_result[1].toLowerCase(),
       new Date(parseInt(raw_result[2]) * 1000).toLocaleString()
     ]
     
