@@ -13,7 +13,6 @@ const contractAddress = '0xF472c0676b7b4eda7675f6301962BCa168EEBE2f'; // contrac
 const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 
 function App() {
-  const [message, setMessage] = useState('-');
   const [post, setPost] = useState(['The tunnel begins here.', '0x0000000000000000000000000000000000000000', 'Arbitrary timestamp']);
   const [uid, setUid] = useState(0);
   const [info, setInfo] = useState('The genesis message')
@@ -28,14 +27,13 @@ function App() {
 
     const formData = new FormData(e.target), formDataObj = Object.fromEntries(formData.entries())
     var readableMessage = formDataObj['input']
-    var _message = web3.utils.fromAscii(formDataObj['input'].padEnd(32, String.fromCharCode(0)));
+    var message = web3.utils.fromAscii(formDataObj['input'].padEnd(32, String.fromCharCode(0)));
 
-    var gas = await contract.methods.write(_message).estimateGas();
-    var result = await contract.methods.write(_message).send({ from: account, gas });
+    var gas = await contract.methods.write(message).estimateGas();
+    var result = await contract.methods.write(message).send({ from: account, gas });
 
     setInfo('You have written on the wall')
     setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()])
-    setMessage(readableMessage);
     setUid(result.events.Log.returnValues['uid']);
 
     console.log(result) // debugging
