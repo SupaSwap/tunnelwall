@@ -34,7 +34,7 @@ function App() {
     var result = await contract.methods.write(_message).send({ from: account, gas });
 
     setInfo('You have written on the wall')
-    setPost([readableMessage, account, 'Date is not yet added'])
+    setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()])
     setMessage(readableMessage);
     setUid(result.events.Log.returnValues['uid']);
 
