@@ -32,6 +32,8 @@ function App() {
     var gas = await contract.methods.write(message).estimateGas();
     var result = await contract.methods.write(message).send({ from: account, gas });
 
+    e.target.reset();
+
     setInfo('Your message has been posted');
     setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()]);
     setUid(result.events.Log.returnValues['uid']);
@@ -73,11 +75,15 @@ function App() {
         new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
       ]
 
+      e.target.reset();
+
       setUid(_uid);
       setInfo('Retrieved message ' + _uid + ' from the wall');
       setPost(result);
 
     } else {
+      e.target.reset();
+
       setUid('—');
       setInfo('No messages found at that ID');
       setPost(['—', '—', '—']);
@@ -238,7 +244,6 @@ function App() {
               timestamp={ post[2] } />
           </Col>
         </Row>
-        
       </Container>
     </div>
   );
