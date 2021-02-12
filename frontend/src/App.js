@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
-import { Navbar, Jumbotron, Form, FormGroup, Button, Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Navbar, Jumbotron, Form, FormGroup, InputGroup, Button, Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { ReactComponent as Logo } from './logo.svg';
 import { ReactComponent as GithubLogo } from './github.svg';
 import MessageCard from './MessageCard';
@@ -144,23 +144,38 @@ function App() {
                 Write
               </Button>
             </Form>
-          <Row className="text-center">
+          <p className="text-center mb-2">Read the messages on the wall</p>
+          <Row>
             <Col xs={4}>
-              <p className="mb-2">Get most recent message</p>
               <Button
                 className="mb-3"
                 variant="primary"
                 type="button" 
                 onClick={ handleGetLastMessage }
                 block >
-                Request Message
+                Most recent
               </Button>
             </Col>
             <Col xs={4}>
-              I am a column
+              <Button
+                className="mb-3"
+                variant="primary"
+                type="button"
+                block >
+                Random
+              </Button>
             </Col>
             <Col xs={4}>
-              I am also a column
+              <InputGroup className="mb-3">
+                <Form.Control
+                  placeholder="Post ID" />
+                <InputGroup.Append>
+                  <Button
+                    variant="primary" >
+                    Read
+                  </Button>
+                </InputGroup.Append>
+              </InputGroup>
             </Col>
           </Row>
           </Col>
