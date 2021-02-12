@@ -108,10 +108,10 @@ function App() {
       <Container>
         <h3 className="text-center text-dark">This is your dashboard</h3>
         <p className="text-center lead mb-5">From here, you can interact with the Tunnelwall program. For help getting started, please view the <a href="https://www.google.com">guide</a>.</p>
-        <Row className="mb-4">
+        <Row className="mb-5">
           <Col xs={7}>
             <Form
-              className="text-center"
+              className="text-center mb-3"
               onSubmit={ handleWriteMessage } >
               <FormGroup>
                 <Form.Label>Write a message on the wall</Form.Label>
@@ -129,6 +129,25 @@ function App() {
                 Write
               </Button>
             </Form>
+          <Row className="text-center">
+            <Col xs={4}>
+              <p className="mb-2">Get most recent message</p>
+              <Button
+                className="mb-3"
+                variant="primary"
+                type="button" 
+                onClick={ handleGetLastMessage }
+                block >
+                Request Message
+              </Button>
+            </Col>
+            <Col xs={4}>
+              I am a column
+            </Col>
+            <Col xs={4}>
+              I am also a column
+            </Col>
+          </Row>
           </Col>
           <Col xs={5}>
             <p className="text-center mb-2">Output</p>
@@ -140,25 +159,7 @@ function App() {
               timestamp={ post[2] } />
           </Col>
         </Row>
-        <Row>
-          <Col xs={4}>
-            <p className="text-center mb-2">Get most recent message</p>
-            <Button
-              className="mb-3"
-              variant="primary"
-              type="button" 
-              onClick={ handleGetLastMessage }
-              block >
-              Request Message
-            </Button>
-          </Col>
-          <Col xs={4}>
-            I am a column
-          </Col>
-          <Col xs={4}>
-            I am also a column
-          </Col>
-        </Row>
+        
       </Container>
     </div>
   );
