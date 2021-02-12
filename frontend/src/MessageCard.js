@@ -15,7 +15,12 @@ export default class MessageCard extends Component {
           <Card.Text>{ this.props.text }</Card.Text>
           <hr className="my-3"/>
           <Card.Subtitle className="mt-3">Sender Address</Card.Subtitle>
-          <Card.Text><a href="https://etherscan.io/address/{ this.props.address }">{ this.props.address }</a></Card.Text>
+          <Card.Text>
+            <a 
+              href={"https://etherscan.io/address/" + this.props.address }
+              target="blank" >{ this.props.address }
+            </a>
+          </Card.Text>
           <hr className="my-3"/>
           <Card.Subtitle className="mt-3">Timestamp</Card.Subtitle>
           <Card.Text>{ this.props.timestamp }</Card.Text>
