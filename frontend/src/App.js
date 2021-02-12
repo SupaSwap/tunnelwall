@@ -15,7 +15,7 @@ const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 function App() {
   const [post, setPost] = useState(['The tunnel begins here.', '0x0000000000000000000000000000000000000000', 'Arbitrary timestamp']);
   const [uid, setUid] = useState(0);
-  const [info, setInfo] = useState('The genesis message')
+  const [info, setInfo] = useState('Retrieved the genesis message')
   const [walletAddress, setWalletAddress] = useState('Please connect a wallet with MetaMask')
 
   const handleWriteMessage = async (e) => {
@@ -52,7 +52,7 @@ function App() {
     var _uid = await contract.methods.getUid().call();
     
     setUid(_uid);
-    setInfo('Latest message on the wall');
+    setInfo('Retrieved latest message on the wall');
     setPost(result);
 
     console.log(result) // debugging
@@ -74,14 +74,34 @@ function App() {
       ]
 
       setUid(_uid);
-      setInfo('Retrieved message from the wall');
+      setInfo('Retrieved message ' + _uid + ' from the wall');
       setPost(result);
 
     } else {
       setUid('—');
       setInfo('No messages found at that ID');
-      setPost(['—', '—', '—'])
+      setPost(['—', '—', '—']);
     }
+
+    console.log(result) // debugging
+  }
+
+  const handleGetRandomMessage = async (e) => {
+    e.preventDefault();
+
+    var _uid = await contract.methods.getUid().call();
+    _uid = Math.floor(Math.random() * (parseInt(_uid) + 1));
+
+    var rawResult = await contract.methods.read(web3.utils.toBN(_uid)).call();
+    var result = [
+      web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
+      rawResult[1].toLowerCase(),
+      new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
+    ]
+
+    setUid(_uid);
+    setInfo('Retrieved random message from the wall');
+    setPost(result);
 
     console.log(result) // debugging
   }
@@ -199,6 +219,7 @@ function App() {
                     <Button
                       variant="primary"
                       type="button"
+                      onClick={ handleGetRandomMessage }
                       block >
                       Random
                     </Button>
