@@ -34,6 +34,7 @@ function App() {
     var result = await contract.methods.write(_message).send({ from: account, gas });
 
     setInfo('Successfully posted on the wall')
+    setPost([readableMessage, account, "Date is not yet added"])
     setMessage(readableMessage);
     setUid(result.events.Log.returnValues['uid']);
 
@@ -134,10 +135,10 @@ function App() {
             <p className="text-center mb-2">Output</p>
             <MessageCard
               info={ info }
-              text={ message }
+              text={ post[0] }
               uid={ uid }
-              address="None"
-              timestamp="None" />
+              address={ post[1] }
+              timestamp={ post[2] } />
           </Col>
         </Row>
         <Row>
