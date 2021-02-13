@@ -3,7 +3,7 @@ import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
 import { Navbar, Jumbotron, Card, Form, FormGroup, InputGroup, Button, Container, Row, Col, OverlayTrigger, Tooltip, Spinner } from 'react-bootstrap';
 import { ReactComponent as Logo } from './logo.svg';
-import { ReactComponent as GithubLogo } from './github.svg';
+import { ReactComponent as GithubIcon } from './github.svg';
 import { ReactComponent as CopyIcon } from './copy.svg';
 import MessageCard from './MessageCard';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -162,7 +162,7 @@ function App() {
               position: "relative",
               display: "inline-block"
             }} >
-            <GithubLogo
+            <GithubIcon
               style={{
                 width: "2em",
                 height: "2em",
