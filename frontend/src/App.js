@@ -4,6 +4,7 @@ import { tunnelwallAbi } from './abi';
 import { Navbar, Jumbotron, Card, Form, FormGroup, InputGroup, Button, Container, Row, Col, OverlayTrigger, Tooltip, Spinner } from 'react-bootstrap';
 import { ReactComponent as Logo } from './logo.svg';
 import { ReactComponent as GithubLogo } from './github.svg';
+import { ReactComponent as CopyIcon } from './copy.svg';
 import MessageCard from './MessageCard';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
@@ -114,6 +115,10 @@ function App() {
     setPost(result);
 
     console.log(result) // debugging
+  }
+
+  function copyAddress(address) {
+    navigator.clipboard.writeText(address);
   }
 
   return (
@@ -257,7 +262,7 @@ function App() {
               timestamp={ post[2] } />
           </Col>
         </Row>
-        <h3 className="text-center text-dark pt-4 mb-4">The guide</h3>
+        <h3 className="text-center text-dark pt-4 mb-4">Getting started</h3>
         <p className="lead text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Cras eget lacus leo. Aliquam porta tristique odio ut vestibulum.
@@ -279,11 +284,34 @@ function App() {
           Donations of any size are greatly appreciated, and help to keep this site up and running.
           Any Ether sent to the address below will go directly to the author of this project — thank you.
         </p>
-        <Card className="mx-auto">
-          <Card.Body className="lead text-center">
-            0x0000000000000000000000000000000000000000
-          </Card.Body>
-        </Card>
+        <Row>
+          <Col />
+          <Col xs={6}>
+            <InputGroup className="mb-3">
+              <Form.Control
+                className="text-center"
+                type="text"
+                value="0x0000000000000000000000000000000000000000"
+                readonly />
+              <InputGroup.Append>
+                <OverlayTrigger
+                  overlay={<Tooltip>Copy to clipboard</Tooltip>}
+                  placement="right" >
+                  <Button onClick={ () => copyAddress("0x0000000000000000000000000000000000000000") }>
+                    <CopyIcon 
+                      style={{
+                        marginBottom: "0.1em",
+                        width: "1.2em",
+                        height: "1.2em",
+                        fill: "#fff"
+                      }} />
+                  </Button>
+                </OverlayTrigger>
+              </InputGroup.Append>
+            </InputGroup>
+          </Col>
+          <Col />
+        </Row>
       </Container>
       <Navbar
         style={{
