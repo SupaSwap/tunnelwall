@@ -20,6 +20,7 @@ function App() {
   const [walletAddress, setWalletAddress] = useState('Please connect a wallet with MetaMask');
 
   const [writeLoading, setWriteLoading] = useState(false);
+  const [specificLoading, setSpecificLoading] = useState(false);
   const [mostRecentLoading, setMostRecentLoading] = useState(false);
 
   const handleWriteMessage = async (e) => {
@@ -43,6 +44,7 @@ function App() {
     setInfo('Your message has been posted');
     setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()]);
     setUid(result.events.Log.returnValues['uid']);
+
     setWriteLoading(false);
 
     console.log(result) // debugging
@@ -65,6 +67,7 @@ function App() {
     setUid(_uid);
     setInfo('Retrieved latest message');
     setPost(result);
+
     setMostRecentLoading(false);
 
     console.log(result) // debugging
@@ -72,6 +75,8 @@ function App() {
 
   const handleGetSpecificMessage = async (e) => {
     e.preventDefault();
+
+    setSpecificLoading(true);
 
     const formData = new FormData(e.target), formDataObj = Object.fromEntries(formData.entries())
     var _uid = formDataObj['uidInput']
@@ -102,6 +107,8 @@ function App() {
       setInfo('No messages found at that ID');
       setPost(['—', '—', '—']);
     }
+
+    setSpecificLoading(false);
 
     console.log(result) // debugging
   }
@@ -237,7 +244,21 @@ function App() {
                       className="px-5"
                       variant="primary"
                       type="submit" >
-                      Read
+                      { !specificLoading && (
+                        <p className="mb-0">Read</p>
+                      )}
+                    { specificLoading && (
+                      <Spinner
+                        style={{
+                          marginBottom: "0.1em",
+                          marginLeft: "0.6em",
+                          marginRight: "0.6em"
+                        }}
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        role="status" />
+                    )}
                     </Button>
                   </InputGroup.Append>
                 </InputGroup>
