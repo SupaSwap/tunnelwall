@@ -73,7 +73,7 @@ function App() {
     ]
 
     if (!result[0]) {
-      result[0] = '<Message empty>';
+      result[0] = '—';
     }
 
     var _uid = await contract.methods.getUid().call();
@@ -109,7 +109,7 @@ function App() {
       ]
 
       if (!result[0]) {
-        result[0] = '<Message empty>';
+        result[0] = '—';
       }
 
       e.target.reset();
@@ -147,7 +147,7 @@ function App() {
     ]
 
     if (!result[0]) {
-      result[0] = '<Message empty>';
+      result[0] = '—';
     }
 
     setUid(_uid);
