@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
 import { Navbar, Jumbotron, Card, Form, FormGroup, InputGroup, Button, Container, Row, Col, OverlayTrigger, Tooltip, Spinner } from 'react-bootstrap';
@@ -23,6 +23,9 @@ function App() {
   const [specificLoading, setSpecificLoading] = useState(false);
   const [mostRecentLoading, setMostRecentLoading] = useState(false);
   const [randomLoading, setRandomLoading] = useState(false);
+
+  const guideRef = useRef(null);
+  const executeScroll = () => guideRef.current.scrollIntoView()
 
   const handleWriteMessage = async (e) => {
     e.preventDefault();
@@ -212,7 +215,27 @@ function App() {
       </Jumbotron>
       <Container>
         <h3 className="text-center text-dark pt-4">This is your dashboard</h3>
-        <p className="text-center lead mb-5 pb-5">From here, you can interact with the Tunnelwall program. For help getting started, please view the <a href="https://www.google.com">guide</a>.</p>
+        <p className="text-center lead mb-5 pb-5">
+          From here, you can interact with the Tunnelwall program. For help getting started, please view the 
+          <Button 
+            onClick={ executeScroll } 
+            style={{
+              marginBottom: "0.34em",
+              marginLeft: "0.34em",
+              fontSize: "1.25rem",
+              fontWeight: "300",
+              background: "none",
+              border: "none",
+              outline: "none",
+              boxShadow: "none",
+              padding: "0",
+              color: "#007bff",
+              textDecoration: "underline"
+            }} >
+            guide
+          </Button>
+          .
+        </p>
         <Row className="mb-5 pb-3 w-100" >
           <Col xs={7}>
             <h5 className="text-center mb-2">Write a message on the wall</h5>
@@ -342,7 +365,7 @@ function App() {
               timestamp={ post[2] } />
           </Col>
         </Row>
-        <h3 className="text-center text-dark pt-4 mb-4">Getting started</h3>
+        <h3 className="text-center text-dark pt-4 mb-4" ref={ guideRef }>Getting started</h3>
         <p className="lead text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Cras eget lacus leo. Aliquam porta tristique odio ut vestibulum.
