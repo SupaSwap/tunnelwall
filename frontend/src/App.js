@@ -66,8 +66,12 @@ function App() {
     const formData = new FormData(e.target), formDataObj = Object.fromEntries(formData.entries())
     var _uid = formDataObj['uidInput']
     
-    var rawResult = await contract.methods.read(web3.utils.toBN(parseInt(_uid))).call();
-
+    try {
+      var rawResult = await contract.methods.read(web3.utils.toBN(parseInt(_uid))).call();
+    } catch(error) {
+      rawResult = ['', '', 0];
+    }
+    
     if (parseInt(rawResult[2]) !== 0) {
       var result = [
         web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
