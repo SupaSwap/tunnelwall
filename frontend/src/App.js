@@ -16,8 +16,9 @@ const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 function App() {
   const [post, setPost] = useState(['The tunnel begins here.', '0x0000000000000000000000000000000000000000', 'Arbitrary timestamp']);
   const [uid, setUid] = useState(0);
-  const [info, setInfo] = useState('Retrieved the genesis message')
-  const [walletAddress, setWalletAddress] = useState('Please connect a wallet with MetaMask')
+  const [info, setInfo] = useState('Retrieved the genesis message');
+  const [walletAddress, setWalletAddress] = useState('Please connect a wallet with MetaMask');
+  const [mostRecentLoading, setMostRecentLoading] = useState(false);
 
   const handleWriteMessage = async (e) => {
     e.preventDefault();
@@ -44,6 +45,8 @@ function App() {
 
   const handleGetLastMessage = async (e) => {
     e.preventDefault();
+    
+    setMostRecentLoading(true);
 
     var rawResult = await contract.methods.readLast().call();
     var result = [
@@ -57,6 +60,7 @@ function App() {
     setUid(_uid);
     setInfo('Retrieved latest message');
     setPost(result);
+    setMostRecentLoading(false);
 
     console.log(result) // debugging
   }
@@ -236,7 +240,20 @@ function App() {
                       type="button" 
                       onClick={ handleGetLastMessage }
                       block >
-                      Most recent
+                      { !mostRecentLoading && (
+                        <p className="mb-0">Most recent</p>
+                      )}
+                    { mostRecentLoading && (
+                      <Spinner
+                        style={{
+                          marginBottom: "0.1em",
+                          marginLeft: "0.5em"
+                        }}
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        role="status" />
+                    )}
                     </Button>
                   </Col>
                   <Col xs={6}>
