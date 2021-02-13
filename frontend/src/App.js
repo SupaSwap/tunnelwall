@@ -392,6 +392,10 @@ function App() {
           <Col xs={6}>
             <InputGroup className="mb-3">
               <Form.Control
+                style={{
+                  boxShadow: "none",
+                  borderColor: "#bbb"
+                }}
                 className="text-center"
                 type="text"
                 value="0x0000000000000000000000000000000000000000"
