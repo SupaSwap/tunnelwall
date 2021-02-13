@@ -18,10 +18,14 @@ function App() {
   const [uid, setUid] = useState(0);
   const [info, setInfo] = useState('Retrieved the genesis message');
   const [walletAddress, setWalletAddress] = useState('Please connect a wallet with MetaMask');
+
+  const [writeLoading, setWriteLoading] = useState(false);
   const [mostRecentLoading, setMostRecentLoading] = useState(false);
 
   const handleWriteMessage = async (e) => {
     e.preventDefault();
+
+    setWriteLoading(true);
 
     var accounts = await window.ethereum.enable();
     var account = accounts[0];
@@ -39,6 +43,7 @@ function App() {
     setInfo('Your message has been posted');
     setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()]);
     setUid(result.events.Log.returnValues['uid']);
+    setWriteLoading(false);
 
     console.log(result) // debugging
   }
@@ -198,7 +203,10 @@ function App() {
                     variant="primary"
                     type="submit"
                     block >
-                    Write
+                    { !writeLoading && (
+                        <p className="mb-0">Write</p>
+                    )}
+                  { writeLoading && (
                     <Spinner
                       style={{
                         marginBottom: "0.1em",
@@ -208,6 +216,7 @@ function App() {
                       animation="border"
                       size="sm"
                       role="status" />
+                  )}
                   </Button>
                 </Form>
               </Card.Body>
