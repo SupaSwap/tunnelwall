@@ -22,6 +22,7 @@ function App() {
   const [writeLoading, setWriteLoading] = useState(false);
   const [specificLoading, setSpecificLoading] = useState(false);
   const [mostRecentLoading, setMostRecentLoading] = useState(false);
+  const [randomLoading, setRandomLoading] = useState(false);
 
   const handleWriteMessage = async (e) => {
     e.preventDefault();
@@ -116,6 +117,8 @@ function App() {
   const handleGetRandomMessage = async (e) => {
     e.preventDefault();
 
+    setRandomLoading(true);
+
     var _uid = await contract.methods.getUid().call();
     _uid = Math.floor(Math.random() * (parseInt(_uid) + 1));
 
@@ -129,6 +132,8 @@ function App() {
     setUid(_uid);
     setInfo('Retrieved random message');
     setPost(result);
+
+    setRandomLoading(false);
 
     console.log(result) // debugging
   }
@@ -216,8 +221,7 @@ function App() {
                   { writeLoading && (
                     <Spinner
                       style={{
-                        marginBottom: "0.1em",
-                        marginLeft: "0.5em"
+                        marginBottom: "0.1em"
                       }}
                       as="span"
                       animation="border"
@@ -276,8 +280,7 @@ function App() {
                     { mostRecentLoading && (
                       <Spinner
                         style={{
-                          marginBottom: "0.1em",
-                          marginLeft: "0.5em"
+                          marginBottom: "0.1em"
                         }}
                         as="span"
                         animation="border"
@@ -292,7 +295,19 @@ function App() {
                       type="button"
                       onClick={ handleGetRandomMessage }
                       block >
-                      Random
+                      { !randomLoading && (
+                        <p className="mb-0">Random</p>
+                      )}
+                    { randomLoading && (
+                      <Spinner
+                        style={{
+                          marginBottom: "0.1em"
+                        }}
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        role="status" />
+                    )}
                     </Button>
                   </Col>
                 </Row>
