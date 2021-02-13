@@ -213,7 +213,7 @@ function App() {
       <Container>
         <h3 className="text-center text-dark pt-4">This is your dashboard</h3>
         <p className="text-center lead mb-5 pb-5">From here, you can interact with the Tunnelwall program. For help getting started, please view the <a href="https://www.google.com">guide</a>.</p>
-        <Row className="mb-5 pb-3">
+        <Row className="mb-5 pb-3 w-100" >
           <Col xs={7}>
             <h5 className="text-center mb-2">Write a message on the wall</h5>
             <Card>
@@ -252,39 +252,39 @@ function App() {
             </Card>
             <h5 className="text-center mt-4 mb-2">Read the messages on the wall</h5>
             <Card>
-             <Card.Body>
-              <Form
-                onSubmit={ handleGetSpecificMessage } >
-                <InputGroup className="mb-3">
-                  <Form.Control
-                    type="number"
-                    min="0"
-                    name="uidInput"
-                    placeholder="Post ID" />
-                  <InputGroup.Append>
-                    <Button
-                      className="px-5"
-                      variant="primary"
-                      type="submit" >
-                      { !specificLoading && (
-                        <p className="mb-0">Read</p>
+              <Card.Body>
+                <Form
+                  onSubmit={ handleGetSpecificMessage } >
+                  <InputGroup className="mb-3">
+                    <Form.Control
+                      type="number"
+                      min="0"
+                      name="uidInput"
+                      placeholder="Post ID" />
+                    <InputGroup.Append>
+                      <Button
+                        className="px-5"
+                        variant="primary"
+                        type="submit" >
+                        { !specificLoading && (
+                          <p className="mb-0">Read</p>
+                        )}
+                      { specificLoading && (
+                        <Spinner
+                          style={{
+                            marginBottom: "0.1em",
+                            marginLeft: "0.6em",
+                            marginRight: "0.6em"
+                          }}
+                          as="span"
+                          animation="border"
+                          size="sm"
+                          role="status" />
                       )}
-                    { specificLoading && (
-                      <Spinner
-                        style={{
-                          marginBottom: "0.1em",
-                          marginLeft: "0.6em",
-                          marginRight: "0.6em"
-                        }}
-                        as="span"
-                        animation="border"
-                        size="sm"
-                        role="status" />
-                    )}
-                    </Button>
-                  </InputGroup.Append>
-                </InputGroup>
-              </Form>
+                      </Button>
+                    </InputGroup.Append>
+                  </InputGroup>
+                </Form>
                 <Row>
                   <Col xs={6}>
                     <Button
