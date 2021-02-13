@@ -165,7 +165,7 @@ function App() {
       <Container>
         <h3 className="text-center text-dark pt-4">This is your dashboard</h3>
         <p className="text-center lead mb-5 pb-5">From here, you can interact with the Tunnelwall program. For help getting started, please view the <a href="https://www.google.com">guide</a>.</p>
-        <Row className="mb-5">
+        <Row className="mb-5 pb-3">
           <Col xs={7}>
             <h5 className="text-center mb-2">Write a message on the wall</h5>
             <Card>
@@ -253,7 +253,47 @@ function App() {
               timestamp={ post[2] } />
           </Col>
         </Row>
+        <h3 className="text-center text-dark pt-4 mb-4">The guide</h3>
+        <p className="lead text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Cras eget lacus leo. Aliquam porta tristique odio ut vestibulum.
+          Duis lobortis ac elit sed congue. Etiam aliquet tincidunt libero eget convallis.
+          Proin id urna gravida, porttitor dui id, bibendum elit.
+          Praesent justo augue, rhoncus vel euismod vel, gravida in eros.
+          Pellentesque vulputate aliquam ex, ac aliquet odio efficitur vel.
+        </p>
+        <p className="lead text-center pb-5">
+          Duis varius felis massa, eget vestibulum leo rutrum a.
+          Curabitur quis mattis mauris, et lobortis nisl.
+          Suspendisse diam nisl, tristique vitae erat quis, mattis rhoncus ipsum.
+          Proin egestas justo at massa fermentum tempor ut at leo.
+          Nunc lobortis augue lorem, pulvinar ullamcorper nibh tempus convallis.
+          Mauris ex lacus, semper nec felis non, mollis fermentum massa.
+        </p>
+        <h3 className="text-center text-dark pt-4 pb-4">Please consider donating</h3>
+        <p className="lead text-center pb-2">
+          Donations of any size are greatly appreciated, and help to keep this site up and running.
+          Any Ether sent to the address below will go directly to the author of this project — thank you.
+        </p>
+        <Card className="mx-auto">
+          <Card.Body className="lead text-center">
+            0x0000000000000000000000000000000000000000
+          </Card.Body>
+        </Card>
       </Container>
+      <Navbar
+        style={{
+          marginTop: "8em"
+        }}
+        bg="dark"
+        variant="dark" >
+        <a
+          className="navbar-text my-0 ml-1"
+          href="https://github.com/jshstw"
+          target="blank" >
+          © Josh Stow 2021
+        </a>
+      </Navbar>
     </div>
   );
 }
