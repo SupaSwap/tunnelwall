@@ -53,7 +53,7 @@ function App() {
     }
     
     e.target.reset();
-    
+
     console.log(result) // debugging
   }
 
@@ -68,6 +68,10 @@ function App() {
       rawResult[1].toLowerCase(),
       new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
     ]
+
+    if (!result[0]) {
+      result[0] = '<Message empty>';
+    }
 
     var _uid = await contract.methods.getUid().call();
     
@@ -100,6 +104,10 @@ function App() {
         rawResult[1].toLowerCase(),
         new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
       ]
+
+      if (!result[0]) {
+        result[0] = '<Message empty>';
+      }
 
       e.target.reset();
 
@@ -134,6 +142,10 @@ function App() {
       rawResult[1].toLowerCase(),
       new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
     ]
+
+    if (!result[0]) {
+      result[0] = '<Message empty>';
+    }
 
     setUid(_uid);
     setInfo('Retrieved random message');
