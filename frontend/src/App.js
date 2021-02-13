@@ -54,7 +54,7 @@ function App() {
     var _uid = await contract.methods.getUid().call();
     
     setUid(_uid);
-    setInfo('Retrieved latest message on the wall');
+    setInfo('Retrieved latest message');
     setPost(result);
 
     console.log(result) // debugging
@@ -78,7 +78,7 @@ function App() {
       e.target.reset();
 
       setUid(_uid);
-      setInfo('Retrieved message ' + _uid + ' from the wall');
+      setInfo('Retrieved message with ID ' + _uid);
       setPost(result);
 
     } else {
@@ -106,7 +106,7 @@ function App() {
     ]
 
     setUid(_uid);
-    setInfo('Retrieved random message from the wall');
+    setInfo('Retrieved random message');
     setPost(result);
 
     console.log(result) // debugging
