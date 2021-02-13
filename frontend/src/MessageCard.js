@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { ReactComponent as HelpIcon } from './help.svg';
+import { ReactComponent as HelpIcon } from './icons/help.svg';
 
 export default class MessageCard extends Component {
   render() {
