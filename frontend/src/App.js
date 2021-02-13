@@ -28,26 +28,32 @@ function App() {
     e.preventDefault();
 
     setWriteLoading(true);
-
-    var accounts = await window.ethereum.enable();
-    var account = accounts[0];
-    setWalletAddress('Connected: ' + account);
-
+    
     const formData = new FormData(e.target), formDataObj = Object.fromEntries(formData.entries())
     var readableMessage = formDataObj['messageInput']
     var message = web3.utils.fromAscii(formDataObj['messageInput'].padEnd(32, String.fromCharCode(0)));
 
-    var gas = await contract.methods.write(message).estimateGas();
-    var result = await contract.methods.write(message).send({ from: account, gas });
+    try {
+      var accounts = await window.ethereum.enable();
+      var account = accounts[0];
+      setWalletAddress('Connected: ' + account);
 
+      var gas = await contract.methods.write(message).estimateGas();
+      var result = await contract.methods.write(message).send({ from: account, gas });
+
+      setInfo('Your message has been posted');
+      setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()]);
+      setUid(result.events.Log.returnValues['uid']);
+  
+      setWriteLoading(false);
+
+    } catch (error) {
+      console.log(2)
+      setWriteLoading(false);
+    }
+    
     e.target.reset();
-
-    setInfo('Your message has been posted');
-    setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()]);
-    setUid(result.events.Log.returnValues['uid']);
-
-    setWriteLoading(false);
-
+    
     console.log(result) // debugging
   }
 
