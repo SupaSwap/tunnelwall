@@ -90,10 +90,10 @@ function App() {
     setSpecificLoading(true);
 
     const formData = new FormData(e.target), formDataObj = Object.fromEntries(formData.entries())
-    var _uid = formDataObj['uidInput']
+    var _uid = parseInt(formDataObj['uidInput'])
     
     try {
-      var rawResult = await contract.methods.read(web3.utils.toBN(parseInt(_uid))).call();
+      var rawResult = await contract.methods.read(web3.utils.toBN(_uid)).call();
     } catch(error) {
       rawResult = ['', '', 0];
     }
