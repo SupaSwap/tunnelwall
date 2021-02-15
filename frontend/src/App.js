@@ -55,6 +55,7 @@ function App() {
     } catch  {
       console.log('No wallet') // debugging
 
+      setReadError(false);
       setWriteError(true);
     }
     
@@ -94,6 +95,7 @@ function App() {
     } catch {
       console.log('No wallet') // debugging
 
+      setWriteError(false);
       setReadError(true);
     }
 
@@ -149,6 +151,8 @@ function App() {
 
     } catch {
       console.log('No wallet') // debuggin
+
+      setWriteError(false);
       setReadError(true);
     }
 
@@ -189,6 +193,7 @@ function App() {
     } catch {
       console.log('No wallet') // debugging
       
+      setWriteError(false);
       setReadError(true);
     }
 
