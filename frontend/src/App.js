@@ -52,16 +52,16 @@ function App() {
       setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()]);
       setUid(result.events.Log.returnValues['uid']);
   
-      setWriteLoading(false);
-
-    } catch (error) {
+    } catch  {
       console.log('No wallet') // debugging
-      setWriteLoading(false);
+
       setWriteError(true);
     }
     
     e.target.reset();
 
+    setWriteLoading(false);
+  
     console.log(result) // debugging
   }
 
@@ -91,14 +91,14 @@ function App() {
       setInfo('Retrieved latest message');
       setPost(result);
 
-      setMostRecentLoading(false);
-
-    } catch(error) {
+    } catch {
       console.log('No wallet') // debugging
-      setMostRecentLoading(false);
+
       setReadError(true);
     }
 
+    setMostRecentLoading(false);
+  
     console.log(result) // debugging
   }
 
@@ -115,6 +115,7 @@ function App() {
 
     } catch {
       e.target.reset();
+
       setSpecificLoading(false);
       
       return;
@@ -136,15 +137,11 @@ function App() {
           result[0] = '—';
         }
 
-        e.target.reset();
-
         setUid(_uid);
         setInfo('Retrieved message with ID ' + _uid);
         setPost(result);
 
       } else {
-        e.target.reset();
-
         setUid('—');
         setInfo('No messages found at that ID');
         setPost(['—', '—', '—']);
@@ -154,6 +151,8 @@ function App() {
       console.log('No wallet') // debuggin
       setReadError(true);
     }
+
+    e.target.reset()
 
     setSpecificLoading(false);
 
@@ -187,13 +186,13 @@ function App() {
       setInfo('Retrieved random message');
       setPost(result);
 
-      setRandomLoading(false);
-
     } catch {
       console.log('No wallet') // debugging
-      setRandomLoading(false);
+      
       setReadError(true);
     }
+
+    setRandomLoading(false);
 
     console.log(result) // debugging
   }
