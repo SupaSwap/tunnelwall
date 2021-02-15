@@ -151,25 +151,35 @@ function App() {
 
     setRandomLoading(true);
 
-    var _uid = await contract.methods.getUid().call();
-    _uid = Math.floor(Math.random() * (parseInt(_uid) + 1));
+    try {
+      var _uid = await contract.methods.getUid().call();
 
-    var rawResult = await contract.methods.read(web3.utils.toBN(_uid)).call();
-    var result = [
-      web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
-      rawResult[1].toLowerCase(),
-      new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
-    ]
+      setReadError(false);
 
-    if (!result[0]) {
-      result[0] = '—';
+      _uid = Math.floor(Math.random() * (parseInt(_uid) + 1));
+
+      var rawResult = await contract.methods.read(web3.utils.toBN(_uid)).call();
+      var result = [
+        web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
+        rawResult[1].toLowerCase(),
+        new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
+      ]
+
+      if (!result[0]) {
+        result[0] = '—';
+      }
+
+      setUid(_uid);
+      setInfo('Retrieved random message');
+      setPost(result);
+
+      setRandomLoading(false);
+
+    } catch {
+      console.log('No wallet') //debugging
+      setRandomLoading(false);
+      setReadError(true);
     }
-
-    setUid(_uid);
-    setInfo('Retrieved random message');
-    setPost(result);
-
-    setRandomLoading(false);
 
     console.log(result) // debugging
   }
