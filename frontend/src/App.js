@@ -251,6 +251,9 @@ function App() {
                       name="messageInput"
                       placeholder="Max 32 characters"
                       />
+                    <Form.Text className="text-muted text-left ml-1">
+                      Note: Writing on the wall requires you to pay gas fees on the Ethereum network.
+                    </Form.Text>
                   </FormGroup>
                   <Button
                     variant="primary"
