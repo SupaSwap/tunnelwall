@@ -491,7 +491,12 @@ function App() {
         bg="dark"
         variant="dark" >
         <a
-          className="navbar-text my-0 ml-1"
+          className="navbar-text my-0 mr-auto pl-2"
+          href="mailto:dev@tunnelwall.com" >
+          dev@tunnelwall.com
+        </a>
+        <a
+          className="navbar-text my-0 ml-auto pr-2"
           href="https://github.com/jshstw"
           target="blank" >
           © Josh Stow 2021
