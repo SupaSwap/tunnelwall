@@ -286,7 +286,7 @@ function App() {
                       type="number"
                       min="0"
                       name="uidInput"
-                      placeholder="Post ID" />
+                      placeholder="Enter post ID" />
                     <InputGroup.Append>
                       <Button
                         className="px-5"
