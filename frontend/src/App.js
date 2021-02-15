@@ -25,6 +25,7 @@ function App() {
   const [randomLoading, setRandomLoading] = useState(false);
 
   const [writeError, setWriteError] = useState(false);
+  const [readError, setReadError] = useState(false);
 
   const guideRef = useRef(null);
   const executeScroll = () => guideRef.current.scrollIntoView()
@@ -69,24 +70,34 @@ function App() {
     
     setMostRecentLoading(true);
 
-    var rawResult = await contract.methods.readLast().call();
-    var result = [
-      web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
-      rawResult[1].toLowerCase(),
-      new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
-    ]
+    try {
+      var rawResult = await contract.methods.readLast().call();
 
-    if (!result[0]) {
-      result[0] = '—';
+      setWriteError(false);
+
+      var result = [
+        web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
+        rawResult[1].toLowerCase(),
+        new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
+      ]
+
+      if (!result[0]) {
+        result[0] = '—';
+      }
+
+      var _uid = await contract.methods.getUid().call();
+      
+      setUid(_uid);
+      setInfo('Retrieved latest message');
+      setPost(result);
+
+      setMostRecentLoading(false);
+
+    } catch(error) {
+      console.log('No wallet') // debugging
+      setMostRecentLoading(false);
+      setReadError(true);
     }
-
-    var _uid = await contract.methods.getUid().call();
-    
-    setUid(_uid);
-    setInfo('Retrieved latest message');
-    setPost(result);
-
-    setMostRecentLoading(false);
 
     console.log(result) // debugging
   }
@@ -368,6 +379,15 @@ function App() {
                     </Button>
                   </Col>
                 </Row>
+                { readError && (
+                  <Alert
+                    onClose={ () => setReadError(false) }
+                    dismissible
+                    variant="danger"
+                    className="text-center mb-0 mt-3" >
+                    Please connect with a MetaMask wallet
+                  </Alert>
+                )}
               </Card.Body>
             </Card>
           </Col>
