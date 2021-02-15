@@ -38,6 +38,7 @@ function App() {
     const formData = new FormData(e.target), formDataObj = Object.fromEntries(formData.entries())
     var readableMessage = formDataObj['messageInput']
     var message = web3.utils.fromAscii(formDataObj['messageInput'].padEnd(32, String.fromCharCode(0)));
+    message = message.substring(0,66);
 
     try {
       var accounts = await window.ethereum.enable();
@@ -52,7 +53,7 @@ function App() {
       setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()]);
       setUid(result.events.Log.returnValues['uid']);
   
-    } catch  {
+    } catch {
       console.log('No wallet') // debugging
 
       setReadError(false);
@@ -292,7 +293,7 @@ function App() {
                       type="text"
                       maxLength="32"
                       name="messageInput"
-                      placeholder="Max 32 characters"
+                      placeholder="Max 32 ASCII characters"
                       />
                     <Form.Text className="text-muted text-left">
                       Note: Writing on the wall requires you to pay gas fees on the Ethereum network
