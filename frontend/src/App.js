@@ -431,20 +431,28 @@ function App() {
         </Row>
         <h3 className="text-center text-dark pt-4 mb-4" ref={ guideRef }>Getting started</h3>
         <p className="lead text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Cras eget lacus leo. Aliquam porta tristique odio ut vestibulum.
-          Duis lobortis ac elit sed congue. Etiam aliquet tincidunt libero eget convallis.
-          Proin id urna gravida, porttitor dui id, bibendum elit.
-          Praesent justo augue, rhoncus vel euismod vel, gravida in eros.
-          Pellentesque vulputate aliquam ex, ac aliquet odio efficitur vel.
+          If you already have MetaMask set up, you're already done and the Tunnelwall is yours to explore! If not, please keep reading...
+        </p>
+        <p className="lead text-center">
+          Visit the <a href="https://metamask.io/download.html" target="blank">MetaMask</a> website,
+          and download the extension for your current browser. Start
+          MetaMask, then read and accept the terms & conditions.
+          Enter a secure password and create your wallet. Make sure you create a copy of your seed
+          phrase and keep it somewhere safe — it's the only way to restore your wallet if something
+          bad happens!
+        </p>
+        <p className="lead text-center">
+          Writing a message on the wall requires you to pay a small transaction fee in the form of
+          gas. This fee is paid in Ether and varies depending on how busy the network is at the time.
+          To top up your MetaMask wallet with Ether, either buy some using currency on exchanges
+          like <a href="https://www.coinbase.com" target="blank">Coinbase</a> or <a href="https://www.binance.com/en" target="blank">Binance</a> and
+          transfer it, or send it from an Ethereum wallet you own which
+          already contains some Ether.
         </p>
         <p className="lead text-center pb-5">
-          Duis varius felis massa, eget vestibulum leo rutrum a.
-          Curabitur quis mattis mauris, et lobortis nisl.
-          Suspendisse diam nisl, tristique vitae erat quis, mattis rhoncus ipsum.
-          Proin egestas justo at massa fermentum tempor ut at leo.
-          Nunc lobortis augue lorem, pulvinar ullamcorper nibh tempus convallis.
-          Mauris ex lacus, semper nec felis non, mollis fermentum massa.
+          When reading messages from the wall, you will not need to pay any transaction fees, but you
+          will need to be connected with the MetaMask extension in order to communicate with the
+          blockchain.
         </p>
         <h3 className="text-center text-dark pt-4 pb-4">Please consider donating</h3>
         <p className="lead text-center pb-2">
