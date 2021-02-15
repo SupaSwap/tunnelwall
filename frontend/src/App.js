@@ -109,36 +109,50 @@ function App() {
 
     const formData = new FormData(e.target), formDataObj = Object.fromEntries(formData.entries())
     var _uid = parseInt(formDataObj['uidInput'])
-    
+
     try {
-      var rawResult = await contract.methods.read(web3.utils.toBN(_uid)).call();
-    } catch(error) {
-      rawResult = ['', '', 0];
+      var _uidBN = web3.utils.toBN(_uid)
+
+    } catch {
+      e.target.reset();
+      setSpecificLoading(false);
+      
+      return;
     }
     
-    if (parseInt(rawResult[2]) !== 0) {
-      var result = [
-        web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
-        rawResult[1].toLowerCase(),
-        new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
-      ]
+    try {
+      var rawResult = await contract.methods.read(_uidBN).call();
 
-      if (!result[0]) {
-        result[0] = '—';
+      setReadError(false);
+
+      if (parseInt(rawResult[2]) !== 0) {
+        var result = [
+          web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
+          rawResult[1].toLowerCase(),
+          new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
+        ]
+
+        if (!result[0]) {
+          result[0] = '—';
+        }
+
+        e.target.reset();
+
+        setUid(_uid);
+        setInfo('Retrieved message with ID ' + _uid);
+        setPost(result);
+
+      } else {
+        e.target.reset();
+
+        setUid('—');
+        setInfo('No messages found at that ID');
+        setPost(['—', '—', '—']);
       }
 
-      e.target.reset();
-
-      setUid(_uid);
-      setInfo('Retrieved message with ID ' + _uid);
-      setPost(result);
-
-    } else {
-      e.target.reset();
-
-      setUid('—');
-      setInfo('No messages found at that ID');
-      setPost(['—', '—', '—']);
+    } catch {
+      console.log('No wallet') // debuggin
+      setReadError(true);
     }
 
     setSpecificLoading(false);
@@ -176,7 +190,7 @@ function App() {
       setRandomLoading(false);
 
     } catch {
-      console.log('No wallet') //debugging
+      console.log('No wallet') // debugging
       setRandomLoading(false);
       setReadError(true);
     }
