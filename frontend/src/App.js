@@ -394,7 +394,7 @@ function App() {
               <Form.Control
                 style={{
                   boxShadow: "none",
-                  borderColor: "#bbb"
+                  borderColor: "rgba(0, 0, 0, 0.125)"
                 }}
                 className="text-center"
                 type="text"
