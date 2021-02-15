@@ -429,6 +429,13 @@ function App() {
               timestamp={ post[2] } />
           </Col>
         </Row>
+        <h3 className="text-center text-dark pt-4 pb-4">What is Tunnelwall?</h3>
+        <p className="lead text-center pb-5">
+          Tunnelwall is a project developed by <a href="https://github.com/jshstw/" target="blank">Josh Stow</a>,
+          which acts as a virtual 'wall' stored on the Ethereum network. Anyone in the world can write on the wall,
+          and equally read from it. The wall has no censorship, as when a message is written, it remains there
+          on the blockchain for eternity.
+        </p>
         <h3 className="text-center text-dark pt-4 mb-4" ref={ guideRef }>Getting started</h3>
         <p className="lead text-center">
           If you already have MetaMask set up, you're already done and the Tunnelwall is yours to explore! If not, please keep reading...
