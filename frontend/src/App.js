@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
-import { Navbar, Jumbotron, Card, Form, FormGroup, InputGroup, Button, Container, Row, Col, OverlayTrigger, Tooltip, Spinner } from 'react-bootstrap';
+import { Navbar, Jumbotron, Card, Form, FormGroup, InputGroup, Button, Container, Row, Col, OverlayTrigger, Tooltip, Spinner, Alert } from 'react-bootstrap';
 import { ReactComponent as Logo } from './icons/logo.svg';
 import { ReactComponent as GithubIcon } from './icons/github.svg';
 import { ReactComponent as CopyIcon } from './icons/copy.svg';
@@ -24,6 +24,8 @@ function App() {
   const [mostRecentLoading, setMostRecentLoading] = useState(false);
   const [randomLoading, setRandomLoading] = useState(false);
 
+  const [writeError, setWriteError] = useState(false);
+
   const guideRef = useRef(null);
   const executeScroll = () => guideRef.current.scrollIntoView()
 
@@ -40,6 +42,7 @@ function App() {
       var accounts = await window.ethereum.enable();
       var account = accounts[0];
       setWalletAddress('Connected: ' + account);
+      setWriteError(false);
 
       var gas = await contract.methods.write(message).estimateGas();
       var result = await contract.methods.write(message).send({ from: account, gas });
@@ -51,8 +54,9 @@ function App() {
       setWriteLoading(false);
 
     } catch (error) {
-      console.log(2)
+      console.log('No wallet') // debugging
       setWriteLoading(false);
+      setWriteError(true);
     }
     
     e.target.reset();
@@ -273,6 +277,15 @@ function App() {
                       role="status" />
                   )}
                   </Button>
+                  { writeError && (
+                    <Alert
+                      onClose={ () => setWriteError(false) }
+                      dismissible
+                      variant="danger"
+                      className="mb-0 mt-3" >
+                      Please connect with a MetaMask wallet
+                    </Alert>
+                  )}
                 </Form>
               </Card.Body>
             </Card>
