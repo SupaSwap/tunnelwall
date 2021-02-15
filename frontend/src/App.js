@@ -263,6 +263,7 @@ function App() {
           From here, you can interact with the Tunnelwall program. For help getting started, please view the 
           <Button 
             onClick={ executeScroll } 
+            id="guideButton"
             style={{
               marginBottom: "0.34em",
               marginLeft: "0.34em",
@@ -273,8 +274,7 @@ function App() {
               outline: "none",
               boxShadow: "none",
               padding: "0",
-              color: "#007bff",
-              textDecoration: "underline"
+              color: "#007bff"
             }} >
             guide
           </Button>

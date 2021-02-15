@@ -5,3 +5,8 @@ html {
 h1, h2, h3, h4, h5 {
     font-family: 'Montserrat' !important;
 }
+
+#guideButton:hover {
+    color: #0056b3 !important;
+    text-decoration: underline !important;
+}
