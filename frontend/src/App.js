@@ -220,13 +220,13 @@ function App() {
             }}/>{' '}
             Tunnelwall 
           </Navbar.Brand>
-          <span className="navbar-text mr-1">
+          <span className="navbar-text pr-2">
           { walletAddress }
           </span>
         </Container>
       </Navbar>
       <Jumbotron 
-        className=" mb-5"
+        className="mb-5"
         style={{
           borderRadius: "0",
           backgroundImage: "linear-gradient(120deg, #b721ff 0%, #21d4fd 100%)",
