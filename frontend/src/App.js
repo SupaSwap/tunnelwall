@@ -508,7 +508,7 @@ function App() {
           className="navbar-text my-0 ml-auto pr-2"
           href="https://github.com/jshstw"
           target="blank" >
-          © Josh Stow 2021
+          Josh Stow 2021
         </a>
       </Navbar>
     </div>
