@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 const web3 = new Web3(Web3.givenProvider);  // use the given Provider or instantiate a new websocket provider
-const contractAddress = '0xF89eFec1c66eE86F72E494aBD4A26c14b499e299'; // contract address from Truffle migration to Ganache
+const contractAddress = '0x9A9199c61e134A260098572C51521d7E43cA4AdB'; // contract address from Truffle migration to Ganache
 const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 
 function App() {
