@@ -442,8 +442,9 @@ function App() {
           bad happens!
         </p>
         <p className="lead text-center">
-          Writing a message on the wall requires you to pay a small transaction fee in the form of
-          gas. This fee is paid in Ether and varies depending on how busy the network is at the time.
+          Writing a message on the wall requires you to pay a small transaction fee in the form 
+          of <a href="https://support.blockchain.com/hc/en-us/articles/360027772571-What-is-gas-" target="blank">gas</a>. 
+          This fee is paid in Ether and varies depending on how busy the network is at the time.
           To top up your MetaMask wallet with Ether, either buy some using currency on exchanges
           like <a href="https://www.coinbase.com" target="blank">Coinbase</a> or <a href="https://www.binance.com/en" target="blank">Binance</a> and
           transfer it, or send it from an Ethereum wallet you own which
