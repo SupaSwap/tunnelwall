@@ -222,7 +222,7 @@ function App() {
             }}/>
             Tunnelwall 
           </Navbar.Brand>
-          <span className="navbar-text pr-2">
+          <span className="navbar-text text-right pr-2">
           { walletAddress }
           </span>
         </Container>
@@ -266,8 +266,8 @@ function App() {
             onClick={ executeScroll } 
             id="guideButton"
             style={{
-              marginBottom: "0.34em",
-              marginLeft: "0.34em",
+              marginBottom: "0.2em",
+              marginLeft: "0.35rem",
               fontSize: "1.25rem",
               fontWeight: "300",
               background: "none",
@@ -281,6 +281,7 @@ function App() {
           </Button>
           .
         </p>
+        <Alert variant="warning" className="text-center">Please do not pay for any transaction fees, this site is not yet connected to the blockchain.</Alert>
         <Row className="mb-5 pb-3 w-100" >
           <Col xs={7}>
             <h5 className="text-center mb-2">Write a message on the wall</h5>
