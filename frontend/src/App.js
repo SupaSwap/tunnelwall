@@ -212,13 +212,15 @@ function App() {
       <Navbar bg="dark" variant="dark">
         <Container fluid>
           <Navbar.Brand style={{
-            paddingBottom: "0"
+            paddingBottom: "0",
+            marginBottom:"0.05em"
           }}>
             <Logo style={{
-              width: "1.5em",
-              height: "1.5em",
-              marginBottom: "0.3em"
-            }}/>{' '}
+              width: "1.25em",
+              height: "1.25em",
+              marginBottom: "0.3em",
+              marginRight: "0.5em"
+            }}/>
             Tunnelwall 
           </Navbar.Brand>
           <span className="navbar-text pr-2">
