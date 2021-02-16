@@ -282,7 +282,7 @@ function App() {
           .
         </p>
         <Alert variant="warning" className="text-center">Please do not pay for any transaction fees, this site is not yet connected to the blockchain.</Alert>
-        <Row className="mb-5 pb-3 w-100" >
+        <Row className="mb-5 pb-3 w-100 mx-0" >
           <Col xs={7}>
             <h5 className="text-center mb-2">Write a message on the wall</h5>
             <Card>
