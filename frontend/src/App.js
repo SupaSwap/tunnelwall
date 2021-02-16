@@ -212,13 +212,12 @@ function App() {
       <Navbar bg="dark" variant="dark">
         <Container fluid>
           <Navbar.Brand style={{
-            paddingBottom: "0",
-            marginBottom:"0.05em"
+            paddingBottom: "0"
           }}>
             <Logo style={{
               width: "1.25em",
               height: "1.25em",
-              marginBottom: "0.3em",
+              marginBottom: "0.25em",
               marginRight: "0.5em"
             }}/>
             Tunnelwall 
