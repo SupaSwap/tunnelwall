@@ -53,7 +53,8 @@ function App() {
       setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()]);
       setUid(result.events.Log.returnValues['uid']);
   
-    } catch {
+    } catch(error) {
+      console.log(error)  // debugging
       console.log('No wallet') // debugging
 
       setReadError(false);
