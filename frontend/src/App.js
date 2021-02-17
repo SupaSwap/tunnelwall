@@ -287,7 +287,7 @@ function App() {
           </Button>
           .
         </p>
-        <Alert variant="warning" className="text-center">This site is currently connected to the Ropsten testnet blockchain. Use approx gas limit of 100,000 Gwei.</Alert>
+        <Alert variant="warning" className="text-center">This site is currently connected to the Ropsten testnet. Use approx gas limit of 100,000 Gwei.</Alert>
         <Row className="mb-5 pb-3 w-100 mx-0" >
           <Col xs={7}>
             <h5 className="text-center mb-2">Write a message on the wall</h5>
@@ -441,7 +441,7 @@ function App() {
         <h3 className="text-center text-dark pt-4 pb-4">What is Tunnelwall?</h3>
         <p className="lead text-center pb-5">
           Tunnelwall is a project developed by <a href="https://github.com/jshstw/" target="blank">Josh Stow</a>,
-          which acts as a virtual 'wall' stored on the <a href="https://ethereum.org/en/" target="blank">Ethereum network</a>.
+          and serves as a pseudo-anonymous message board stored on the <a href="https://ethereum.org/en/" target="blank">Ethereum network</a>.
           Anyone in the world can write on the wall, and equally read from it. The wall has no censorship,
           as when a message is written, it remains there on the blockchain for eternity.
         </p>
