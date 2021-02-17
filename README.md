@@ -25,7 +25,7 @@ The project serves as an interactive experience for newcomers to blockchain tech
 ## Screenshots
 ### Main site
 ![Site Screenshot](screencap-site.png)
-### Output field
+### Output fields
 ![Posted Output Screenshot](screencap-posted.png) ![Random Output Screenshot](screencap-random.png)
 ## Built with
 - [React](https://reactjs.org/)
