@@ -4,15 +4,15 @@
 <br/>
 
 <p align="center">
-	<img alt="Code Quality" src="https://img.shields.io/scrutinizer/quality/g/jshstw/tunnelwall"/>
+	<img alt="Author" src="https://img.shields.io/badge/author-Josh%20Stow-blueviolet"/>
 	<img alt="Status" src="https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Ftunnelwall.com"/>
-	<img alt="License" src="https://img.shields.io/github/license/jshstw/tunnelwall?color=blue"/>
+	<img alt="License" src="https://img.shields.io/github/license/jshstw/tunnelwall?color=informational"/>
 </p>
 
 <p align="center">
-	<img alt="Repo Size" src="https://img.shields.io/github/repo-size/jshstw/tunnelwall"/>
-	<img alt="Line Count" src="https://img.shields.io/tokei/lines/github/jshstw/tunnelwall"/>
-	<img alt="Language Count" src="https://img.shields.io/github/languages/count/jshstw/tunnelwall"/>
+	<img alt="Repo Size" src="https://img.shields.io/github/repo-size/jshstw/tunnelwall?color=orange"/>
+	<img alt="Line Count" src="https://img.shields.io/tokei/lines/github/jshstw/tunnelwall?color=orange"/>
+	<img alt="Language Count" src="https://img.shields.io/github/languages/count/jshstw/tunnelwall?color=yellow"/>
 	<img alt="Last Commit" src="https://img.shields.io/github/last-commit/jshstw/tunnelwall"/>
 </p>
 
