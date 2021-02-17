@@ -1,7 +1,6 @@
 # ![Tunnelwall](banner.jpg)
-<h3 align="center">A pseudo-anonymous message board on the Ethereum blockchain.</h3>
-<h3 align="center"><a href="https://tunnelwall.com" target="_blank">tunnelwall.com</a></h3>
-<br/>
+<h4 align="center">A pseudo-anonymous message board on the Ethereum blockchain.</h4>
+<h4 align="center"><a href="https://tunnelwall.com" target="_blank">tunnelwall.com</a></h4>
 
 <p align="center">
 	<img alt="Code Quality" src="https://img.shields.io/scrutinizer/quality/g/jshstw/tunnelwall"/>
