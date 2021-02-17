@@ -287,7 +287,7 @@ function App() {
           </Button>
           .
         </p>
-        <Alert variant="warning" className="text-center">This site is currently connected to the Ropsten testnet. Use approx gas limit of 100,000 Gwei.</Alert>
+        <Alert variant="warning" className="text-center">This site is currently connected to the Ropsten testnet. Use gas limit of approx 100,000 Gwei.</Alert>
         <Row className="mb-5 pb-3 w-100 mx-0" >
           <Col xs={7}>
             <h5 className="text-center mb-2">Write a message on the wall</h5>
@@ -447,7 +447,8 @@ function App() {
         </p>
         <h3 className="text-center text-dark pt-4 mb-4" ref={ guideRef }>Getting started</h3>
         <p className="lead text-center">
-          If you already have MetaMask set up, you're already done and the Tunnelwall is yours to explore! If not, please keep reading...
+          If you already have MetaMask set up, there's nothing more you need to do and the Tunnelwall
+          is yours to explore! If not, please keep reading.
         </p>
         <p className="lead text-center">
           Visit the <a href="https://metamask.io/download.html" target="blank">MetaMask</a> website,
