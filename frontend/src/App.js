@@ -1,3 +1,14 @@
+/*  
+project:
+  - title: "Tunnelwall"
+    repo: https://github.com/jshstw/tunnelwall
+    license: "MIT"
+author: 
+  - name: "Josh Stow"
+    url: https://github.com/jshstw
+    email: "dev@tunnelwall.com"
+*/
+
 import React, { useState, useRef } from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
