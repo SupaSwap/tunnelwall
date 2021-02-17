@@ -14,7 +14,7 @@ const contractAddress = '0x58d9984CE91802580e31A70854375Bc2be2B73A9'; // contrac
 const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 
 function App() {
-  const [post, setPost] = useState(['The tunnel begins here.', '0x0000000000000000000000000000000000000000', 'Arbitrary timestamp']);
+  const [post, setPost] = useState(['The tunnel begins here.', '0x88c055b85751448f3013378544ad463b2542f099', '17/02/2021, 13:18:56']);
   const [uid, setUid] = useState(0);
   const [info, setInfo] = useState('Retrieved the genesis message');
   const [walletAddress, setWalletAddress] = useState('Please connect a wallet with MetaMask');
