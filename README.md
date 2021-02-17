@@ -1,4 +1,4 @@
-# The Tunnelwall Project
+# ![Tunnelwall](banner.jpg)
 A pseudo-anonymous message board on the Ethereum blockchain.
 
 ![Version](https://img.shields.io/badge/version-1.0-orange)
