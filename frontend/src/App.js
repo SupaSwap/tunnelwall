@@ -282,7 +282,7 @@ function App() {
           </Button>
           .
         </p>
-        <Alert variant="warning" className="text-center">Please do not pay for any transaction fees, this site is not yet connected to the blockchain.</Alert>
+        <Alert variant="warning" className="text-center">This site is currently connected to the Ropsten testnet blockchain. Use approx gas limit of 100,000 Gwei.</Alert>
         <Row className="mb-5 pb-3 w-100 mx-0" >
           <Col xs={7}>
             <h5 className="text-center mb-2">Write a message on the wall</h5>
