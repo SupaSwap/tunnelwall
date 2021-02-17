@@ -37,6 +37,11 @@ function App() {
     
     const formData = new FormData(e.target), formDataObj = Object.fromEntries(formData.entries())
     var readableMessage = formDataObj['messageInput']
+
+    if (!readableMessage) {
+      readableMessage = '—';
+    }
+
     var message = web3.utils.fromAscii(formDataObj['messageInput'].padEnd(32, String.fromCharCode(0)));
     message = message.substring(0,66);
 
