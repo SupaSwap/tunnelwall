@@ -1,5 +1,5 @@
 # ![Tunnelwall](images/banner.jpg)
-<h4 align="center">A pseudo-anonymous message board on the Ethereum blockchain.</h4>
+<h4 align="center">A pseudo-anonymous message board on the Ethereum blockchain</h4>
 <h4 align="center"><a href="https://tunnelwall.com" target="_blank">tunnelwall.com</a></h4>
 <br/>
 
@@ -20,7 +20,7 @@
 Tunnelwall is a project developed by [Josh Stow](https://jstow.com), and serves as a pseudo-anonymous message board stored on the Ethereum network. Anyone in the world can write on the wall, and equally read from it. The wall has no censorship, as when a message is written, it remains there on the blockchain for eternity.
 
 ## Motivation
-The project serves as an interactive experience for newcomers to blockchain technologies, who wish to understand more about decentralised applications - in particular those on the Ethereum network. It aims to be accessible to induviduals regardless of technical background, and is open-source, which allows those who would like to know how it works to view the code.
+The project serves as an interactive experience for newcomers to blockchain technologies, who wish to understand more about decentralised applications - in particular those on the [Ethereum network](https://ethereum.org/en/). It aims to be accessible to induviduals regardless of technical background, and is open-source, which allows those who would like to know how it works to view the code.
 
 ## Screenshots
 ### Main site
@@ -31,7 +31,7 @@ The project serves as an interactive experience for newcomers to blockchain tech
 - [React](https://reactjs.org/)
 - [create-react-app](https://github.com/facebook/create-react-app)
 - [React-Bootstrap](https://react-bootstrap.github.io/)
-- [Remix](https://remix.ethereum.org/)
+- [Web3.js](https://github.com/ChainSafe/web3.js/)
 - [Truffle](https://www.trufflesuite.com/)
 - [Firebase](https://firebase.google.com/)
 
