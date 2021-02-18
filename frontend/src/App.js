@@ -532,12 +532,18 @@ function App() {
           href="mailto:dev@tunnelwall.com" >
           dev@tunnelwall.com
         </a>
-        <a
-          className="navbar-text my-0 ml-auto pr-2"
-          href="https://github.com/jshstw"
-          target="blank" >
-          MIT © Josh Stow 2021
-        </a>
+        <span className="navbar-text my-0 ml-auto pr-2">
+          MIT © 2021
+          {' '}
+          <a
+            style={{
+              color: "rgba(255, 255, 255, 0.5)"
+            }}
+            href="https://github.com/jshstw"
+            target="blank" >
+            Josh Stow
+          </a>
+        </span>
       </Navbar>
     </div>
   );
