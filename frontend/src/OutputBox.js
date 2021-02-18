@@ -5,6 +5,16 @@ import {
   Tooltip,
   Button
 } from 'react-bootstrap';
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  RedditShareButton,
+  TwitterShareButton,
+  EmailIcon,
+  FacebookIcon,
+  RedditIcon,
+  TwitterIcon
+} from 'react-share';
 import { ReactComponent as HelpIcon } from './icons/help.svg';
 import { ReactComponent as CopyIcon } from './icons/copy.svg';
 
@@ -14,6 +24,10 @@ function copyId(address) {
 
 export default class OutputBox extends Component {
   render() {
+
+    const url = 'tunnelwall.com';
+    const title = 'Check out this message with ID ' + this.props.uid + ' on the Tunnelwall!'
+
     return(
       <Card className="w-100">
         <Card.Body>
@@ -71,6 +85,53 @@ export default class OutputBox extends Component {
           <hr className="my-3"/>
           <Card.Subtitle className="mt-3">Timestamp</Card.Subtitle>
           <Card.Text>{ this.props.timestamp }</Card.Text>
+          <hr className="my-3"/>
+          <TwitterShareButton
+            style={{
+              marginRight: "0.5rem"
+            }}
+            url={ url }
+            title={ title } >
+            <TwitterIcon
+              size={28}
+              bgStyle={{ fill: "#007bff" }}
+              iconFillColor="#fff"
+              round />
+          </TwitterShareButton>
+          <FacebookShareButton
+            style={{
+              marginRight: "0.5rem"
+            }}
+            url={ url }
+            quote={ title } >
+            <FacebookIcon
+              size={28}
+              bgStyle={{ fill: "#007bff" }}
+              iconFillColor="#fff"
+              round />
+          </FacebookShareButton>
+          <RedditShareButton
+            style={{
+              marginRight: "0.5rem"
+            }}
+            url={ url }
+            title={ title } >
+            <RedditIcon
+              size={28}
+              bgStyle={{ fill: "#007bff" }}
+              iconFillColor="#fff"
+              round />
+          </RedditShareButton>
+          <EmailShareButton
+            url={ url }
+            subject="Look at this Tunnelwall message"
+            body={ title } >
+            <EmailIcon
+              size={28}
+              bgStyle={{ fill: "#007bff" }}
+              iconFillColor="#fff"
+              round />
+          </EmailShareButton>
         </Card.Body>
       </Card>
     )
