@@ -31,6 +31,7 @@ The project serves as an interactive experience for newcomers to blockchain tech
 - [React](https://reactjs.org/)
 - [create-react-app](https://github.com/facebook/create-react-app)
 - [React-Bootstrap](https://react-bootstrap.github.io/)
+- [react-share](https://github.com/nygardk/react-share)
 - [Web3.js](https://github.com/ChainSafe/web3.js/)
 - [Truffle](https://www.trufflesuite.com/)
 - [Firebase](https://firebase.google.com/)
