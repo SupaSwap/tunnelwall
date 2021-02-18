@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import { Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Card, OverlayTrigger, Tooltip, Button } from 'react-bootstrap';
 import { ReactComponent as HelpIcon } from './icons/help.svg';
+import { ReactComponent as CopyIcon } from './icons/copy.svg';
+
+function copyId(address) {
+  navigator.clipboard.writeText(address);
+}
 
 export default class MessageCard extends Component {
   render() {
@@ -10,7 +15,31 @@ export default class MessageCard extends Component {
           <Card.Title className="mt-1 text-center">{ this.props.info }</Card.Title>
           <hr className="mt-4 mb-3"/>
           <Card.Subtitle className="mt-3">Post ID</Card.Subtitle>
-          <Card.Text>{ this.props.uid }</Card.Text>
+          <Card.Text>
+            { this.props.uid }
+            <Button 
+              onClick={ () => copyId(this.props.uid) }
+              style={{
+                marginBottom: "0.35rem",
+                marginLeft: "0.35rem",
+                background: "none",
+                border: "none",
+                outline: "none",
+                boxShadow: "none",
+                padding: "0",
+              }} >
+              <OverlayTrigger
+                overlay={<Tooltip>Copy to clipboard</Tooltip>}
+                placement="right" >
+                <CopyIcon 
+                  style={{
+                    width: "1em",
+                    height: "1em",
+                    fill: "#000"
+                  }} />
+              </OverlayTrigger>
+            </Button>
+          </Card.Text>
           <hr className="my-3"/>
           <Card.Subtitle className="mt-3">Text</Card.Subtitle>
           <Card.Text>{ this.props.text }</Card.Text>
