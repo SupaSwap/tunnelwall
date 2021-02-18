@@ -7,7 +7,7 @@ function copyId(address) {
   navigator.clipboard.writeText(address);
 }
 
-export default class MessageCard extends Component {
+export default class OutputBox extends Component {
   render() {
     return(
       <Card className="w-100">

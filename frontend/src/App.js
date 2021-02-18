@@ -17,7 +17,7 @@ import { Navbar, Jumbotron, Card, Form, FormGroup, InputGroup, Button, Container
 import { ReactComponent as Logo } from './icons/logo.svg';
 import { ReactComponent as GithubIcon } from './icons/github.svg';
 import { ReactComponent as CopyIcon } from './icons/copy.svg';
-import MessageCard from './MessageCard';
+import OutputBox from './OutputBox';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
@@ -417,7 +417,7 @@ function App() {
           </Col>
           <Col xs={5}>
             <h5 className="text-center mb-2">Output</h5>
-            <MessageCard
+            <OutputBox
               info={ info }
               text={ post[0] }
               uid={ uid }
