@@ -10,10 +10,28 @@ author:
 */
 
 // import dependencies
-import React, { useState, useRef } from 'react';
+import React, {
+  useState,
+  useRef
+} from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
-import { Navbar, Jumbotron, Card, Form, FormGroup, InputGroup, Button, Container, Row, Col, OverlayTrigger, Tooltip, Spinner, Alert } from 'react-bootstrap';
+import { 
+  Navbar,
+  Jumbotron,
+  Card,
+  Form,
+  FormGroup,
+  InputGroup,
+  Button,
+  Container,
+  Row,
+  Col,
+  OverlayTrigger,
+  Tooltip,
+  Spinner,
+  Alert
+} from 'react-bootstrap';
 import { ReactComponent as Logo } from './icons/logo.svg';
 import { ReactComponent as GithubIcon } from './icons/github.svg';
 import { ReactComponent as CopyIcon } from './icons/copy.svg';

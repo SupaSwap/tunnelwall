@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Card, OverlayTrigger, Tooltip, Button } from 'react-bootstrap';
+import {
+  Card,
+  OverlayTrigger,
+  Tooltip,
+  Button
+} from 'react-bootstrap';
 import { ReactComponent as HelpIcon } from './icons/help.svg';
 import { ReactComponent as CopyIcon } from './icons/copy.svg';
 
