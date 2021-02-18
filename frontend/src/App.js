@@ -9,6 +9,7 @@ author:
     email: "dev@tunnelwall.com"
 */
 
+// import dependencies
 import React, { useState, useRef } from 'react';
 import Web3 from 'web3';
 import { tunnelwallAbi } from './abi';
@@ -21,10 +22,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 const web3 = new Web3(Web3.givenProvider);  // use the given Provider or instantiate a new websocket provider
-const contractAddress = '0x58d9984CE91802580e31A70854375Bc2be2B73A9'; // contract address from Truffle migration to Ganache
+const contractAddress = '0x58d9984CE91802580e31A70854375Bc2be2B73A9'; // contract address
 const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 
 function App() {
+  // react hooks
   const [post, setPost] = useState(['The tunnel begins here.', '0x88c055b85751448f3013378544ad463b2542f099', '17/02/2021, 13:18:56']);
   const [uid, setUid] = useState(0);
   const [info, setInfo] = useState('Retrieved the genesis message');
@@ -43,7 +45,6 @@ function App() {
 
   const handleWriteMessage = async (e) => {
     e.preventDefault();
-
     setWriteLoading(true);
     
     const formData = new FormData(e.target), formDataObj = Object.fromEntries(formData.entries())
@@ -69,29 +70,21 @@ function App() {
       setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()]);
       setUid(result.events.Log.returnValues['uid']);
   
-    } catch(error) {
-      console.log(error)  // debugging
-      console.log('No wallet') // debugging
-
+    } catch {
       setReadError(false);
       setWriteError(true);
     }
     
     e.target.reset();
-
     setWriteLoading(false);
-  
-    console.log(result) // debugging
   }
 
   const handleGetLastMessage = async (e) => {
     e.preventDefault();
-    
     setMostRecentLoading(true);
 
     try {
       var rawResult = await contract.methods.readLast().call();
-
       setWriteError(false);
 
       var result = [
@@ -111,20 +104,15 @@ function App() {
       setPost(result);
 
     } catch {
-      console.log('No wallet') // debugging
-
       setWriteError(false);
       setReadError(true);
     }
 
     setMostRecentLoading(false);
-  
-    console.log(result) // debugging
   }
 
   const handleGetSpecificMessage = async (e) => {
     e.preventDefault();
-
     setSpecificLoading(true);
 
     const formData = new FormData(e.target), formDataObj = Object.fromEntries(formData.entries())
@@ -135,7 +123,6 @@ function App() {
 
     } catch {
       e.target.reset();
-
       setSpecificLoading(false);
       
       return;
@@ -143,7 +130,6 @@ function App() {
     
     try {
       var rawResult = await contract.methods.read(_uidBN).call();
-
       setReadError(false);
 
       if (parseInt(rawResult[2]) !== 0) {
@@ -168,27 +154,20 @@ function App() {
       }
 
     } catch {
-      console.log('No wallet') // debuggin
-
       setWriteError(false);
       setReadError(true);
     }
 
     e.target.reset()
-
     setSpecificLoading(false);
-
-    console.log(result) // debugging
   }
 
   const handleGetRandomMessage = async (e) => {
     e.preventDefault();
-
     setRandomLoading(true);
 
     try {
       var _uid = await contract.methods.getUid().call();
-
       setReadError(false);
 
       _uid = Math.floor(Math.random() * (parseInt(_uid) + 1));
@@ -209,21 +188,18 @@ function App() {
       setPost(result);
 
     } catch {
-      console.log('No wallet') // debugging
-      
       setWriteError(false);
       setReadError(true);
     }
 
     setRandomLoading(false);
-
-    console.log(result) // debugging
   }
 
   function copyAddress(address) {
     navigator.clipboard.writeText(address);
   }
 
+  // render
   return (
     <div>
       <Navbar bg="dark" variant="dark">
