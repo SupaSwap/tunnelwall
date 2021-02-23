@@ -222,7 +222,7 @@ function App() {
 
   // render
   return (
-    <div>
+    <>
       <Navbar bg="dark" variant="dark">
         <Container fluid>
           <Navbar.Brand style={{
@@ -542,7 +542,7 @@ function App() {
           </a>
         </span>
       </Navbar>
-    </div>
+    </>
   );
 }
 
