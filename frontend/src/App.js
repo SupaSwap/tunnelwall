@@ -45,7 +45,7 @@ const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 
 function App() {
   // react hooks
-  const [post, setPost] = useState(['The tunnel begins here.', '0x88c055b85751448f3013378544ad463b2542f099', '17/02/2021, 13:18:56']);
+  const [post, setPost] = useState(['The tunnel begins here.', '0x88c055b85751448f3013378544ad463b2542f099', '17/02/2021, 13:18:56 (UTC)']);
   const [uid, setUid] = useState(0);
   const [info, setInfo] = useState('Retrieved the genesis message');
   const [walletAddress, setWalletAddress] = useState('Please connect a wallet with MetaMask');
@@ -85,7 +85,10 @@ function App() {
       var result = await contract.methods.write(message).send({ from: account, gas });
 
       setInfo('Your message has been posted');
-      setPost([readableMessage, account, new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString()]);
+      setPost([
+        readableMessage,
+        account,
+        new Date(parseInt(result.events.Log.returnValues['timestamp']) * 1000).toLocaleString() + ' (UTC)']);
       setUid(result.events.Log.returnValues['uid']);
   
     } catch {
@@ -108,7 +111,7 @@ function App() {
       var result = [
         web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
         rawResult[1].toLowerCase(),
-        new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
+        new Date(parseInt(rawResult[2]) * 1000).toLocaleString() + ' (UTC)'
       ]
 
       if (!result[0]) {
@@ -154,7 +157,7 @@ function App() {
         var result = [
           web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
           rawResult[1].toLowerCase(),
-          new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
+          new Date(parseInt(rawResult[2]) * 1000).toLocaleString() + ' (UTC)'
         ]
 
         if (!result[0]) {
@@ -194,7 +197,7 @@ function App() {
       var result = [
         web3.utils.toAscii(rawResult[0]).replaceAll(String.fromCharCode(0),''),
         rawResult[1].toLowerCase(),
-        new Date(parseInt(rawResult[2]) * 1000).toLocaleString()
+        new Date(parseInt(rawResult[2]) * 1000).toLocaleString() + ' (UTC)'
       ]
 
       if (!result[0]) {
