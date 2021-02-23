@@ -26,7 +26,7 @@ export default class OutputBox extends Component {
   render() {
 
     const url = 'tunnelwall.com';
-    const title = 'Check out this message with ID ' + this.props.uid + ' on the Tunnelwall!'
+    const title = 'Check out the message with ID ' + this.props.uid + ' on the Tunnelwall!'
 
     return(
       <Card className="w-100">
