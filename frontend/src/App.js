@@ -298,7 +298,7 @@ function App() {
           .
         </p>
         <Alert variant="warning" className="text-center mx-3 mb-5">
-          This site is currently connected to the Goerli testnet. Collect some test Eth from the
+          This site is currently connected to the Goerli testnet. Collect some test Ether from the
           {' '}<a href="https://goerli-faucet.slock.it/" target="blank" style={{color: "#856404", fontWeight: "bold"}}>faucet</a>
         .
         </Alert>
