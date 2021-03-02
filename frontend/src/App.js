@@ -472,6 +472,7 @@ function App() {
           phrase and keep it somewhere safe — it's the only way to restore your wallet if something
           bad happens!
         </p>
+        {/*
         <p className="lead text-center">
           Writing a message on the wall requires you to pay a small transaction fee in the form 
           of <a href="https://support.blockchain.com/hc/en-us/articles/360027772571-What-is-gas-" target="blank">gas</a>. 
@@ -480,6 +481,14 @@ function App() {
           like <a href="https://www.coinbase.com" target="blank">Coinbase</a> or <a href="https://www.binance.com/en" target="blank">Binance</a> and
           transfer it, or send it from an Ethereum wallet you own which
           already contains some Ether.
+        </p>
+        */}
+        <p className="lead text-center">
+          Writing a message on the wall requires you to pay a small transaction fee in the form 
+          of <a href="https://support.blockchain.com/hc/en-us/articles/360027772571-What-is-gas-" target="blank">gas</a>. 
+          This fee is paid in Ether and varies depending on how busy the network is at the time.
+          To top up your MetaMask wallet with Goerli test Ether, you can collect some for free from
+          the <a href="https://goerli-faucet.slock.it" target="blank">faucet</a>.
         </p>
         <p className="lead text-center pb-5">
           When reading messages from the wall, you will not need to pay any transaction fees, but you
