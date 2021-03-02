@@ -252,7 +252,7 @@ function App() {
         }}>
         <h1 className="text-white mt-5 pt-3">Welcome to the Tunnelwall Project</h1>
         <p className="text-white lead mb-4">
-        A virtual wall built on the Ethereum blockchain, on which anyone can write to and read from.
+        A virtual wall built on the Ethereum blockchain, on which anyone can write to and read from
         </p>
         <OverlayTrigger
           overlay={<Tooltip>View the code</Tooltip>}
