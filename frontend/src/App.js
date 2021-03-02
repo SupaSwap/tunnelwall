@@ -82,7 +82,8 @@ function App() {
       setWalletAddress('Connected: ' + account);
       setWriteError(false);
 
-      var gas = await contract.methods.write(message).estimateGas();
+      //var gas = await contract.methods.write(message).estimateGas();
+      var gas = 150000;
       var result = await contract.methods.write(message).send({ from: account, gas });
 
       setInfo('Your message has been posted');
