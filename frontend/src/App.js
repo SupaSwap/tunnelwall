@@ -297,7 +297,11 @@ function App() {
           </Button>
           .
         </p>
-        <Alert variant="warning" className="text-center mx-3 mb-5">This site is currently connected to the Ropsten testnet. Use a gas limit of approximately 100,000.</Alert>
+        <Alert variant="warning" className="text-center mx-3 mb-5">
+          This site is currently connected to the Goerli testnet. Collect some test Eth from the
+          {' '}<a href="https://goerli-faucet.slock.it/" target="blank" style={{color: "#856404", fontWeight: "bold"}}>faucet</a>
+        .
+        </Alert>
         <Row className="mb-5 pb-3 w-100 mx-0" >
           <Col xs={7}>
             <h5 className="text-center mb-2">Write a message on the wall</h5>
