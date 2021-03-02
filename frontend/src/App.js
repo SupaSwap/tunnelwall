@@ -46,7 +46,7 @@ const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 
 function App() {
   // react hooks
-  const [post, setPost] = useState(['The tunnel begins here.', '0x88c055b85751448f3013378544ad463b2542f099', '17/02/2021, 13:18:56 (UTC)']);
+  const [post, setPost] = useState(['The tunnel begins here.', '0x88c055b85751448f3013378544ad463b2542f099', '02/03/2021, 15:06:56 (UTC)']);
   const [uid, setUid] = useState(0);
   const [info, setInfo] = useState('Retrieved the genesis message');
   const [walletAddress, setWalletAddress] = useState('Please connect a wallet with MetaMask');
