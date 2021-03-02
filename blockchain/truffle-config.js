@@ -71,6 +71,13 @@ module.exports = {
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     },
 
+    goerli: {
+      provider: () => new HDWalletProvider(secrets['SEED_PHRASE'], 'https://goerli.infura.io/v3/' + secrets['API_KEY']),
+      network_id: 5,
+      gas: 5500000,
+      skipDryRun: true
+    },
+
     // Useful for private networks
     // private: {
       // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
