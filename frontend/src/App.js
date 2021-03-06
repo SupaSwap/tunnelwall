@@ -486,7 +486,8 @@ function App() {
         <p className="lead text-center">
           Writing a message on the wall requires you to pay a small transaction fee in the form 
           of <a href="https://support.blockchain.com/hc/en-us/articles/360027772571-What-is-gas-" target="blank">gas</a>. 
-          This fee is paid in Ether and varies depending on how busy the network is at the time.
+          As the Tunnelwall is currently deployed on the Goerli testnet, this fee is paid in test Ether and varies
+          depending on how busy the network is at the time.
           To top up your MetaMask wallet with Goerli test Ether, you can collect some for free from
           the <a href="https://goerli-faucet.slock.it" target="blank">faucet</a>.
         </p>
