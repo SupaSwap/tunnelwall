@@ -276,7 +276,7 @@ function App() {
       </Jumbotron>
       <Container>
         <h3 className="text-center text-dark pt-4">This is your dashboard</h3>
-        <p className="text-center lead mb-5 pb-5">
+        <p className="text-center lead mb-5 pb-3">
           From here, you can interact with the Tunnelwall program. For help getting started, please view the 
           <Button 
             onClick={ executeScroll } 
