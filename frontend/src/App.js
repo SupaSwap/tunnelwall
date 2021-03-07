@@ -512,13 +512,13 @@ function App() {
                 }}
                 className="text-center"
                 type="text"
-                value="Address coming soon..."
+                value="0xbB61A5398EeF5707fa662F42B7fC1Ca32e76e747"
                 readonly />
               <InputGroup.Append>
                 <OverlayTrigger
                   overlay={<Tooltip>Copy to clipboard</Tooltip>}
                   placement="right" >
-                  <Button onClick={ () => copyAddress("Address coming soon...") }>
+                  <Button onClick={ () => copyAddress("0xbB61A5398EeF5707fa662F42B7fC1Ca32e76e747") }>
                     <CopyIcon 
                       style={{
                         marginBottom: "0.1em",
