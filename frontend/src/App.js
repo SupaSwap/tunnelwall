@@ -40,7 +40,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 const web3 = new Web3(Web3.givenProvider);  // use the given Provider or instantiate a new websocket provider
-//const contractAddress = '0x58d9984CE91802580e31A70854375Bc2be2B73A9'; // ropsten contract address
 const contractAddress = '0x58d9984CE91802580e31A70854375Bc2be2B73A9'; // goerli contract address
 const contract = new web3.eth.Contract(tunnelwallAbi, contractAddress);
 
