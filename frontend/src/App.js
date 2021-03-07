@@ -460,8 +460,8 @@ function App() {
         </p>
         <h3 className="text-center text-dark pt-4 mb-4" ref={ guideRef }>Getting started</h3>
         <p className="lead text-center">
-          If you already have MetaMask set up, there's nothing more you need to do and the Tunnelwall
-          is yours to explore! If not, please keep reading.
+          If you already have MetaMask set up, just switch to the Goerli testnet, and then there's
+          nothing more you need to do and the Tunnelwall is yours to explore! If not, please keep reading.
         </p>
         <p className="lead text-center">
           Visit the <a href="https://metamask.io/download.html" target="blank">MetaMask</a> website,
@@ -492,8 +492,8 @@ function App() {
         </p>
         <p className="lead text-center pb-5">
           When reading messages from the wall, you will not need to pay any transaction fees, but you
-          will need to be connected with the MetaMask extension in order to communicate with the
-          blockchain.
+          will need to be connected with the MetaMask extension, with the Goerli test network selected, in
+          order to communicate with the blockchain.
         </p>
         <h3 className="text-center text-dark pt-4 pb-4">Please consider donating</h3>
         <p className="lead text-center pb-2">
